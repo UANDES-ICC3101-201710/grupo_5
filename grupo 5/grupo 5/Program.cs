@@ -72,6 +72,9 @@ namespace Hearthstone_POO_Grupo5
             Minions x58 = new Minions("Boulderfist Ogre", 6, 7, 6);
             Minions x59 = new Minions("War Golem", 7, 7, 7);
             Minions x60 = new Minions("Core Hound", 7, 5, 9);
+            /*Las siguientes cartas corresponden a los poderes de heroe*/
+            Armas a1 = new Armas("Wicked Knife", 2, 1, 2);
+            Armas a2 = new Armas("Poisoned Dagger", 2, 2, 2);///se asume que el costo de mana de esta arma se ve por el poder del heroe y no por el costo de mana de la carta///
             Jugador J1;
             Jugador J2;
             List<Cartas> Mazo1 = new List<Cartas> { x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30 };
@@ -81,6 +84,12 @@ namespace Hearthstone_POO_Grupo5
             Mazo P1 = new Mazo(Mazo1, "Mazito");
             Mazo P2 = new Mazo(Mazo2, "Mazin");
             Manager m = new Manager();
+            Heroe T = new Heroe("Thrall", "Shaman", m);
+            Heroe V = new Heroe("Valeera", "Rogue", m);
+            Heroe J = new Heroe("Jaina", "Mage", m);
+            Heroe U = new Heroe("Uther", "Paladin", m);
+            Heroe A = new Heroe("Anduin", "Priest", m);
+            Heroe M = new Heroe("Malfurion", "Druid", m);
             Heroe H = new Heroe("Rexxar", "Hunter", m);
             Heroe W = new Heroe("Garrosh", "Warrior", m);
             m.Aviso("Jugador 1, ingrese su nombre.");

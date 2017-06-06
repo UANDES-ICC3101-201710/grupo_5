@@ -23,6 +23,9 @@ namespace Hearthstone_POO_Grupo5
         public int VarAuxDmg;
         public bool HabMej;
         public bool UsoHab;
+        /**/
+        public int ataqueheroe = 0;
+
 
         public Jugador(String Nombre, Mazo Mazo, bool ID, Heroe Heroe, Manager manager)
         {
@@ -100,6 +103,33 @@ namespace Hearthstone_POO_Grupo5
             return Mano[z];
         }
 
+
+
+
+
+        /*public Minions GenerarSilverHand(string codigo)
+        {
+            BajarCarta();
+            Minions codigo = new Minions("Silver Hand recruit", 1, 1, 1);
+
+        }
+
+        public Object GenerarTotem()
+        {
+            Minions t1 = new Minions("Healing Totem", 1, 2, 0);//agregar efecto para sanar a todos los minions en 1 al final del turno
+            Minions t2 = new Minions("Searing Totem", 1, 1, 1);
+            Minions t3 = new Minions("Wraith Of Air Totem", 1, 2, 0);//otorga +1 spell dmg mientras este vivo
+            Minions t4 = new Minions("Stoneclaw Totem", 1, 2, 0);//posee taunt
+            BajarCarta();
+        }
+        */
+
+        public void AtaqueHeroe()
+        {
+            Ataque(int x, Jugador J, int y);
+            
+        }
+
         public void UsarHabilidad()
         {
             if (Mana < 2)
@@ -129,6 +159,74 @@ namespace Hearthstone_POO_Grupo5
                 else if (Heroe.Clase == "Warrior" && HabMej == false)
                 {
                     Armor += 2;
+                }
+                else if (Heroe.Clase == "Paladin" && HabMej == true)
+                {
+                    
+                    /*int silvercount = 0;
+                    Minions s1 = new Minions("Silver Hand recruit", 1, 1, 1);
+
+                    for (int i = 0; i <= silvercount; i++)
+                    {
+                       Minions s1 = new Minions("Silver Hand recruit", 1, 1, 1);
+                       
+                    }
+                    silvercount += 1;*/
+                }
+                else if (Heroe.Clase == "Paladin" && HabMej == false)
+                {
+                    ///sumonea dos mono 1/1///;;
+                }
+                else if (Heroe.Clase == "Warlock" && HabMej == true)
+                {
+                    RobarCarta();
+                }
+                else if (Heroe.Clase == "Warlock" && HabMej == false)
+                {
+                    RobarCarta();
+                    Vida -= 2;
+                }
+                else if (Heroe.Clase == "Mage" && HabMej == true)
+                {
+                    ///Daña 2 a alguien///;
+                }
+                else if (Heroe.Clase == "Mage" && HabMej == false)
+                {
+                    ///Daña 1 a algjuien///;
+                }
+                else if (Heroe.Clase == "Priest" && HabMej == true)
+                {
+                    ///Cura 2 a alguien///;
+                }
+                else if (Heroe.Clase == "Priest" && HabMej == false)
+                {
+                    ///Cura 4 as alguien///;
+                }
+                else if (Heroe.Clase == "Druid" && HabMej == true)
+                {
+                    Armor += 2;
+                    ///sunma dos de ataque///;
+                }
+                else if (Heroe.Clase == "Druid" && HabMej == false)
+                {
+                    Armor += 2;
+                    ///auma uno de ataque///;
+                }
+                else if (Heroe.Clase == "Rogue" && HabMej == true)
+                {
+                    ///genera un arma 2/2///;
+                }
+                else if (Heroe.Clase == "Rogue" && HabMej == false)
+                {
+                    ///genera un arma 1/2///;
+                }
+                else if (Heroe.Clase == "Shaman" && HabMej == true)
+                {
+                    ///sumonea un totem a eleccion///;
+                }
+                else if (Heroe.Clase == "Shaman" && HabMej == false)
+                {
+                    ///sumonea un totem///(4 tipos);
                 }
             }
 
