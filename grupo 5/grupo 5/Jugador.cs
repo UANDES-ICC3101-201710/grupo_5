@@ -124,11 +124,11 @@ namespace Hearthstone_POO_Grupo5
         }
         */
 
-        public void AtaqueHeroe()
+        /*public void AtaqueHeroe()
         {
             Ataque(int x, Jugador J, int y);
             
-        }
+        }*/
 
         public void UsarHabilidad()
         {
@@ -205,7 +205,7 @@ namespace Hearthstone_POO_Grupo5
                 else if (Heroe.Clase == "Druid" && HabMej == true)
                 {
                     Armor += 2;
-                    ///sunma dos de ataque///;
+                    //SUMAR 2 DE ATAQUE POR UN TURNO//
                 }
                 else if (Heroe.Clase == "Druid" && HabMej == false)
                 {
