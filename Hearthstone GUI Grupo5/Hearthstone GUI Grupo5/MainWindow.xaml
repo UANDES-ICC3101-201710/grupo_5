@@ -26,15 +26,23 @@
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Margin="1055,168,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2" Height="125" Name="HabilidadEnemigo" RenderTransformOrigin="0.432,0.272">
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
             <Button.Background>
                 <ImageBrush ImageSource="imagenes/Base.png"/>
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Margin="1077,741,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2" Height="125" Name="HabilidadAliado" Click="HabilidadAliado_Click">
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
             <Button.Background>
                 <ImageBrush ImageSource="imagenes/Base.png"/>
             </Button.Background>
         </Button>
+        <Image HorizontalAlignment="Left" Height="201" Margin="877,704,0,0" VerticalAlignment="Top" Width="160" Name="HeroeAli" Source="imagenes/Base.png"/>
+        <Image HorizontalAlignment="Left" Height="201" Margin="877,118,0,0" VerticalAlignment="Top" Width="160" Name="HeroeEne" Source="imagenes/Base.png"/>
 
     </Grid>
 </Window>

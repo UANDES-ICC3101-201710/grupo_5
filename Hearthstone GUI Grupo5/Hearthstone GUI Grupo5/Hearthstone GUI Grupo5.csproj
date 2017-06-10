@@ -156,5 +156,16 @@
   <ItemGroup>
     <Resource Include="imagenes\Base.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\HAnduin.png" />
+    <Resource Include="imagenes\HGarrosh.png" />
+    <Resource Include="imagenes\HGuldan.png" />
+    <Resource Include="imagenes\HJaina.png" />
+    <Resource Include="imagenes\HMalfurion.png" />
+    <Resource Include="imagenes\HRexxar.png" />
+    <Resource Include="imagenes\HThrall.png" />
+    <Resource Include="imagenes\HUther.png" />
+    <Resource Include="imagenes\HValeera.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

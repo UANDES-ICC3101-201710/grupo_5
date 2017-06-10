@@ -96,7 +96,14 @@ namespace Hearthstone_GUI_Grupo5
             Manager m = new Manager();
             Heroe H = new Heroe("Rexxar", "Hunter", m);
             Heroe W = new Heroe("Garrosh", "Warrior", m);
-            
+            Heroe R = new Heroe("Valeera", "Rogue", m);
+            Heroe P = new Heroe("Uther", "Paladin", m);
+            Heroe Pr = new Heroe("Anduin", "Priest", m);
+            Heroe S = new Heroe("Thrall", "Shaman", m);
+            Heroe Wk = new Heroe("Guldan", "Warlock", m);
+            Heroe D = new Heroe("Malfurion", "Druid", m);
+            Heroe M = new Heroe("Jaina", "Mage", m);
+
             MenuHeroes popup = new MenuHeroes(0);
             MenuHeroes popup1 = new MenuHeroes(1);
             popup.ShowDialog();
@@ -107,14 +114,6 @@ namespace Hearthstone_GUI_Grupo5
             String z2 = popup1.Nombre;
             int z3 = popup1.Heroe;
             InitializeComponent();
-            if (z1 == 5 || z3 == 5)
-            {
-                var brush = new ImageBrush();
-                //brush.ImageSource = new BitmapImage(new Uri(@"imagenes/Rexxar.png"));
-                //HabilidadAliado.Background = brush;
-                //HabilidadAliado.Content = "Holamundo";
-                Test();
-            }
             /*            m.Aviso("Jugador 1, ingrese su nombre.");
                         String z = m.RecibirNomb();
                         m.Aviso("Jugador 1, ingrese su heroe. 1 = Hunter, 2 = Warrior");
@@ -125,20 +124,78 @@ namespace Hearthstone_GUI_Grupo5
                         int z3 = m.RecibirResp();*/
             if (z1 == 1)
             {
+                J1 = new Jugador(z, P1, true, W, m);
+            }
+            else if (z1 == 2)
+            {
+                J1 = new Jugador(z, P1, true, S, m);
+            }
+            else if (z1 == 3)
+            {
+                J1 = new Jugador(z, P1, true, R, m);
+            }
+            else if (z1 == 4)
+            {
+                J1 = new Jugador(z, P1, true, P, m);
+            }
+            else if (z1 == 5)
+            {
                 J1 = new Jugador(z, P1, true, H, m);
+            }
+            else if (z1 == 6)
+            {
+                J1 = new Jugador(z, P1, true, D, m);
+            }
+            else if (z1 == 7)
+            {
+                J1 = new Jugador(z, P1, true, Wk, m);
+            }
+            else if (z1 == 8)
+            {
+                J1 = new Jugador(z, P1, true, M, m);
             }
             else
             {
-                J1 = new Jugador(z, P1, true, W, m);
+                J1 = new Jugador(z, P1, true, Pr, m);
             }
             if (z3 == 1)
             {
+                J2 = new Jugador(z2, P2, false, W, m);
+            }
+            else if (z3 ==2)
+            {
+                J2 = new Jugador(z2, P2, false, S, m);
+            }
+            else if (z3 == 3)
+            {
+                J2 = new Jugador(z2, P2, false, R, m);
+            }
+            else if (z3 == 4)
+            {
+                J2 = new Jugador(z2, P2, false, P, m);
+            }
+            else if (z3 == 5)
+            {
                 J2 = new Jugador(z2, P2, false, H, m);
+            }
+            else if (z3 == 6)
+            {
+                J2 = new Jugador(z2, P2, false, D, m);
+            }
+            else if (z3 == 7)
+            {
+                J2 = new Jugador(z2, P2, false, Wk, m);
+            }
+            else if (z3 == 8)
+            {
+                J2 = new Jugador(z2, P2, false, M, m);
             }
             else
             {
-                J2 = new Jugador(z2, P2, false, W, m);
+                J2 = new Jugador(z2, P2, false, Pr, m);
             }
+
+
             Tablero Tab = new Tablero(J1, J2, m);
             Tablerini = Tab;
             CambioHabilidad(J1.Heroe, J2.Heroe);       
@@ -146,30 +203,108 @@ namespace Hearthstone_GUI_Grupo5
 
 
         }
-        private void Test()
-        {
-            HabilidadAliado.Content = "Holamundo";
-            //var brush = new ImageBrush();
-            //brush.ImageSource = new BitmapImage(new Uri("imagenes/Rexxar.png"));
-            //HabilidadAliado.Background = brush;
-            //HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(@"imagenes/Rexxar.png")));
-            HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Rexxar.png")));
-        }
+
         private void CambioHabilidad(Heroe ally, Heroe enemy)
         {
-
+            // CAMBIAMOS LA IMAGEN ALIADA
             if (ally.NombreHeroe == "Rexxar")
             {
-                var brush = new ImageBrush();
-                brush.ImageSource = new BitmapImage(new Uri("imagenes/Rexxar.png"));
-                HabilidadAliado.Background = brush;
-                ShowDialog();
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Rexxar.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HRexxar.png"));
             }
+            else if (ally.NombreHeroe == "Uther")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Uther.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HUther.png"));
+            }
+            else if (ally.NombreHeroe == "Valeera")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Valeera.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HValeera.png"));
+            }
+            else if (ally.NombreHeroe == "Anduin")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Anduin.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HAnduin.png"));
+            }
+            else if (ally.NombreHeroe == "Thrall")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Thrall.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HThrall.png"));
+            }
+            else if (ally.NombreHeroe == "Malfurion")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Malfurion.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HMalfurion.png"));
+            }
+            else if (ally.NombreHeroe == "Guldan")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Guldan.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGuldan.png"));
+            }
+            else if (ally.NombreHeroe == "Garrosh")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Garrosh.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGarrosh.png"));
+            }
+            else if (ally.NombreHeroe == "Jaina")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Jaina.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HJaina.png"));
+            }
+            // CAMBIAMOS LA IMAGEN DEL ENEMIGO
+            if (enemy.NombreHeroe == "Rexxar")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Rexxar.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HRexxar.png"));
+            }
+            else if (enemy.NombreHeroe == "Uther")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Uther.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HUther.png"));
+            }
+            else if (enemy.NombreHeroe == "Valeera")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Valeera.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HValeera.png"));
+            }
+            else if (enemy.NombreHeroe == "Anduin")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Anduin.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HAnduin.png"));
+            }
+            else if (enemy.NombreHeroe == "Thrall")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Thrall.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HThrall.png"));
+            }
+            else if (enemy.NombreHeroe == "Malfurion")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Malfurion.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HMalfurion.png"));
+            }
+            else if (enemy.NombreHeroe == "Guldan")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Guldan.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGuldan.png"));
+            }
+            else if (enemy.NombreHeroe == "Garrosh")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Garrosh.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGarrosh.png"));
+            }
+            else if (enemy.NombreHeroe == "Jaina")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Jaina.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HJaina.png"));
+            }
+            ShowDialog();
+
         }
 
         private void HabilidadAliado_Click(object sender, RoutedEventArgs e)
         {
-            Tablerini.UsarHabilidad(Tablerini.J1);
+            //Tablerini.UsarHabilidad(Tablerini.J1);
         }
 
 
