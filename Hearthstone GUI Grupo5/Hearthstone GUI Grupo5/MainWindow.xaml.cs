@@ -198,13 +198,13 @@ namespace Hearthstone_GUI_Grupo5
 
             Tablero Tab = new Tablero(J1, J2, m);
             Tablerini = Tab;
-            CambioHabilidad(J1.Heroe, J2.Heroe);       
+            CambioImagenes(J1.Heroe, J2.Heroe);       
             //Tab.Partir();
 
 
         }
 
-        private void CambioHabilidad(Heroe ally, Heroe enemy)
+        private void CambioImagenes(Heroe ally, Heroe enemy)
         {
             // CAMBIAMOS LA IMAGEN ALIADA
             if (ally.NombreHeroe == "Rexxar")

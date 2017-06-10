@@ -34,6 +34,9 @@
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Margin="1077,741,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2" Height="125" Name="HabilidadAliado" Click="HabilidadAliado_Click">
+            <Button.Effect>
+                <BlurEffect/>
+            </Button.Effect>
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
