@@ -22,6 +22,7 @@ namespace Hearthstone_GUI_Grupo5
     /// </summary>
     public partial class MainWindow : Window
     {
+        Tablero Tablerini;
         public MainWindow()
         {
             Minions x1 = new Minions("Wisp", 0, 1, 1);//nombre, costo, vida, ataque
@@ -105,6 +106,15 @@ namespace Hearthstone_GUI_Grupo5
             int z1 = popup.Heroe;
             String z2 = popup1.Nombre;
             int z3 = popup1.Heroe;
+            InitializeComponent();
+            if (z1 == 5 || z3 == 5)
+            {
+                var brush = new ImageBrush();
+                //brush.ImageSource = new BitmapImage(new Uri(@"imagenes/Rexxar.png"));
+                //HabilidadAliado.Background = brush;
+                //HabilidadAliado.Content = "Holamundo";
+                Test();
+            }
             /*            m.Aviso("Jugador 1, ingrese su nombre.");
                         String z = m.RecibirNomb();
                         m.Aviso("Jugador 1, ingrese su heroe. 1 = Hunter, 2 = Warrior");
@@ -130,19 +140,30 @@ namespace Hearthstone_GUI_Grupo5
                 J2 = new Jugador(z2, P2, false, W, m);
             }
             Tablero Tab = new Tablero(J1, J2, m);
-            CambioHabilidad(J1.Heroe, J2.Heroe);
-            //InitializeComponent();
+            Tablerini = Tab;
+            CambioHabilidad(J1.Heroe, J2.Heroe);       
             //Tab.Partir();
 
 
         }
+        private void Test()
+        {
+            HabilidadAliado.Content = "Holamundo";
+            //var brush = new ImageBrush();
+            //brush.ImageSource = new BitmapImage(new Uri("imagenes/Rexxar.png"));
+            //HabilidadAliado.Background = brush;
+            //HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(@"imagenes/Rexxar.png")));
+            HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Rexxar.png")));
+        }
         private void CambioHabilidad(Heroe ally, Heroe enemy)
         {
+
             if (ally.NombreHeroe == "Rexxar")
             {
                 var brush = new ImageBrush();
-                brush.ImageSource = new BitmapImage(new Uri(@"imagenes/Rexxar.png"));
+                brush.ImageSource = new BitmapImage(new Uri("imagenes/Rexxar.png"));
                 HabilidadAliado.Background = brush;
+                ShowDialog();
             }
         }
 
