@@ -169,7 +169,7 @@ namespace Hearthstone_GUI_Grupo5
 
         private void HabilidadAliado_Click(object sender, RoutedEventArgs e)
         {
-            
+            Tablerini.UsarHabilidad(Tablerini.J1);
         }
 
 
