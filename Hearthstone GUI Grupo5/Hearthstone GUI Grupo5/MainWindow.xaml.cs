@@ -95,7 +95,7 @@ namespace Hearthstone_GUI_Grupo5
             Manager m = new Manager();
             Heroe H = new Heroe("Rexxar", "Hunter", m);
             Heroe W = new Heroe("Garrosh", "Warrior", m);
-            InitializeComponent();
+            
             MenuHeroes popup = new MenuHeroes(0);
             MenuHeroes popup1 = new MenuHeroes(1);
             popup.ShowDialog();
@@ -130,10 +130,28 @@ namespace Hearthstone_GUI_Grupo5
                 J2 = new Jugador(z2, P2, false, W, m);
             }
             Tablero Tab = new Tablero(J1, J2, m);
+            CambioHabilidad(J1.Heroe, J2.Heroe);
+            //InitializeComponent();
             //Tab.Partir();
 
 
         }
+        private void CambioHabilidad(Heroe ally, Heroe enemy)
+        {
+            if (ally.NombreHeroe == "Rexxar")
+            {
+                var brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri(@"imagenes/Rexxar.png"));
+                HabilidadAliado.Background = brush;
+            }
+        }
+
+        private void HabilidadAliado_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
     }
     public static class ThreadSafeRandom
     {

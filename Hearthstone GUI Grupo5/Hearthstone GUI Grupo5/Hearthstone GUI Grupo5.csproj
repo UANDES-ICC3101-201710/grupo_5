@@ -137,11 +137,24 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="imagenes\Anduin.png" />
+    <Resource Include="imagenes\Garrosh.png" />
+    <Resource Include="imagenes\Guldan.png" />
+    <Resource Include="imagenes\Jaina.png" />
+    <Resource Include="imagenes\Malfurion.png" />
+    <Resource Include="imagenes\Rexxar.png" />
+    <Resource Include="imagenes\Thrall.png" />
+    <Resource Include="imagenes\Uther.png" />
+    <Resource Include="imagenes\Valeera.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="imagenes\635468707078430980.png" />
     <Resource Include="imagenes\hearthstone_screenshot_1-29-2014-00-53-39.png" />
     <Resource Include="imagenes\heroes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\Base.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

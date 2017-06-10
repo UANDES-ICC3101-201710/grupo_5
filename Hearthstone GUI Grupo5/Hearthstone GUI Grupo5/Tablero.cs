@@ -18,7 +18,9 @@ namespace Hearthstone_GUI_Grupo5
         public TimeSpan reloj;
         public Random rdm = new Random();
         public List<Cartas> Historial = new List<Cartas>();
-        public Hechizos Moneda = new Hechizos("The Coin", 0); 
+        public Hechizos Moneda = new Hechizos("The Coin", 0);
+        public MainWindow Tablero1;
+        public MainWindow Tablero2;
 
         public Tablero(Jugador J1, Jugador J2, Manager manager)
         {

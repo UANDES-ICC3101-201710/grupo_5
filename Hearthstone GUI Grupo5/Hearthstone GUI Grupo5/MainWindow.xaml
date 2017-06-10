@@ -17,9 +17,24 @@
         <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="162" Margin="434,505,0,0" VerticalAlignment="Top" Width="1004"/>
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="160" Margin="336,889,0,0" VerticalAlignment="Top" Width="864"/>
         <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="162" Margin="528,309,0,0" VerticalAlignment="Top" Width="872"/>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="370,437,0,0" VerticalAlignment="Top" Width="143" Height="68"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="1077,191,0,0" VerticalAlignment="Top" Width="103" Grid.ColumnSpan="2" Height="90"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="1088,759,0,0" VerticalAlignment="Top" Width="103" Grid.ColumnSpan="2" Height="90"/>
+        <Button Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="366,450,0,0" VerticalAlignment="Top" Width="126" Height="61" Name="FinTurno" Opacity="0.082">
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="" HorizontalAlignment="Left" Margin="1055,168,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2" Height="125" Name="HabilidadEnemigo" RenderTransformOrigin="0.432,0.272">
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/Base.png"/>
+            </Button.Background>
+        </Button>
+        <Button Content="" HorizontalAlignment="Left" Margin="1077,741,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2" Height="125" Name="HabilidadAliado" Click="HabilidadAliado_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/Base.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>
