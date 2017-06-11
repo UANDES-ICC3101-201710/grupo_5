@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Hearthstone_GUI_Grupo5
 {
-    class Minions : Cartas
+    class Minions : Cartas, INotifyPropertyChanged
     {
         public int Vida;
         public int Ataque;
@@ -18,5 +19,24 @@ namespace Hearthstone_GUI_Grupo5
             this.Vida = Vida;
             this.Ataque = Ataque;
         }
+        private string nombre;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value;
+                OnPropertyChanged(nombre);
+            }
+        }
+
+        private void OnPropertyChanged(String Propiedad)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(Propiedad));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

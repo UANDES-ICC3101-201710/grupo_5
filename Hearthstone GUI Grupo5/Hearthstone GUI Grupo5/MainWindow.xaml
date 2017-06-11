@@ -4,18 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hearthstone_GUI_Grupo5"
+        xmlns:m="using:Hearthstone_GUI_Grupo5"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Window.Background>
         <ImageBrush ImageSource="imagenes\hearthstone_screenshot_1-29-2014-00-53-39.png"/>
     </Window.Background>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="553*"/>
             <ColumnDefinition Width="403*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="162" Margin="434,505,0,0" VerticalAlignment="Top" Width="1004"/>
-        <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="160" Margin="336,889,0,0" VerticalAlignment="Top" Width="864"/>
         <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="162" Margin="528,309,0,0" VerticalAlignment="Top" Width="872"/>
         <Button Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="366,450,0,0" VerticalAlignment="Top" Width="126" Height="61" Name="FinTurno" Opacity="0.082">
             <Button.BorderBrush>
@@ -34,9 +35,9 @@
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Margin="1077,741,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2" Height="125" Name="HabilidadAliado" Click="HabilidadAliado_Click">
-            <Button.Effect>
-                <BlurEffect/>
-            </Button.Effect>
+            <Button.Foreground>
+                <ImageBrush/>
+            </Button.Foreground>
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -46,6 +47,56 @@
         </Button>
         <Image HorizontalAlignment="Left" Height="201" Margin="877,704,0,0" VerticalAlignment="Top" Width="160" Name="HeroeAli" Source="imagenes/Base.png"/>
         <Image HorizontalAlignment="Left" Height="201" Margin="877,118,0,0" VerticalAlignment="Top" Width="160" Name="HeroeEne" Source="imagenes/Base.png"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="1090,889,0,0" VerticalAlignment="Top" Width="103" Height="160" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="982,889,0,0" VerticalAlignment="Top" Width="103" Height="160">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="875,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="767,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="659,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="551,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="443,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="335,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="227,889,0,0" VerticalAlignment="Top" Width="103" Height="160">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="119,889,0,0" VerticalAlignment="Top" Width="103" Height="160">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

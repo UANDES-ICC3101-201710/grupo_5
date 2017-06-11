@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Collections;
+using System.ComponentModel;
 
 namespace Hearthstone_GUI_Grupo5
 {
@@ -19,6 +20,7 @@ namespace Hearthstone_GUI_Grupo5
         public Random rdm = new Random();
         public List<Cartas> Historial = new List<Cartas>();
         public Hechizos Moneda = new Hechizos("The Coin", 0);
+        
 
         public Tablero(Jugador J1, Jugador J2, Manager manager)
         {
