@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Hearthstone_GUI_Grupo5
 {
+    [Serializable]
     class Mazo
     {
         public String NombreMazo;

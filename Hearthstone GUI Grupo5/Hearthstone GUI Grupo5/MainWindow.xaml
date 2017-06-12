@@ -96,6 +96,10 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
+        <Label Content="30" HorizontalAlignment="Left" Margin="1002,256,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="VidaEnem"/>
+        <Label Content="30" HorizontalAlignment="Left" Margin="1002,841,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="VidaAli"/>
+        <Label Content="0/0" Grid.Column="1" HorizontalAlignment="Left" Margin="109,939,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Foreground="White" Name="ManaAli" FontFamily="OPTIBelwe" Height="40"/>
+        <Label Content="0/0" Grid.Column="1" HorizontalAlignment="Left" Margin="76,62,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Foreground="White" x:Name="ManaEnem" FontFamily="OPTIBelwe" Height="40"/>
 
     </Grid>
 </Window>

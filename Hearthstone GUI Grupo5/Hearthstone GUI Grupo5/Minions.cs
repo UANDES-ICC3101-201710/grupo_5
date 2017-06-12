@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Hearthstone_GUI_Grupo5
 {
+    [Serializable]
     class Minions : Cartas, INotifyPropertyChanged
     {
         public int Vida;

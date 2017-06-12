@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Hearthstone_GUI_Grupo5
 {
@@ -298,6 +301,69 @@ namespace Hearthstone_GUI_Grupo5
         private void HabilidadAliado_Click(object sender, RoutedEventArgs e)
         {
             //Tablerini.UsarHabilidad(Tablerini.J1);
+        }
+
+        private static void Save(Tablero tablero, Mazo mazo, Jugador jugador, Cartas cartas, Armas armas, Minions minions)
+        {
+
+            string fileName1 = "Savedgame/tablero.txt";
+            string fileName2 = "Savedgame/jugador.txt";
+            string fileName3 = "Savedgame/cartas.txt";
+            string fileName4 = "Savedgame/armas.txt";
+            string fileName5 = "Savedgame/mazo.txt";
+            string filename6 = "Savedgam/minions.txt";
+            // Creamos el Stream donde guardaremos nuestro juego
+            FileStream fs_mazo = new FileStream(fileName5, FileMode.CreateNew);
+            FileStream fs_armas = new FileStream(fileName4, FileMode.CreateNew);
+            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
+            FileStream fs_jugador = new FileStream(fileName2, FileMode.CreateNew);
+            FileStream fs_cartas = new FileStream(fileName3, FileMode.CreateNew);
+            FileStream fs_minions = new FileStream(filename6, FileMode.CreateNew);
+            IFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(fs_tablero, tablero);
+            formatter.Serialize(fs_mazo, mazo);
+            formatter.Serialize(fs_jugador, jugador);
+            formatter.Serialize(fs_cartas, cartas);
+            formatter.Serialize(fs_armas, armas);
+            formatter.Serialize(fs_minions, minions);
+            fs_minions.Close();
+            fs_tablero.Close();
+            fs_jugador.Close();
+            fs_cartas.Close();
+            fs_mazo.Close();
+            fs_armas.Close();
+        }
+        private static Tablero Load()//revizar cuantos metodos se deben hacer
+        {
+            Console.WriteLine(" Nombre del archivo : ");
+            string fileName1 = "Savedgame/tablero.txt";
+            string fileName2 = "Savedgame/jugador.txt";
+            string fileName3 = "Savedgame/cartas.txt";
+            string fileName4 = "Savedgame/armas.txt";
+            string fileName5 = "Savedgame/mazo.txt";
+            string fileName6 = "Savedgame/minions.txt";
+            // Creamos el Stream donde se encuentra nuestro juego
+            FileStream fs_mazo = new FileStream(fileName5, FileMode.CreateNew);
+            FileStream fs_armas = new FileStream(fileName4, FileMode.CreateNew);
+            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
+            FileStream fs_jugador = new FileStream(fileName2, FileMode.CreateNew);
+            FileStream fs_cartas = new FileStream(fileName3, FileMode.CreateNew);
+            FileStream fs_minions = new FileStream(fileName6, FileMode.CreateNew);
+            IFormatter formatter = new BinaryFormatter();
+            Tablero tablero = formatter.Deserialize(fs_tablero) as Tablero;
+            Jugador jugador = formatter.Deserialize(fs_jugador) as Jugador;
+            Cartas cartas = formatter.Deserialize(fs_cartas) as Cartas;
+            Mazo mazo = formatter.Deserialize(fs_mazo) as Mazo;
+            Armas armas = formatter.Deserialize(fs_armas) as Armas;
+            Minions minions = formatter.Deserialize(fs_minions) as Minions;
+            fs_tablero.Close();
+            fs_jugador.Close();
+            fs_cartas.Close();
+            fs_mazo.Close();
+            fs_armas.Close();
+            fs_minions.Close();
+            return tablero;
+            //falta retornar todo lo otro.            
         }
 
 

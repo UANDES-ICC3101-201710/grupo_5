@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Collections;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace Hearthstone_GUI_Grupo5
 {
+    [Serializable]
     class Tablero
     {
         public TimeSpan Tiempo;
