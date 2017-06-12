@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hearthstone_GUI_Grupo5"
-        xmlns:m="using:Hearthstone_GUI_Grupo5"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Window.Background>
