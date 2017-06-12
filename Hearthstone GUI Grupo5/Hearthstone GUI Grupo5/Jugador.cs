@@ -20,9 +20,21 @@ namespace Hearthstone_GUI_Grupo5
         public int Mana;
         public int Armor;
         public Heroe Heroe;
-        public int VarAuxDmg;
+        public int VarAuxDmg = 0;
         public bool HabMej;
         public bool UsoHab;
+        public Armas Arma;
+        public int Daño = 0;
+
+        //Lista que guarda los silver hand warriors que crea la habilidad del paladin
+        public List<Minions> SilverHand;
+        //Lista que guarda los totems que crea la habilidad del shaman
+        public List<Minions> Totems;
+        //Creacion de totems para poder ingresarlos a la lista totems
+        Minions totem1 = new Minions("Healing Totem", 1, 2, 0);//Al final de el turno del jugador da 1 de vida al resto de los minions del tablero del jugador.
+        Minions totem2 = new Minions("Searing Totem", 1, 1, 1);
+        Minions totem3 = new Minions("Stoneclaw Totem", 1, 2, 0);// Posee Taunt, habilidad que obliga a los minions enemigos a destruir este minion u otro que posea taunt antes de atacar al resto.
+        Minions totem4 = new Minions("Wraith Of Air Totem", 1, 2, 0);// Otorga al jugador +1 spelldamage mientras este totem este vivo.
 
         public Jugador(String Nombre, Mazo Mazo, bool ID, Heroe Heroe, Manager manager)
         {
@@ -114,7 +126,7 @@ namespace Hearthstone_GUI_Grupo5
             {
                 manager.Aviso("No tiene suficiente maná: " + Mana);
             }
-            else if(UsoHab == true)
+            else if (UsoHab == true)
             {
                 manager.Aviso("Ya utilizó la habilidad este turno.");
             }
@@ -138,8 +150,157 @@ namespace Hearthstone_GUI_Grupo5
                 {
                     Armor += 2;
                 }
+                else if (Heroe.Clase == "Paladin" && HabMej == true)
+                {
+                    Minions s1 = new Minions("Silver Hand recruit", 1, 1, 1);
+                    s1 = new Minions("Silver Hand recruit", 1, 1, 1);
+                    SilverHand.Add(s1);
+                }
+                else if (Heroe.Clase == "Paladin" && HabMej == false)
+                {
+                    Minions silver1 = new Minions("Silver Hand recruit", 1, 1, 1);
+                    silver1 = new Minions("Silver Hand recruit", 1, 1, 1);
+                    SilverHand.Add(silver1);
+                    SilverHand.Add(silver1);
+                }
+                else if (Heroe.Clase == "Warlock" && HabMej == true)
+                {
+                    RobarCarta();
+                }
+                else if (Heroe.Clase == "Warlock" && HabMej == false)
+                {
+                    RobarCarta();
+                    Vida -= 2;
+                }
+                else if (Heroe.Clase == "Mage" && HabMej == true)
+                {
+                    VarAuxDmg = 2;
+                }
+                else if (Heroe.Clase == "Mage" && HabMej == false)
+                {
+                    VarAuxDmg = 1;
+                }
+                else if (Heroe.Clase == "Priest" && HabMej == true)
+                {
+                    VarAuxDmg = 2;
+                }
+                else if (Heroe.Clase == "Priest" && HabMej == false)
+                {
+                    VarAuxDmg = 4;
+                }
+                else if (Heroe.Clase == "Druid" && HabMej == true)
+                {
+                    Armor += 2;
+                    Daño = 2;
+                }
+                else if (Heroe.Clase == "Druid" && HabMej == false)
+                {
+                    Armor += 2;
+                    Daño = 1;
+                }
+                else if (Heroe.Clase == "Rogue" && HabMej == true) // Generamos un arma 2/2 y la equipamos
+                {
+                    Armas a2 = new Armas("Poisoned Dagger", 2, 2, 2);
+                    Arma = a2;
+                }
+                else if (Heroe.Clase == "Rogue" && HabMej == false) // Generamos un arma 2/1 y la equipamos
+                {
+                    Armas a1 = new Armas("Wicked Knife", 2, 1, 2);
+                    Arma = a1;
+                }
+                else if (Heroe.Clase == "Shaman" && HabMej == true)
+                {
+                    ///eleccion de totem.
+                    ///creacion de totem.
+                }
+                else if (Heroe.Clase == "Shaman" && HabMej == false)
+                //OBSERVACION DEL METODO, ESTE METODO ASIGNA UN RANDOM ENTER 0 Y 3 PARA ELEGIR ENTRE 4 TOTEMS DISTINTOS
+                //PERO SI EXISTE UN TOTEM EN EL TABLERO EL RANDOM SIGUIENTE EXCLUYE AL TOTEM QUE ESTA EN EL TABLERO, HASTA QUE SALGAN LOS 4
+                //POR ESTO ANTES DE CREAR UN TOTEM REVIZA (con 4 contadores de los 4 totems) QUE ESTE YA ESTE O NO CREADO.
+                {
+                    int totemPick = rdm.Next(0, 3);
+                    int totem0count = 0;
+                    int totem1count = 0;
+                    int totem2count = 0;
+                    int totem3count = 0;
+
+                    if (totemPick == 0)
+                    {
+                        if (!(totem0count >= totem1count && totem0count >= totem2count && totem0count >= totem3count))
+                        {
+                            GenTotem0();
+                            totem0count += 1;
+                        }
+                        else
+                        {
+                            UsarHabilidad();
+                        }
+                    }
+                    else if (totemPick == 1)
+                    {
+                        if (!(totem1count >= totem0count && totem1count >= totem2count && totem1count >= totem3count))
+                        {
+                            GenTotem1();
+                            totem1count += 1;
+                        }
+                        else
+                        {
+                            UsarHabilidad();
+                        }
+                    }
+                    else if (totemPick == 2)
+                    {
+                        if (!(totem2count >= totem0count && totem2count >= totem1count && totem2count >= totem3count))
+                        {
+                            GenTotem2();
+                            totem2count += 1;
+                        }
+                        else
+                        {
+                            UsarHabilidad();
+                        }
+
+                    }
+                    else
+                    {
+                        if (!(totem3count >= totem0count && totem3count >= totem1count && totem3count >= totem2count))
+                        {
+                            GenTotem3();
+                            totem3count += 1;
+                        }
+                        else
+                        {
+                            UsarHabilidad();
+                        }
+                    }
+
+                }
             }
 
+        }
+
+        public void GenTotem0()//Genera un healing totem
+        {
+            totem1 = new Minions("Healing Totem", 1, 2, 0);
+            Totems.Add(totem1);
+        }
+
+        public void GenTotem1()//Genera un Searing totem
+        {
+            totem2 = new Minions("Searing Totem", 1, 1, 1);
+            Totems.Add(totem2);
+        }
+
+        public void GenTotem2()//Genera un stoneclaw totem
+        {
+            totem3 = new Minions("Stoneclaw Totem", 1, 2, 0);
+            Totems.Add(totem3);
+        }
+
+        public void GenTotem3()//Genera un wraith of air totem
+        {
+            totem4 = new Minions("Wraith Of Air Totem", 1, 2, 0);
+            Totems.Add(totem4);
         }
 
         public void Fatiga()

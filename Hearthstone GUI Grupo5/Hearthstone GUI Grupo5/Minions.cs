@@ -13,11 +13,13 @@ namespace Hearthstone_GUI_Grupo5
         public int Ataque;
         public Boolean Estado;
         public int Memoria;
+        public int VidaOriginal;
 
         public Minions(string nombre, int costo, int Vida, int Ataque) : base(nombre, costo, Vida, Ataque)
         {
             this.Vida = Vida;
             this.Ataque = Ataque;
+            this.VidaOriginal = Vida;
         }
         private string nombre;
 

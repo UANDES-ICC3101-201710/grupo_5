@@ -13,6 +13,7 @@ namespace Hearthstone_GUI_Grupo5
         public int Vida;
         public int Ataque;
         public int Memoria;
+        public int VidaOriginal;
 
 
         public Cartas(string nombre, int costo, int Vida, int Ataque)
@@ -21,6 +22,7 @@ namespace Hearthstone_GUI_Grupo5
             this.Costo = costo;
             this.Vida = Vida;
             this.Ataque = Ataque;
+            this.VidaOriginal = Vida;
         }
 
         public void AplicarEfecto()

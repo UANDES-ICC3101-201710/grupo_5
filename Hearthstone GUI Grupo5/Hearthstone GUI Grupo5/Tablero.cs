@@ -306,6 +306,10 @@ namespace Hearthstone_GUI_Grupo5
             {
                 manager.Aviso("Que carta desea usar? ");
                 InfoCartas(J, J.Tablero);
+                if (J.Daño != 0 || J.Arma != null)
+                {
+                    manager.Aviso("Seleccione 7 Para atacar con su heroe.");
+                }
                 int x = manager.RecibirResp();
                 manager.Aviso("En que posición está la carta que desea atacar? (0,1,2,3,4,5,6 o 7 = Heroe enemigo)");
                 manager.Aviso("Tablero Enemigo: ");
@@ -318,7 +322,14 @@ namespace Hearthstone_GUI_Grupo5
                     InfoCartas(J1, J1.Tablero);
                 }
                 int y = manager.RecibirResp();
-                Ataque(x, J, y); // x posicion de carta del atacante, y posicion de carta del atacado
+                if (x == 7)
+                {
+                    AtaqueHeroe(J, y);
+                }
+                else
+                {
+                    Ataque(x, J, y); // x posicion de carta del atacante, y posicion de carta del atacado
+                }                
                 Menu(J);
             }
             
@@ -425,20 +436,374 @@ namespace Hearthstone_GUI_Grupo5
 
         }
 
-        public void UsarHabilidad(Jugador J) // Listo
+        public void AtaqueHeroe (Jugador J, int y)
+        {
+            if (J.ID == true && J.Arma != null)
+            {
+                if (y < 7)
+                {
+                    J2.Tablero[y].Vida -= (J1.Daño + J1.Arma.Ataque);
+                    J1.Arma.Durabilidad -= 1;
+                    if (J1.Arma.Durabilidad <= 0)
+                    {
+                        J1.Arma = null;
+                    }
+                    if(J1.Armor > 0)
+                    {
+                        J1.Armor -= J2.Tablero[y].Ataque;
+                        if (J1.Armor > 0)
+                        {
+
+                        }
+                        else
+                        {
+                            J1.Vida += J1.Armor;
+                            J1.Armor = 0;
+                        }
+
+                    }
+                    else
+                    {
+                        J1.Vida -= J1.Tablero[y].Ataque;
+                    }
+                    J1.Daño = 0;
+                }
+                else
+                {
+                    J2.Vida -= (J1.Daño + J1.Arma.Ataque);
+                    J1.Arma.Durabilidad -= 1;
+                    if (J1.Arma.Durabilidad <= 0)
+                    {
+                        J1.Arma = null;
+                    }
+                    if (J1.Armor > 0)
+                    {
+                        if (J2.Arma != null)
+                        {
+                            J1.Armor -= (J2.Daño + J2.Arma.Ataque);
+                            J2.Arma.Durabilidad -= 1; //revisar si pierde durabilidad
+                            if (J2.Arma.Durabilidad <= 0)
+                            {
+                                J2.Arma = null;
+                            }
+                            if (J1.Armor > 0)
+                            {
+
+                            }
+                            else
+                            {
+                                J1.Vida += J1.Armor;
+                                J1.Armor = 0;
+                            }
+                        }
+                        else
+                        {
+                            J1.Armor -= (J2.Daño);
+                            if (J1.Armor > 0)
+                            {
+
+                            }
+                            else
+                            {
+                                J1.Vida += J1.Armor;
+                                J1.Armor = 0;
+                            }
+                        }
+                        J2.Daño = 0;
+                    }    
+                }
+            }
+            else if (J.ID == true && J.Arma == null)
+            {
+                if (y < 7)
+                {
+                    J2.Tablero[y].Vida -= (J1.Daño);
+                    
+                    if (J1.Armor > 0)
+                    {
+                        J1.Armor -= J2.Tablero[y].Ataque;
+                        if (J1.Armor > 0)
+                        {
+
+                        }
+                        else
+                        {
+                            J1.Vida += J1.Armor;
+                            J1.Armor = 0;
+                        }
+
+                    }
+                    else
+                    {
+                        J1.Vida -= J1.Tablero[y].Ataque;
+                    }
+                    J1.Daño = 0;
+                }
+                else
+                {
+                    J2.Vida -= (J1.Daño);
+                    
+                    if (J1.Armor > 0)
+                    {
+                        if (J2.Arma != null)
+                        {
+                            J1.Armor -= (J2.Daño + J2.Arma.Ataque);
+                            J2.Arma.Durabilidad -= 1; //revisar si pierde durabilidad
+                            if (J2.Arma.Durabilidad <= 0)
+                            {
+                                J2.Arma = null;
+                            }
+                            if (J1.Armor > 0)
+                            {
+
+                            }
+                            else
+                            {
+                                J1.Vida += J1.Armor;
+                                J1.Armor = 0;
+                            }
+                        }
+                        else
+                        {
+                            J1.Armor -= (J2.Daño);
+                            if (J1.Armor > 0)
+                            {
+
+                            }
+                            else
+                            {
+                                J1.Vida += J1.Armor;
+                                J1.Armor = 0;
+                            }
+                        }
+                        J2.Daño = 0;
+                    }
+                }
+            }
+            else if (J.ID == false && J.Arma != null)
+            {
+                if (y < 7)
+                {
+                    J1.Tablero[y].Vida -= (J2.Daño + J2.Arma.Ataque);
+                    J2.Arma.Durabilidad -= 1;
+                    if (J2.Arma.Durabilidad <= 0)
+                    {
+                        J2.Arma = null;
+                    }
+                    if (J2.Armor > 0)
+                    {
+                        J2.Armor -= J1.Tablero[y].Ataque;
+                        if (J2.Armor > 0)
+                        {
+
+                        }
+                        else
+                        {
+                            J2.Vida += J2.Armor;
+                            J2.Armor = 0;
+                        }
+
+                    }
+                    else
+                    {
+                        J2.Vida -= J2.Tablero[y].Ataque;
+                    }
+                    J2.Daño = 0;
+                }
+                else
+                {
+                    J1.Vida -= (J2.Daño + J2.Arma.Ataque);
+                    J2.Arma.Durabilidad -= 1;
+                    if (J2.Arma.Durabilidad <= 0)
+                    {
+                        J2.Arma = null;
+                    }
+                    if (J2.Armor > 0)
+                    {
+                        if (J1.Arma != null)
+                        {
+                            J2.Armor -= (J1.Daño + J1.Arma.Ataque);
+                            J1.Arma.Durabilidad -= 1; //revisar si pierde durabilidad
+                            if (J1.Arma.Durabilidad <= 0)
+                            {
+                                J1.Arma = null;
+                            }
+                            if (J2.Armor > 0)
+                            {
+
+                            }
+                            else
+                            {
+                                J2.Vida += J2.Armor;
+                                J2.Armor = 0;
+                            }
+                        }
+                        else
+                        {
+                            J2.Armor -= (J1.Daño);
+                            if (J2.Armor > 0)
+                            {
+
+                            }
+                            else
+                            {
+                                J2.Vida += J2.Armor;
+                                J2.Armor = 0;
+                            }
+                        }
+                        J1.Daño = 0;
+                    }
+                }
+            }
+            else if (J.ID == false && J.Arma == null)
+            {
+                if (y < 7)
+                {
+                    J1.Tablero[y].Vida -= (J2.Daño);
+
+                    if (J2.Armor > 0)
+                    {
+                        J2.Armor -= J1.Tablero[y].Ataque;
+                        if (J2.Armor > 0)
+                        {
+
+                        }
+                        else
+                        {
+                            J2.Vida += J2.Armor;
+                            J2.Armor = 0;
+                        }
+
+                    }
+                    else
+                    {
+                        J2.Vida -= J2.Tablero[y].Ataque;
+                    }
+                    J2.Daño = 0;
+                }
+                else
+                {
+                    J1.Vida -= (J2.Daño);
+
+                    if (J2.Armor > 0)
+                    {
+                        if (J1.Arma != null)
+                        {
+                            J2.Armor -= (J1.Daño + J1.Arma.Ataque);
+                            J1.Arma.Durabilidad -= 1; //revisar si pierde durabilidad
+                            if (J1.Arma.Durabilidad <= 0)
+                            {
+                                J2.Arma = null;
+                            }
+                            if (J2.Armor > 0)
+                            {
+
+                            }
+                            else
+                            {
+                                J2.Vida += J2.Armor;
+                                J2.Armor = 0;
+                            }
+                        }
+                        else
+                        {
+                            J2.Armor -= (J1.Daño);
+                            if (J2.Armor > 0)
+                            {
+
+                            }
+                            else
+                            {
+                                J2.Vida += J2.Armor;
+                                J2.Armor = 0;
+                            }
+                        }
+                        J1.Daño = 0;
+                    }
+                }
+            }
+        } //Optimizar
+
+        public void UsarHabilidad(Jugador J) // Terminar Jaina y Anduin
         {
             J.UsarHabilidad();
             int y = J.VarAuxDmg;
             J.VarAuxDmg = 0;
             if (J.ID == true)
             {
-                J2.Vida -= y; // no se resta dos porque depende del heroe y podrían haber cartas que aumenten su daño (Justicar Trueheart)
+                if (J.Heroe.NombreHeroe == "Rexxar")
+                {
+                    J2.Vida -= y;
+                }
+                else if (J.Heroe.NombreHeroe == "Jaina") // Falta dejar que ataque a sus aliados y a si mismo
+                {
+                    manager.Aviso("Que desea atacar? : ");
+                    InfoCartas(J2, J2.Tablero);
+                    int res = manager.RecibirResp();
+                    J2.Tablero[res].Vida -= y;                 
+                }
+                else if (J.Heroe.NombreHeroe == "Anduin") // Falta dejar que cure a sus enemigos
+                {
+                    manager.Aviso("A quien desea Curar? ");
+                    InfoCartas(J1, J1.Tablero);
+                    manager.Aviso("Si desea curar su vida de heroe use 7");
+                    int res = manager.RecibirResp();
+                    if (res == 7)
+                    {
+                        J1.Vida += 2;
+                        if (J1.Vida >= 30)
+                        {
+                            J1.Vida = 30;
+                        }
+                    }
+                    else
+                    {
+                        J1.Tablero[res].Vida += y;
+                        if (J1.Tablero[res].Vida > J1.Tablero[res].VidaOriginal)
+                        {
+                            J1.Tablero[res].Vida = J1.Tablero[res].VidaOriginal;
+                        }
+                    }
+                }
             }
             else
             {
-                J1.Vida -= y;
+                if (J.Heroe.NombreHeroe == "Rexxar")
+                {
+                    J1.Vida -= y;
+                }
+                else if (J.Heroe.NombreHeroe == "Jaina") // Falta dejar que ataque a sus aliados y a si mismo
+                {
+                    manager.Aviso("Que desea atacar? : ");
+                    InfoCartas(J1, J1.Tablero);
+                    int res = manager.RecibirResp();
+                    J1.Tablero[res].Vida -= y;
+                }
+                else if (J.Heroe.NombreHeroe == "Anduin") // Falta dejar que cure a sus enemigos
+                {
+                    manager.Aviso("A quien desea Curar? ");
+                    InfoCartas(J2, J2.Tablero);
+                    manager.Aviso("Si desea curar su vida de heroe use 7");
+                    int res = manager.RecibirResp();
+                    if (res == 7)
+                    {
+                        J2.Vida += 2;
+                        if (J2.Vida >= 30)
+                        {
+                            J2.Vida = 30;
+                        }
+                    }
+                    else
+                    {
+                        J2.Tablero[res].Vida += y;
+                        if (J2.Tablero[res].Vida > J2.Tablero[res].VidaOriginal)
+                        {
+                            J2.Tablero[res].Vida = J2.Tablero[res].VidaOriginal;
+                        }
+                    }
+                }
             }
-
+            J.VarAuxDmg = 0;
             // ahora le mostramos el menú de opciones denuevo
             Menu(J);
         }
