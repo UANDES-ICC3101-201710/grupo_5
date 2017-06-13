@@ -15,8 +15,80 @@
             <ColumnDefinition Width="553*"/>
             <ColumnDefinition Width="403*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="162" Margin="434,505,0,0" VerticalAlignment="Top" Width="1004"/>
-        <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="162" Margin="528,309,0,0" VerticalAlignment="Top" Width="872"/>
+        <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="162" Margin="434,505,0,0" VerticalAlignment="Top" Width="966">
+            <Button Content="" HorizontalAlignment="Left" Margin="792,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TA7">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="674,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TA6">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="556,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TA5">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="438,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TA4">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="320,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TA3">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="202,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TA2">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="84,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TA1">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="162" Margin="528,309,0,0" VerticalAlignment="Top" Width="872">
+            <Button Content="" HorizontalAlignment="Left" Margin="718,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TE7">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="600,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TE6">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="482,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TE5">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="364,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TE4">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="246,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TE3">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="128,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TE2">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="113" Height="152" Name="TE1">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+        </Grid>
         <Button Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="366,450,0,0" VerticalAlignment="Top" Width="126" Height="61" Name="FinTurno" Opacity="0.082">
             <Button.BorderBrush>
                 <ImageBrush/>
@@ -46,60 +118,72 @@
         </Button>
         <Image HorizontalAlignment="Left" Height="201" Margin="877,704,0,0" VerticalAlignment="Top" Width="160" Name="HeroeAli" Source="imagenes/Base.png"/>
         <Image HorizontalAlignment="Left" Height="201" Margin="877,118,0,0" VerticalAlignment="Top" Width="160" Name="HeroeEne" Source="imagenes/Base.png"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="1090,889,0,0" VerticalAlignment="Top" Width="103" Height="160" Grid.ColumnSpan="2">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="982,889,0,0" VerticalAlignment="Top" Width="103" Height="160">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="875,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="767,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="659,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="551,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="443,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="335,889,0,0" VerticalAlignment="Top" Width="102" Height="160">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="227,889,0,0" VerticalAlignment="Top" Width="103" Height="160">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="119,889,0,0" VerticalAlignment="Top" Width="103" Height="160">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
         <Label Content="30" HorizontalAlignment="Left" Margin="1002,256,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="VidaEnem"/>
-        <Label Content="30" HorizontalAlignment="Left" Margin="1002,841,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="VidaAli"/>
+        <Label Content="{Binding Path=Jugador.Vida, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="1002,841,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="VidaAli"/>
+        
         <Label Content="0/0" Grid.Column="1" HorizontalAlignment="Left" Margin="109,939,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Foreground="White" Name="ManaAli" FontFamily="OPTIBelwe" Height="40"/>
         <Label Content="0/0" Grid.Column="1" HorizontalAlignment="Left" Margin="76,62,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Foreground="White" x:Name="ManaEnem" FontFamily="OPTIBelwe" Height="40"/>
+        <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="168" Margin="35,871,0,0" VerticalAlignment="Top" Width="1145" Orientation="Horizontal">
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Width="114">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <Label Content="5 Cartas en la mano" HorizontalAlignment="Left" Margin="860,39,0,0" VerticalAlignment="Top" Height="38" Width="236" Foreground="White" FontSize="20" FontFamily="OPTIBelwe" Name="NCartasEnem"/>
+        <Button Content="Jugar!" HorizontalAlignment="Left" Margin="860,421,0,0" VerticalAlignment="Top" Width="177" Height="126" FontSize="36" FontFamily="OPTIBelwe" Foreground="White" Click="InicioJuego" Name="Inicio">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF874416"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

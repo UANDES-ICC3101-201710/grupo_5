@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Runtime.Serialization;
+using System.ComponentModel;
 
 namespace Hearthstone_GUI_Grupo5
 {
     [Serializable]
-    class Jugador : IJugar
+    class Jugador : IJugar, INotifyPropertyChanged
     {
         public String Nombre;
         public List<Cartas> Mano = new List<Cartas>();
@@ -18,7 +19,7 @@ namespace Hearthstone_GUI_Grupo5
         public Boolean ID;//true para jugador 1 y false para jugador 2.
         public Manager manager;
         public Random rdm = new Random();
-        public int Vida = 30;
+        private int vida = 30;
         public int Mana;
         public int Armor;
         public Heroe Heroe;
@@ -29,14 +30,32 @@ namespace Hearthstone_GUI_Grupo5
         public int Daño = 0;
 
         //Lista que guarda los silver hand warriors que crea la habilidad del paladin
-        public List<Minions> SilverHand;
+        public List<Minions> SilverHand = new List<Minions>();
         //Lista que guarda los totems que crea la habilidad del shaman
-        public List<Minions> Totems;
+        public List<Minions> Totems = new List<Minions>();
         //Creacion de totems para poder ingresarlos a la lista totems
         Minions totem1 = new Minions("Healing Totem", 1, 2, 0);//Al final de el turno del jugador da 1 de vida al resto de los minions del tablero del jugador.
         Minions totem2 = new Minions("Searing Totem", 1, 1, 1);
         Minions totem3 = new Minions("Stoneclaw Totem", 1, 2, 0);// Posee Taunt, habilidad que obliga a los minions enemigos a destruir este minion u otro que posea taunt antes de atacar al resto.
         Minions totem4 = new Minions("Wraith Of Air Totem", 1, 2, 0);// Otorga al jugador +1 spelldamage mientras este totem este vivo.
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public int Vida {
+            get { return vida; }
+            set
+            {
+                vida = value;
+                OnPropertyChanged(vida);
+            }
+        }
+        private void OnPropertyChanged(int VidaJugador)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs("VidaJugador"));
+            }
+        }
 
         public Jugador(String Nombre, Mazo Mazo, bool ID, Heroe Heroe, Manager manager)
         {

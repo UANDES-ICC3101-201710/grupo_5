@@ -11,33 +11,34 @@ namespace Hearthstone_GUI_Grupo5
     [Serializable]
     class Minions : Cartas, INotifyPropertyChanged
     {
-        public int Vida;
         public int Ataque;
         public Boolean Estado;
         public int Memoria;
         public int VidaOriginal;
+        private string nombre;
+        private int vida;
 
         public Minions(string nombre, int costo, int Vida, int Ataque) : base(nombre, costo, Vida, Ataque)
         {
-            this.Vida = Vida;
+            this.vida = Vida;
             this.Ataque = Ataque;
             this.VidaOriginal = Vida;
         }
-        private string nombre;
 
-        public string Nombre
+
+        public int Vida
         {
-            get { return nombre; }
-            set { nombre = value;
-                OnPropertyChanged(nombre);
+            get { return vida; }
+            set { vida = value;
+                OnPropertyChanged(vida);
             }
         }
 
-        private void OnPropertyChanged(String Propiedad)
+        private void OnPropertyChanged(int Propiedad)
         {
             if (PropertyChanged != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(Propiedad));
+                PropertyChanged(this, new PropertyChangedEventArgs("Propiedad"));
             }
         }
 

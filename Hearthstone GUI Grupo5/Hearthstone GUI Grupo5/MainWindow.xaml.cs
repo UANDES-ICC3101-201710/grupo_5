@@ -28,6 +28,184 @@ namespace Hearthstone_GUI_Grupo5
         Tablero Tablerini;
         public MainWindow()
         {
+            InitializeComponent();
+        }
+
+
+        private void CambioImagenes(Heroe ally, Heroe enemy)
+        {
+            Hide();
+            // CAMBIAMOS LA IMAGEN ALIADA
+            if (ally.NombreHeroe == "Rexxar")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Rexxar.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HRexxar.png"));
+            }
+            else if (ally.NombreHeroe == "Uther")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Uther.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HUther.png"));
+            }
+            else if (ally.NombreHeroe == "Valeera")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Valeera.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HValeera.png"));
+            }
+            else if (ally.NombreHeroe == "Anduin")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Anduin.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HAnduin.png"));
+            }
+            else if (ally.NombreHeroe == "Thrall")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Thrall.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HThrall.png"));
+            }
+            else if (ally.NombreHeroe == "Malfurion")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Malfurion.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HMalfurion.png"));
+            }
+            else if (ally.NombreHeroe == "Guldan")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Guldan.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGuldan.png"));
+            }
+            else if (ally.NombreHeroe == "Garrosh")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Garrosh.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGarrosh.png"));
+            }
+            else if (ally.NombreHeroe == "Jaina")
+            {
+                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Jaina.png")));
+                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HJaina.png"));
+            }
+            // CAMBIAMOS LA IMAGEN DEL ENEMIGO
+            if (enemy.NombreHeroe == "Rexxar")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Rexxar.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HRexxar.png"));
+            }
+            else if (enemy.NombreHeroe == "Uther")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Uther.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HUther.png"));
+            }
+            else if (enemy.NombreHeroe == "Valeera")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Valeera.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HValeera.png"));
+            }
+            else if (enemy.NombreHeroe == "Anduin")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Anduin.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HAnduin.png"));
+            }
+            else if (enemy.NombreHeroe == "Thrall")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Thrall.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HThrall.png"));
+            }
+            else if (enemy.NombreHeroe == "Malfurion")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Malfurion.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HMalfurion.png"));
+            }
+            else if (enemy.NombreHeroe == "Guldan")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Guldan.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGuldan.png"));
+            }
+            else if (enemy.NombreHeroe == "Garrosh")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Garrosh.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGarrosh.png"));
+            }
+            else if (enemy.NombreHeroe == "Jaina")
+            {
+                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Jaina.png")));
+                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HJaina.png"));
+            }
+            Inicio.Content = "";
+            Inicio.Background = Brushes.Transparent;
+            Inicio.Foreground = Brushes.Transparent;
+            Inicio.BorderBrush = Brushes.Transparent;
+            ShowDialog();
+
+        }
+
+        private void HabilidadAliado_Click(object sender, RoutedEventArgs e)
+        {
+            //Tablerini.UsarHabilidad(Tablerini.J1);
+        }
+
+        private static void Save(Tablero tablero, Mazo mazo, Jugador jugador, Cartas cartas, Armas armas, Minions minions)
+        {
+
+            string fileName1 = "Savedgame/tablero.txt";
+            string fileName2 = "Savedgame/jugador.txt";
+            string fileName3 = "Savedgame/cartas.txt";
+            string fileName4 = "Savedgame/armas.txt";
+            string fileName5 = "Savedgame/mazo.txt";
+            string filename6 = "Savedgam/minions.txt";
+            // Creamos el Stream donde guardaremos nuestro juego
+            FileStream fs_mazo = new FileStream(fileName5, FileMode.CreateNew);
+            FileStream fs_armas = new FileStream(fileName4, FileMode.CreateNew);
+            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
+            FileStream fs_jugador = new FileStream(fileName2, FileMode.CreateNew);
+            FileStream fs_cartas = new FileStream(fileName3, FileMode.CreateNew);
+            FileStream fs_minions = new FileStream(filename6, FileMode.CreateNew);
+            IFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(fs_tablero, tablero);
+            formatter.Serialize(fs_mazo, mazo);
+            formatter.Serialize(fs_jugador, jugador);
+            formatter.Serialize(fs_cartas, cartas);
+            formatter.Serialize(fs_armas, armas);
+            formatter.Serialize(fs_minions, minions);
+            fs_minions.Close();
+            fs_tablero.Close();
+            fs_jugador.Close();
+            fs_cartas.Close();
+            fs_mazo.Close();
+            fs_armas.Close();
+        }
+        private static Tablero Load()//revizar cuantos metodos se deben hacer
+        {
+            Console.WriteLine(" Nombre del archivo : ");
+            string fileName1 = "Savedgame/tablero.txt";
+            string fileName2 = "Savedgame/jugador.txt";
+            string fileName3 = "Savedgame/cartas.txt";
+            string fileName4 = "Savedgame/armas.txt";
+            string fileName5 = "Savedgame/mazo.txt";
+            string fileName6 = "Savedgame/minions.txt";
+            // Creamos el Stream donde se encuentra nuestro juego
+            FileStream fs_mazo = new FileStream(fileName5, FileMode.CreateNew);
+            FileStream fs_armas = new FileStream(fileName4, FileMode.CreateNew);
+            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
+            FileStream fs_jugador = new FileStream(fileName2, FileMode.CreateNew);
+            FileStream fs_cartas = new FileStream(fileName3, FileMode.CreateNew);
+            FileStream fs_minions = new FileStream(fileName6, FileMode.CreateNew);
+            IFormatter formatter = new BinaryFormatter();
+            Tablero tablero = formatter.Deserialize(fs_tablero) as Tablero;
+            Jugador jugador = formatter.Deserialize(fs_jugador) as Jugador;
+            Cartas cartas = formatter.Deserialize(fs_cartas) as Cartas;
+            Mazo mazo = formatter.Deserialize(fs_mazo) as Mazo;
+            Armas armas = formatter.Deserialize(fs_armas) as Armas;
+            Minions minions = formatter.Deserialize(fs_minions) as Minions;
+            fs_tablero.Close();
+            fs_jugador.Close();
+            fs_cartas.Close();
+            fs_mazo.Close();
+            fs_armas.Close();
+            fs_minions.Close();
+            return tablero;
+            //falta retornar todo lo otro.            
+        }
+
+        private void InicioJuego(object sender, RoutedEventArgs e)
+        {
+            
             Minions x1 = new Minions("Wisp", 0, 1, 1);//nombre, costo, vida, ataque
             Minions x2 = new Minions("Murloc Raider", 1, 1, 2);
             Minions x3 = new Minions("Bloodfen Raptor", 2, 2, 3);
@@ -158,7 +336,7 @@ namespace Hearthstone_GUI_Grupo5
             {
                 J2 = new Jugador(z2, P2, false, W, m);
             }
-            else if (z3 ==2)
+            else if (z3 == 2)
             {
                 J2 = new Jugador(z2, P2, false, S, m);
             }
@@ -194,179 +372,8 @@ namespace Hearthstone_GUI_Grupo5
 
             Tablero Tab = new Tablero(J1, J2, m);
             Tablerini = Tab;
-            CambioImagenes(J1.Heroe, J2.Heroe);       
-            //Tab.Partir();
-
-
+            CambioImagenes(J1.Heroe, J2.Heroe);
         }
-
-        private void CambioImagenes(Heroe ally, Heroe enemy)
-        {
-            // CAMBIAMOS LA IMAGEN ALIADA
-            if (ally.NombreHeroe == "Rexxar")
-            {
-                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Rexxar.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HRexxar.png"));
-            }
-            else if (ally.NombreHeroe == "Uther")
-            {
-                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Uther.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HUther.png"));
-            }
-            else if (ally.NombreHeroe == "Valeera")
-            {
-                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Valeera.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HValeera.png"));
-            }
-            else if (ally.NombreHeroe == "Anduin")
-            {
-                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Anduin.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HAnduin.png"));
-            }
-            else if (ally.NombreHeroe == "Thrall")
-            {
-                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Thrall.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HThrall.png"));
-            }
-            else if (ally.NombreHeroe == "Malfurion")
-            {
-                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Malfurion.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HMalfurion.png"));
-            }
-            else if (ally.NombreHeroe == "Guldan")
-            {
-                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Guldan.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGuldan.png"));
-            }
-            else if (ally.NombreHeroe == "Garrosh")
-            {
-                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Garrosh.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGarrosh.png"));
-            }
-            else if (ally.NombreHeroe == "Jaina")
-            {
-                HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Jaina.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HJaina.png"));
-            }
-            // CAMBIAMOS LA IMAGEN DEL ENEMIGO
-            if (enemy.NombreHeroe == "Rexxar")
-            {
-                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Rexxar.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HRexxar.png"));
-            }
-            else if (enemy.NombreHeroe == "Uther")
-            {
-                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Uther.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HUther.png"));
-            }
-            else if (enemy.NombreHeroe == "Valeera")
-            {
-                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Valeera.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HValeera.png"));
-            }
-            else if (enemy.NombreHeroe == "Anduin")
-            {
-                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Anduin.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HAnduin.png"));
-            }
-            else if (enemy.NombreHeroe == "Thrall")
-            {
-                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Thrall.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HThrall.png"));
-            }
-            else if (enemy.NombreHeroe == "Malfurion")
-            {
-                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Malfurion.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HMalfurion.png"));
-            }
-            else if (enemy.NombreHeroe == "Guldan")
-            {
-                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Guldan.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGuldan.png"));
-            }
-            else if (enemy.NombreHeroe == "Garrosh")
-            {
-                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Garrosh.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGarrosh.png"));
-            }
-            else if (enemy.NombreHeroe == "Jaina")
-            {
-                HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Jaina.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HJaina.png"));
-            }
-            ShowDialog();
-
-        }
-
-        private void HabilidadAliado_Click(object sender, RoutedEventArgs e)
-        {
-            //Tablerini.UsarHabilidad(Tablerini.J1);
-        }
-
-        private static void Save(Tablero tablero, Mazo mazo, Jugador jugador, Cartas cartas, Armas armas, Minions minions)
-        {
-
-            string fileName1 = "Savedgame/tablero.txt";
-            string fileName2 = "Savedgame/jugador.txt";
-            string fileName3 = "Savedgame/cartas.txt";
-            string fileName4 = "Savedgame/armas.txt";
-            string fileName5 = "Savedgame/mazo.txt";
-            string filename6 = "Savedgam/minions.txt";
-            // Creamos el Stream donde guardaremos nuestro juego
-            FileStream fs_mazo = new FileStream(fileName5, FileMode.CreateNew);
-            FileStream fs_armas = new FileStream(fileName4, FileMode.CreateNew);
-            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
-            FileStream fs_jugador = new FileStream(fileName2, FileMode.CreateNew);
-            FileStream fs_cartas = new FileStream(fileName3, FileMode.CreateNew);
-            FileStream fs_minions = new FileStream(filename6, FileMode.CreateNew);
-            IFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(fs_tablero, tablero);
-            formatter.Serialize(fs_mazo, mazo);
-            formatter.Serialize(fs_jugador, jugador);
-            formatter.Serialize(fs_cartas, cartas);
-            formatter.Serialize(fs_armas, armas);
-            formatter.Serialize(fs_minions, minions);
-            fs_minions.Close();
-            fs_tablero.Close();
-            fs_jugador.Close();
-            fs_cartas.Close();
-            fs_mazo.Close();
-            fs_armas.Close();
-        }
-        private static Tablero Load()//revizar cuantos metodos se deben hacer
-        {
-            Console.WriteLine(" Nombre del archivo : ");
-            string fileName1 = "Savedgame/tablero.txt";
-            string fileName2 = "Savedgame/jugador.txt";
-            string fileName3 = "Savedgame/cartas.txt";
-            string fileName4 = "Savedgame/armas.txt";
-            string fileName5 = "Savedgame/mazo.txt";
-            string fileName6 = "Savedgame/minions.txt";
-            // Creamos el Stream donde se encuentra nuestro juego
-            FileStream fs_mazo = new FileStream(fileName5, FileMode.CreateNew);
-            FileStream fs_armas = new FileStream(fileName4, FileMode.CreateNew);
-            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
-            FileStream fs_jugador = new FileStream(fileName2, FileMode.CreateNew);
-            FileStream fs_cartas = new FileStream(fileName3, FileMode.CreateNew);
-            FileStream fs_minions = new FileStream(fileName6, FileMode.CreateNew);
-            IFormatter formatter = new BinaryFormatter();
-            Tablero tablero = formatter.Deserialize(fs_tablero) as Tablero;
-            Jugador jugador = formatter.Deserialize(fs_jugador) as Jugador;
-            Cartas cartas = formatter.Deserialize(fs_cartas) as Cartas;
-            Mazo mazo = formatter.Deserialize(fs_mazo) as Mazo;
-            Armas armas = formatter.Deserialize(fs_armas) as Armas;
-            Minions minions = formatter.Deserialize(fs_minions) as Minions;
-            fs_tablero.Close();
-            fs_jugador.Close();
-            fs_cartas.Close();
-            fs_mazo.Close();
-            fs_armas.Close();
-            fs_minions.Close();
-            return tablero;
-            //falta retornar todo lo otro.            
-        }
-
-
     }
     public static class ThreadSafeRandom
     {
