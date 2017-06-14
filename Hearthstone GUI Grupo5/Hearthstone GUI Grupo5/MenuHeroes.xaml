@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hearthstone_GUI_Grupo5"
         mc:Ignorable="d"
-        Title="MenuHeroes" Height="1056" Width="944">
+        Title="MenuHeroes" Height="896" Width="800.97">
     <Window.Background>
         <ImageBrush ImageSource="imagenes\heroes.png" />
     </Window.Background>
@@ -13,7 +13,7 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Button Content="" HorizontalAlignment="Left" Margin="120,208,0,0" VerticalAlignment="Top" Width="224" Click="ClickHeroe" Height="160" Opacity="0.1" Name="Warrior">
+        <Button Content="" HorizontalAlignment="Left" Margin="98,176,0,0" VerticalAlignment="Top" Width="193" Click="ClickHeroe" Height="136" Opacity="0.1" Name="Warrior">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -21,7 +21,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="362,208,0,0" VerticalAlignment="Top" Width="224" Click="ClickHeroe" Height="160" Opacity="0.1" Name="Shaman">
+        <Button Content="" HorizontalAlignment="Left" Margin="307,176,0,0" VerticalAlignment="Top" Width="193" Click="ClickHeroe" Height="136" Opacity="0.1" Name="Shaman">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -29,7 +29,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="591,208,0,0" VerticalAlignment="Top" Width="224" Click="ClickHeroe" Height="160" Opacity="0.1" Name="Rogue">
+        <Button Content="" HorizontalAlignment="Left" Margin="504,176,0,0" VerticalAlignment="Top" Width="193" Click="ClickHeroe" Height="136" Opacity="0.1" Name="Rogue">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -37,7 +37,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="120,424,0,0" VerticalAlignment="Top" Width="224" Click="ClickHeroe" Height="160" Opacity="0.1" Name="Paladin">
+        <Button Content="" HorizontalAlignment="Left" Margin="98,360,0,0" VerticalAlignment="Top" Width="193" Click="ClickHeroe" Height="137" Opacity="0.1" Name="Paladin">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -45,7 +45,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="362,424,0,0" VerticalAlignment="Top" Width="224" Click="ClickHeroe" Height="160" Opacity="0.1" Name="Hunter">
+        <Button Content="" HorizontalAlignment="Left" Margin="307,360,0,0" VerticalAlignment="Top" Width="193" Click="ClickHeroe" Height="137" Opacity="0.1" Name="Hunter">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -53,7 +53,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="591,424,0,0" VerticalAlignment="Top" Width="224" Click="ClickHeroe" Height="160" Opacity="0.1" Name="Druid">
+        <Button Content="" HorizontalAlignment="Left" Margin="504,360,0,0" VerticalAlignment="Top" Width="193" Click="ClickHeroe" Height="137" Opacity="0.1" Name="Druid">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -61,7 +61,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="120,656,0,0" VerticalAlignment="Top" Width="224" Click="ClickHeroe" Height="150" Opacity="0.1" Name="Warlock">
+        <Button Content="" HorizontalAlignment="Left" Margin="98,558,0,0" VerticalAlignment="Top" Width="193" Click="ClickHeroe" Height="128" Opacity="0.1" Name="Warlock">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -69,7 +69,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="362,656,0,0" VerticalAlignment="Top" Width="224" Click="ClickHeroe" Height="150" Opacity="0.1" Name="Mage">
+        <Button Content="" HorizontalAlignment="Left" Margin="307,558,0,0" VerticalAlignment="Top" Width="193" Click="ClickHeroe" Height="128" Opacity="0.1" Name="Mage">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -77,7 +77,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="591,656,0,0" VerticalAlignment="Top" Width="224" Click="ClickHeroe" Height="150" Opacity="0.1" Name="Priest">
+        <Button Content="" HorizontalAlignment="Left" Margin="504,558,0,0" VerticalAlignment="Top" Width="193" Click="ClickHeroe" Height="128" Opacity="0.1" Name="Priest">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -85,13 +85,13 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="299,856,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" TextChanged="TextBox_TextChanged" Foreground="White" FontSize="25" FontFamily="OPTIBelwe" Name="tb" Text="">
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="233,728,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" TextChanged="TextBox_TextChanged" Foreground="White" FontSize="25" FontFamily="OPTIBelwe" Name="tb" Text="">
             <TextBox.Background>
                 <SolidColorBrush Color="#FF9E7F7F" Opacity="0.1"/>
             </TextBox.Background>
         </TextBox>
-        <Label Content="Ingresa tu nombre:" HorizontalAlignment="Left" Height="34" Margin="80,856,0,0" VerticalAlignment="Top" Width="214" FontFamily="OPTIBelwe" FontSize="22" Foreground="White"/>
-        <Button Content="Listo" HorizontalAlignment="Left" Height="48" Margin="718,842,0,0" VerticalAlignment="Top" Width="97" Click="Listo" FontFamily="OPTIBelwe" FontSize="18">
+        <Label Content="Ingresa tu nombre:" HorizontalAlignment="Left" Height="34" Margin="10,728,0,0" VerticalAlignment="Top" Width="209" FontFamily="OPTIBelwe" FontSize="22" Foreground="White"/>
+        <Button Content="Listo" HorizontalAlignment="Left" Height="48" Margin="636,732,0,0" VerticalAlignment="Top" Width="97" Click="Listo" FontFamily="OPTIBelwe" FontSize="18">
             <Button.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FF995505" Offset="1"/>
@@ -99,6 +99,6 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Label Content="Player" HorizontalAlignment="Left" Height="64" Margin="417,10,0,0" VerticalAlignment="Top" Width="139" FontFamily="OPTIBelwe" FontSize="32" Foreground="White" Name="tbp"/>
+        <Label Content="Player" HorizontalAlignment="Left" Height="64" Margin="307,0,0,0" VerticalAlignment="Top" Width="139" FontFamily="OPTIBelwe" FontSize="32" Foreground="White" Name="tbp"/>
     </Grid>
 </Window>

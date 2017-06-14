@@ -32,10 +32,12 @@ namespace Hearthstone_GUI_Grupo5
         }
 
 
-        private void CambioImagenes(Heroe ally, Heroe enemy)
+        private void CambioImagenes(Heroe ally, Heroe enemy, String Ally, String Enemy)
         {
             Hide();
             // CAMBIAMOS LA IMAGEN ALIADA
+            NombreAliado.Content = Ally;
+            NombreEnemigo.Content = Enemy;
             if (ally.NombreHeroe == "Rexxar")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Rexxar.png")));
@@ -140,67 +142,27 @@ namespace Hearthstone_GUI_Grupo5
             //Tablerini.UsarHabilidad(Tablerini.J1);
         }
 
-        private static void Save(Tablero tablero, Mazo mazo, Jugador jugador, Cartas cartas, Armas armas, Minions minions)
+        private static void Save(Tablero tablero)
         {
 
             string fileName1 = "Savedgame/tablero.txt";
-            string fileName2 = "Savedgame/jugador.txt";
-            string fileName3 = "Savedgame/cartas.txt";
-            string fileName4 = "Savedgame/armas.txt";
-            string fileName5 = "Savedgame/mazo.txt";
-            string filename6 = "Savedgam/minions.txt";
             // Creamos el Stream donde guardaremos nuestro juego
-            FileStream fs_mazo = new FileStream(fileName5, FileMode.CreateNew);
-            FileStream fs_armas = new FileStream(fileName4, FileMode.CreateNew);
-            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
-            FileStream fs_jugador = new FileStream(fileName2, FileMode.CreateNew);
-            FileStream fs_cartas = new FileStream(fileName3, FileMode.CreateNew);
-            FileStream fs_minions = new FileStream(filename6, FileMode.CreateNew);
+            
+            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);           
             IFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(fs_tablero, tablero);
-            formatter.Serialize(fs_mazo, mazo);
-            formatter.Serialize(fs_jugador, jugador);
-            formatter.Serialize(fs_cartas, cartas);
-            formatter.Serialize(fs_armas, armas);
-            formatter.Serialize(fs_minions, minions);
-            fs_minions.Close();
+            formatter.Serialize(fs_tablero, tablero);   
             fs_tablero.Close();
-            fs_jugador.Close();
-            fs_cartas.Close();
-            fs_mazo.Close();
-            fs_armas.Close();
+          
         }
         private static Tablero Load()//revizar cuantos metodos se deben hacer
         {
-            Console.WriteLine(" Nombre del archivo : ");
             string fileName1 = "Savedgame/tablero.txt";
-            string fileName2 = "Savedgame/jugador.txt";
-            string fileName3 = "Savedgame/cartas.txt";
-            string fileName4 = "Savedgame/armas.txt";
-            string fileName5 = "Savedgame/mazo.txt";
-            string fileName6 = "Savedgame/minions.txt";
             // Creamos el Stream donde se encuentra nuestro juego
-            FileStream fs_mazo = new FileStream(fileName5, FileMode.CreateNew);
-            FileStream fs_armas = new FileStream(fileName4, FileMode.CreateNew);
             FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
-            FileStream fs_jugador = new FileStream(fileName2, FileMode.CreateNew);
-            FileStream fs_cartas = new FileStream(fileName3, FileMode.CreateNew);
-            FileStream fs_minions = new FileStream(fileName6, FileMode.CreateNew);
             IFormatter formatter = new BinaryFormatter();
             Tablero tablero = formatter.Deserialize(fs_tablero) as Tablero;
-            Jugador jugador = formatter.Deserialize(fs_jugador) as Jugador;
-            Cartas cartas = formatter.Deserialize(fs_cartas) as Cartas;
-            Mazo mazo = formatter.Deserialize(fs_mazo) as Mazo;
-            Armas armas = formatter.Deserialize(fs_armas) as Armas;
-            Minions minions = formatter.Deserialize(fs_minions) as Minions;
             fs_tablero.Close();
-            fs_jugador.Close();
-            fs_cartas.Close();
-            fs_mazo.Close();
-            fs_armas.Close();
-            fs_minions.Close();
-            return tablero;
-            //falta retornar todo lo otro.            
+            return tablero;           
         }
 
         private void InicioJuego(object sender, RoutedEventArgs e)
@@ -372,7 +334,7 @@ namespace Hearthstone_GUI_Grupo5
 
             Tablero Tab = new Tablero(J1, J2, m);
             Tablerini = Tab;
-            CambioImagenes(J1.Heroe, J2.Heroe);
+            CambioImagenes(J1.Heroe, J2.Heroe, J1.Nombre, J2.Nombre);
         }
     }
     public static class ThreadSafeRandom
