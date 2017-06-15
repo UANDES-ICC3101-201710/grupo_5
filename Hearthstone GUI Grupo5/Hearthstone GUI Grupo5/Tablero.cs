@@ -22,6 +22,7 @@ namespace Hearthstone_GUI_Grupo5
         public Random rdm = new Random();
         public List<Cartas> Historial = new List<Cartas>();
         public Hechizos Moneda = new Hechizos("The Coin", 0);
+        public Boolean J1Jugando;
         
 
         public Tablero(Jugador J1, Jugador J2, Manager manager)
@@ -817,10 +818,12 @@ namespace Hearthstone_GUI_Grupo5
             manager.Aviso("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
             if (J.ID == true)
             {
+                J1Jugando = false;
                 InicioTurno(J2);
             }
             else
             {
+                J1Jugando = true;
                 InicioTurno(J1);
             }
         } // Listo

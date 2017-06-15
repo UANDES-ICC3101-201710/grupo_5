@@ -336,6 +336,25 @@ namespace Hearthstone_GUI_Grupo5
             Tablerini = Tab;
             CambioImagenes(J1.Heroe, J2.Heroe, J1.Nombre, J2.Nombre);
         }
+        private void ActGui()
+        {
+            if (Tablerini.J1Jugando == true)
+            {
+                CambioImagenes(Tablerini.J1.Heroe, Tablerini.J2.Heroe, Tablerini.J1.Nombre, Tablerini.J2.Nombre);
+
+            }
+        }
+
+        private void ActMano(List<Cartas> Cartitas)
+        {
+            foreach (Cartas i in Cartitas)
+            {
+                if (i.Nombre == "Wisp")
+                {
+                    C.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Rexxar.png")));
+                }
+            }
+        }
     }
     public static class ThreadSafeRandom
     {
