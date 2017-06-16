@@ -124,52 +124,52 @@
         <Label Content="0/0" Grid.Column="1" HorizontalAlignment="Left" Margin="65,687,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Foreground="White" Name="ManaAli" FontFamily="OPTIBelwe" Height="40"/>
         <Label Content="0/0" Grid.Column="1" HorizontalAlignment="Left" Margin="44,40,0,0" VerticalAlignment="Top" Width="49" FontSize="20" Foreground="White" x:Name="ManaEnem" FontFamily="OPTIBelwe" Height="33"/>
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="150" Margin="4,609,0,0" VerticalAlignment="Top" Width="801" Orientation="Horizontal">
-            <Button Content="" Width="79" Margin="0,34,0,0">
+            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli10">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0">
+            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli9">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="78" Margin="0,34,0,0">
+            <Button Content="" Width="78" Margin="0,34,0,0" Name="CMAli8">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0">
+            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli7">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0">
+            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli6">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0">
+            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli5">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0">
+            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli4">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="78" Margin="0,34,0,0">
+            <Button Content="" Width="78" Margin="0,34,0,0" Name="CMAli3">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0">
+            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli2">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0">
+            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli1">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
