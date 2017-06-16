@@ -44,6 +44,7 @@ namespace Hearthstone_GUI_Grupo5
                 {
                   J1.Mano.Add(J1.Mazo.miMazo[0]);
                   J1.Mazo.miMazo.RemoveAt(0);
+                  J1Jugando = true;
                 }
                 while (J2.Mano.Count < 4)
                 {
@@ -64,6 +65,7 @@ namespace Hearthstone_GUI_Grupo5
                 {
                     J2.Mano.Add(J2.Mazo.miMazo[0]);
                     J2.Mazo.miMazo.RemoveAt(0);
+                    J1Jugando = false;
                 }
                 J1.Mano.Add(Moneda);
             }
@@ -82,7 +84,43 @@ namespace Hearthstone_GUI_Grupo5
 
         } //Listo
 
-        public void CambioCartas(Jugador J1, Jugador J2)
+        public void CambioCartas3(Jugador J, int re1, int re2, int re3)
+        {
+            if (re1 == 1)
+            {
+                J.CambiarCarta(0);
+            }
+            if (re2 == 1)
+            {
+                J.CambiarCarta(1);
+            }
+            if (re3 == 1)
+            {
+                J.CambiarCarta(2);
+            }
+        }
+
+        public void CambioCartas4(Jugador J, int re1, int re2, int re3, int re4)
+        {
+            if (re1 == 1)
+            {
+                J.CambiarCarta(0);
+            }
+            if (re2 == 1)
+            {
+                J.CambiarCarta(1);
+            }
+            if (re3 == 1)
+            {
+                J.CambiarCarta(2);
+            }
+            if (re4 == 1)
+            {
+                J.CambiarCarta(3);
+            }
+        }
+
+        /*public void CambioCartas(Jugador J1, Jugador J2)
         {
             manager.Aviso(J1.Nombre + " Desea cambiar cartas?");
             manager.Aviso("Mano actual:");
@@ -165,7 +203,7 @@ namespace Hearthstone_GUI_Grupo5
             InfoCartas(J2, J2.Mano);
             manager.Aviso("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
 
-        }
+        }*/ // Método para consola.
 
         public void InfoCartas(Jugador J, List<Cartas> L)
         {

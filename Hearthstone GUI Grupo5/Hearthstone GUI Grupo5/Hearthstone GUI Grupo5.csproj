@@ -69,10 +69,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CambioCartas.xaml.cs">
+      <DependentUpon>CambioCartas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MenuHeroes.xaml.cs">
       <DependentUpon>MenuHeroes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tablero.cs" />
+    <Page Include="CambioCartas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

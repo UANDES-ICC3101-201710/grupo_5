@@ -105,7 +105,7 @@
                 <ImageBrush ImageSource="imagenes/Base.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="704,567,0,0" VerticalAlignment="Top" Width="79" Height="73" Name="HabilidadAliado" Click="HabilidadAliado_Click" Grid.ColumnSpan="2">
+        <Button Content="" HorizontalAlignment="Left" Margin="694,558,0,0" VerticalAlignment="Top" Width="89" Height="82" Name="HabilidadAliado" Click="HabilidadAliado_Click" Grid.ColumnSpan="2">
             <Button.Foreground>
                 <ImageBrush/>
             </Button.Foreground>
@@ -119,10 +119,10 @@
         <Image HorizontalAlignment="Left" Height="140" Margin="578,520,0,0" VerticalAlignment="Top" Width="111" Name="HeroeAli" Source="imagenes/Base.png"/>
         <Image HorizontalAlignment="Left" Height="157" Margin="578,88,0,0" VerticalAlignment="Top" Width="120" Name="HeroeEne" Source="imagenes/Base.png"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="666,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="VidaEnem" Grid.ColumnSpan="2"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="669,615,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="VidaAli"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="666,615,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="VidaAli"/>
 
-        <Label Content="0/0" Grid.Column="1" HorizontalAlignment="Left" Margin="65,687,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Foreground="White" Name="ManaAli" FontFamily="OPTIBelwe" Height="40"/>
-        <Label Content="0/0" Grid.Column="1" HorizontalAlignment="Left" Margin="44,40,0,0" VerticalAlignment="Top" Width="49" FontSize="20" Foreground="White" x:Name="ManaEnem" FontFamily="OPTIBelwe" Height="33"/>
+        <Label Content="0" Grid.Column="1" HorizontalAlignment="Left" Margin="65,687,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Foreground="White" Name="ManaAli" FontFamily="OPTIBelwe" Height="40"/>
+        <Label Content="0" Grid.Column="1" HorizontalAlignment="Left" Margin="44,40,0,0" VerticalAlignment="Top" Width="49" FontSize="20" Foreground="White" x:Name="ManaEnem" FontFamily="OPTIBelwe" Height="33"/>
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="150" Margin="4,609,0,0" VerticalAlignment="Top" Width="801" Orientation="Horizontal" >
             <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli10">
                 <Button.Background>
@@ -186,6 +186,43 @@
         </Button>
         <Label Content="Player" HorizontalAlignment="Left" Margin="0,492,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="NombreAliado"/>
         <Label Content="Player" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="NombreEnemigo"/>
+        <Label Content="Desea cambiar cartas?" Grid.Column="1" HorizontalAlignment="Left" Margin="354,453,0,0" VerticalAlignment="Top" Width="172" FontFamily="OPTIBelwe" FontSize="14" Foreground="White" Name="Cambiarcartas" Visibility="Hidden" IsEnabled="False"/>
+        <Button Content="Si" Grid.Column="1" HorizontalAlignment="Left" Margin="354,481,0,0" VerticalAlignment="Top" Width="75" Name="Sicambiar" Visibility="Hidden" IsEnabled="False" Click="Sicambiar_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF976116" Offset="0"/>
+                    <GradientStop Color="#FFA28C6D" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="No" Grid.Column="1" HorizontalAlignment="Left" Margin="451,481,0,0" VerticalAlignment="Top" Width="75" Name="Nocambiar" Visibility="Hidden" IsEnabled="False" Click="Nocambiar_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF835512" Offset="1"/>
+                    <GradientStop Color="#FFA28C6D"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Cambiar?" Margin="716,645,477,8" x:Name="CartaCambio1" Grid.ColumnSpan="2" Visibility="Hidden" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Cambiar?" Margin="637,645,20,8" x:Name="CartaCambio2" Click="CambioClick" Visibility="Hidden" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Cambiar?" Margin="558,645,99,8" x:Name="CartaCambio3" Visibility="Hidden" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Content="Cambiar?" Margin="474,645,183,8" x:Name="CartaCambio4" Visibility="Hidden" IsEnabled="False">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

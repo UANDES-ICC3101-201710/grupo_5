@@ -26,6 +26,14 @@ namespace Hearthstone_GUI_Grupo5
     public partial class MainWindow : Window
     {
         Tablero Tablerini;
+        int resp1;
+        int resp2;
+        int resp3;
+        int resp4;
+        int resp5;
+        int resp6;
+        int resp7;
+        int resp8;
         public MainWindow()
         {
             InitializeComponent();
@@ -337,6 +345,38 @@ namespace Hearthstone_GUI_Grupo5
             Tablero Tab = new Tablero(J1, J2, m);
             Tablerini = Tab;
             Tablerini.Partir();
+            if (Tablerini.J1Jugando == true)
+            {
+                CambioCartas pop = new CambioCartas(J1);
+                CambioCartas pop1 = new CambioCartas(J2);
+                pop.ShowDialog();
+                pop1.ShowDialog();
+                resp1 = pop.i1;
+                resp2 = pop.i2;
+                resp3 = pop.i3;
+                resp4 = pop1.i1;
+                resp5 = pop1.i2;
+                resp6 = pop1.i3;
+                resp7 = pop1.i4;
+                Tablerini.CambioCartas3(J1, resp1, resp2, resp3);
+                Tablerini.CambioCartas4(J2, resp4, resp5, resp6, resp7);
+            } // GG WP
+            else
+            {
+                CambioCartas pop = new CambioCartas(J2);
+                CambioCartas pop1 = new CambioCartas(J1);
+                pop.ShowDialog();
+                pop1.ShowDialog();
+                resp1 = pop1.i1;
+                resp2 = pop1.i2;
+                resp3 = pop1.i3;
+                resp4 = pop1.i4;
+                resp5 = pop.i1;
+                resp6 = pop.i2;
+                resp7 = pop.i3;
+                Tablerini.CambioCartas3(J2, resp5, resp6, resp7);
+                Tablerini.CambioCartas4(J1, resp1, resp2, resp3, resp4);
+            }          
             ActGui();
             //CambioImagenes(J1.Heroe, J2.Heroe, J1.Nombre, J2.Nombre);
         }
@@ -354,6 +394,8 @@ namespace Hearthstone_GUI_Grupo5
                 ActTabEne(Tablerini.J2.Tablero);
                 VidaAli.Content = Tablerini.J1.Vida;
                 VidaEnem.Content = Tablerini.J2.Vida;
+                ManaAli.Content = Tablerini.J1.Mana;
+
             }
             else
             {
@@ -364,6 +406,7 @@ namespace Hearthstone_GUI_Grupo5
                 ActTabEne(Tablerini.J1.Tablero);
                 VidaAli.Content = Tablerini.J2.Vida;
                 VidaEnem.Content = Tablerini.J1.Vida;
+                ManaAli.Content = Tablerini.J2.Mana;
             }
             ShowDialog();
         }
@@ -415,9 +458,9 @@ namespace Hearthstone_GUI_Grupo5
                         CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), Direccion)));
                     }
                 }
-                else if (Cartitas[i].Nombre == "Murlock Raider")
+                else if (Cartitas[i].Nombre == "Murloc Raider")
                 {
-                    String Direccion = "Imagenes/Murlockraider.png";
+                    String Direccion = "Imagenes/Murlocraider.png";
                     if (i == 0)
                     {
                         CMAli1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli1), Direccion)));
@@ -1203,9 +1246,9 @@ namespace Hearthstone_GUI_Grupo5
                     }
 
                 }
-                else if (Cartitas[i].Nombre == "Murlock Raider")
+                else if (Cartitas[i].Nombre == "Murloc Raider")
                 {
-                    String Direccion = "Imagenes/Murlockraider.png";
+                    String Direccion = "Imagenes/Murlocraider.png";
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
@@ -1238,7 +1281,7 @@ namespace Hearthstone_GUI_Grupo5
                 }
                 else if (Cartitas[i].Nombre == "Bloodfen Raptor")
                 {
-                    String Direccion = "Imagenes/Bloodfen Raptor.png";
+                    String Direccion = "Imagenes/Bloodfenraptor.png";
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
@@ -1705,9 +1748,9 @@ namespace Hearthstone_GUI_Grupo5
                     }
 
                 }
-                else if (Cartitas[i].Nombre == "Murlock Raider")
+                else if (Cartitas[i].Nombre == "Murloc Raider")
                 {
-                    String Direccion = "Imagenes/Murlockraider.png";
+                    String Direccion = "Imagenes/Murlocraider.png";
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
@@ -1740,7 +1783,7 @@ namespace Hearthstone_GUI_Grupo5
                 }
                 else if (Cartitas[i].Nombre == "Bloodfen Raptor")
                 {
-                    String Direccion = "Imagenes/Bloodfen Raptor.png";
+                    String Direccion = "Imagenes/Bloodfenraptor.png";
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
@@ -2170,8 +2213,80 @@ namespace Hearthstone_GUI_Grupo5
 
             }
         }
+
+        private void Cambiocartas()
+        {
+
+            Cambiarcartas.Visibility = Visibility.Visible;
+            Nocambiar.Visibility = Visibility.Visible;
+            Nocambiar.IsEnabled = true;
+            Sicambiar.Visibility = Visibility.Visible;
+            Sicambiar.IsEnabled = true;
+        }
+        private void Nocambiar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sicambiar_Click(object sender, RoutedEventArgs e)
+        {
+            CartaCambio1.Visibility = Visibility.Visible;
+            CartaCambio1.IsEnabled = true;
+            CartaCambio2.Visibility = Visibility.Visible;
+            CartaCambio2.IsEnabled = true;
+            CartaCambio3.Visibility = Visibility.Visible;
+            CartaCambio3.IsEnabled = true;
+            CartaCambio4.Visibility = Visibility.Visible;
+            CartaCambio4.IsEnabled = true;
+            Nocambiar.Visibility = Visibility.Hidden;
+            Nocambiar.IsEnabled = false;
+            Cambiarcartas.Content = "Haga click sobre las cartas que desea cambiar.";
+        }
+
+        private void CambioClick(object sender, RoutedEventArgs e)
+        {
+            Button boton = (Button)sender;
+            if (Tablerini.J1Jugando == true)
+            {
+                if (boton.Name == "CartaCambio1")
+                {
+                    resp1 = 1;
+                }
+                else if (boton.Name == "CartaCambio2")
+                {
+                    resp2 = 1;
+                }
+                else if (boton.Name == "CartaCambio3")
+                {
+                    resp3 = 1;
+                }
+                else
+                {
+                    resp4 = 1;
+                }
+            }
+            else
+            {
+                if (boton.Name == "CartaCambio1")
+                {
+                    resp5 = 1;
+                }
+                else if (boton.Name == "CartaCambio2")
+                {
+                    resp6 = 1;
+                }
+                else if (boton.Name == "CartaCambio3")
+                {
+                    resp7 = 1;
+                }
+                else
+                {
+                    resp8 = 1;
+                }
+            }            
+        }
     }
-        public static class ThreadSafeRandom
+    public static class ThreadSafeRandom
         {
             [ThreadStatic] private static Random Local;
 
