@@ -167,5 +167,27 @@
     <Resource Include="imagenes\HUther.png" />
     <Resource Include="imagenes\HValeera.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\Airtotem.png" />
+    <Resource Include="imagenes\Bloodfenraptor.png" />
+    <Resource Include="imagenes\Boulderfistogre.png" />
+    <Resource Include="imagenes\Chillwindyeti.png" />
+    <Resource Include="imagenes\Corehound.png" />
+    <Resource Include="imagenes\Healingtotem.png" />
+    <Resource Include="imagenes\Magmarager.png" />
+    <Resource Include="imagenes\Murlocraider.png" />
+    <Resource Include="imagenes\Oasissnapjaw.png" />
+    <Resource Include="imagenes\Poisoneddagger.png" />
+    <Resource Include="imagenes\Rivercrocolisk.png" />
+    <Resource Include="imagenes\Searingtotem.png" />
+    <Resource Include="imagenes\Silverhand.png" />
+    <Resource Include="imagenes\Thecoin.png" />
+    <Resource Include="imagenes\Wargolem.png" />
+    <Resource Include="imagenes\Wickedknife.png" />
+    <Resource Include="imagenes\Wisp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagenes\Stoneclawtotem.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

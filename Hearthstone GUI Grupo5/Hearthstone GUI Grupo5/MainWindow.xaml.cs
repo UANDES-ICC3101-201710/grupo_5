@@ -34,7 +34,7 @@ namespace Hearthstone_GUI_Grupo5
 
         private void CambioImagenes(Heroe ally, Heroe enemy, String Ally, String Enemy)
         {
-            Hide();
+            //Hide();
             // CAMBIAMOS LA IMAGEN ALIADA
             NombreAliado.Content = Ally;
             NombreEnemigo.Content = Enemy;
@@ -133,7 +133,9 @@ namespace Hearthstone_GUI_Grupo5
             Inicio.Background = Brushes.Transparent;
             Inicio.Foreground = Brushes.Transparent;
             Inicio.BorderBrush = Brushes.Transparent;
-            ShowDialog();
+            Inicio.IsEnabled = false;
+            Inicio.Visibility = Visibility.Hidden;
+            //ShowDialog();
 
         }
 
@@ -154,7 +156,7 @@ namespace Hearthstone_GUI_Grupo5
             fs_tablero.Close();
 
         }
-        private static Tablero Load()//revizar cuantos metodos se deben hacer
+        private static Tablero Load()//revisar cuantos metodos se deben hacer
         {
             string fileName1 = "Savedgame/tablero.txt";
             // Creamos el Stream donde se encuentra nuestro juego
@@ -334,20 +336,40 @@ namespace Hearthstone_GUI_Grupo5
 
             Tablero Tab = new Tablero(J1, J2, m);
             Tablerini = Tab;
-            CambioImagenes(J1.Heroe, J2.Heroe, J1.Nombre, J2.Nombre);
+            Tablerini.Partir();
+            ActGui();
+            //CambioImagenes(J1.Heroe, J2.Heroe, J1.Nombre, J2.Nombre);
         }
+
+        // Métodos de actualización de interfaz gráfica.
         private void ActGui()
         {
+            Hide();
             if (Tablerini.J1Jugando == true)
             {
+                NCartasEnem.Content = Tablerini.J2.Mano.Count + " Cartas en la mano.";
                 CambioImagenes(Tablerini.J1.Heroe, Tablerini.J2.Heroe, Tablerini.J1.Nombre, Tablerini.J2.Nombre);
-
+                ActManoAli(Tablerini.J1.Mano);
+                ActTabAli(Tablerini.J1.Tablero);
+                ActTabEne(Tablerini.J2.Tablero);
+                VidaAli.Content = Tablerini.J1.Vida;
+                VidaEnem.Content = Tablerini.J2.Vida;
             }
+            else
+            {
+                NCartasEnem.Content = Tablerini.J1.Mano.Count + " Cartas en la mano.";
+                CambioImagenes(Tablerini.J2.Heroe, Tablerini.J1.Heroe, Tablerini.J2.Nombre, Tablerini.J1.Nombre);
+                ActManoAli(Tablerini.J2.Mano);
+                ActTabAli(Tablerini.J2.Tablero);
+                ActTabEne(Tablerini.J1.Tablero);
+                VidaAli.Content = Tablerini.J2.Vida;
+                VidaEnem.Content = Tablerini.J1.Vida;
+            }
+            ShowDialog();
         }
-
         private void ActManoAli(List<Cartas> Cartitas)
         {
-            for (int i = 0; i <= Cartitas.Count; i++)
+            for (int i = 0; i < Cartitas.Count; i++)
             {
                 if (Cartitas[i].Nombre == "Wisp")
                 {
@@ -439,7 +461,7 @@ namespace Hearthstone_GUI_Grupo5
                 }
                 else if (Cartitas[i].Nombre == "Bloodfen Raptor")
                 {
-                    String Direccion = "Imagenes/Bloodfen Raptor.png";
+                    String Direccion = "Imagenes/Bloodfenraptor.png";
                     if (i == 0)
                     {
                         CMAli1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli1), Direccion)));
@@ -1009,12 +1031,144 @@ namespace Hearthstone_GUI_Grupo5
                         CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), Direccion)));
                     }
                 }
+                else if (Cartitas[i].Nombre == "Wicked Knife")
+                {
+                    String Direccion = "Imagenes/Wickedknife.png";
+                    if (i == 0)
+                    {
+                        CMAli1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli1), Direccion)));
+                    }
+                    else if (i == 1)
+                    {
+                        CMAli2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli2), Direccion)));
+                    }
+                    else if (i == 2)
+                    {
+                        CMAli3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli3), Direccion)));
+                    }
+                    else if (i == 3)
+                    {
+                        CMAli4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli4), Direccion)));
+                    }
+                    else if (i == 4)
+                    {
+                        CMAli5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli5), Direccion)));
+                    }
+                    else if (i == 5)
+                    {
+                        CMAli6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli6), Direccion)));
+                    }
+                    else if (i == 6)
+                    {
+                        CMAli7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli7), Direccion)));
+                    }
+                    else if (i == 7)
+                    {
+                        CMAli8.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli8), Direccion)));
+                    }
+                    else if (i == 8)
+                    {
+                        CMAli9.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli9), Direccion)));
+                    }
+                    else
+                    {
+                        CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), Direccion)));
+                    }
+                }
+                else if (Cartitas[i].Nombre == "Poisoned Dagger")
+                {
+                    String Direccion = "Imagenes/Poisoneddagger.png";
+                    if (i == 0)
+                    {
+                        CMAli1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli1), Direccion)));
+                    }
+                    else if (i == 1)
+                    {
+                        CMAli2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli2), Direccion)));
+                    }
+                    else if (i == 2)
+                    {
+                        CMAli3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli3), Direccion)));
+                    }
+                    else if (i == 3)
+                    {
+                        CMAli4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli4), Direccion)));
+                    }
+                    else if (i == 4)
+                    {
+                        CMAli5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli5), Direccion)));
+                    }
+                    else if (i == 5)
+                    {
+                        CMAli6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli6), Direccion)));
+                    }
+                    else if (i == 6)
+                    {
+                        CMAli7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli7), Direccion)));
+                    }
+                    else if (i == 7)
+                    {
+                        CMAli8.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli8), Direccion)));
+                    }
+                    else if (i == 8)
+                    {
+                        CMAli9.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli9), Direccion)));
+                    }
+                    else
+                    {
+                        CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), Direccion)));
+                    }
+                }
+                else if (Cartitas[i].Nombre == "The Coin")
+                {
+                    String Direccion = "Imagenes/Thecoin.png";
+                    if (i == 0)
+                    {
+                        CMAli1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli1), Direccion)));
+                    }
+                    else if (i == 1)
+                    {
+                        CMAli2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli2), Direccion)));
+                    }
+                    else if (i == 2)
+                    {
+                        CMAli3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli3), Direccion)));
+                    }
+                    else if (i == 3)
+                    {
+                        CMAli4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli4), Direccion)));
+                    }
+                    else if (i == 4)
+                    {
+                        CMAli5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli5), Direccion)));
+                    }
+                    else if (i == 5)
+                    {
+                        CMAli6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli6), Direccion)));
+                    }
+                    else if (i == 6)
+                    {
+                        CMAli7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli7), Direccion)));
+                    }
+                    else if (i == 7)
+                    {
+                        CMAli8.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli8), Direccion)));
+                    }
+                    else if (i == 8)
+                    {
+                        CMAli9.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli9), Direccion)));
+                    }
+                    else
+                    {
+                        CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), Direccion)));
+                    }
+                }
 
             }
         }
         private void ActTabAli(List<Cartas> Cartitas)
         {
-            for (int i = 0; i <= Cartitas.Count; i++)
+            for (int i = 0; i < Cartitas.Count; i++)
             {
                 if (Cartitas[i].Nombre == "Wisp")
                 {
@@ -1516,7 +1670,7 @@ namespace Hearthstone_GUI_Grupo5
         }
         private void ActTabEne(List<Cartas> Cartitas)
         {
-            for (int i = 0; i <= Cartitas.Count; i++)
+            for (int i = 0; i < Cartitas.Count; i++)
             {
                 if (Cartitas[i].Nombre == "Wisp")
                 {

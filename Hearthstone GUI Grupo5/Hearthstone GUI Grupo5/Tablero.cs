@@ -39,7 +39,7 @@ namespace Hearthstone_GUI_Grupo5
             int xy = rdm.Next(1, 2);
             if (xy == 1)
             {
-                manager.Aviso("Parte el jugador 1: " + J1.Nombre);
+                //manager.Aviso("Parte el jugador 1: " + J1.Nombre);
                 while (J1.Mano.Count < 3)
                 {
                   J1.Mano.Add(J1.Mazo.miMazo[0]);
@@ -54,7 +54,7 @@ namespace Hearthstone_GUI_Grupo5
             }
             else
             {
-                manager.Aviso("Parte el jugador 2: " + J2.Nombre);
+                //manager.Aviso("Parte el jugador 2: " + J2.Nombre);
                 while (J1.Mano.Count < 4)
                 {
                     J1.Mano.Add(J1.Mazo.miMazo[0]);
@@ -67,17 +67,17 @@ namespace Hearthstone_GUI_Grupo5
                 }
                 J1.Mano.Add(Moneda);
             }
-            CambioCartas(J1, J2);
+            //CambioCartas(J1, J2);
 
                 // --- INICIO DEL JUEGO ---
 
             if (xy == 1)
             {
-                InicioTurno(J1);
+                //InicioTurno(J1);
             }
             else
             {
-                InicioTurno(J2);
+                //InicioTurno(J2);
             }
 
         } //Listo
