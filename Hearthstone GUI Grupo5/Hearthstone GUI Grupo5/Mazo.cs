@@ -29,6 +29,4 @@ namespace Hearthstone_GUI_Grupo5
 
     }
 
-
-
 }

@@ -33,7 +33,7 @@ namespace Hearthstone_GUI_Grupo5
                 OnPropertyChanged(vida);
             }
         }
-
+        //Tanto el metodo como el evento Property Change no se encuentran en uso ya que el data binding desde XAML presenta problemas
         private void OnPropertyChanged(int Propiedad)
         {
             if (PropertyChanged != null)

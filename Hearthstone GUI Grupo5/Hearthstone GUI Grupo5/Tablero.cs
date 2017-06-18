@@ -75,16 +75,16 @@ namespace Hearthstone_GUI_Grupo5
 
             if (xy == 1)
             {
-                //InicioTurno(J1);
+               // InicioTurno(J1);
             }
             else
             {
-                //InicioTurno(J2);
+               //InicioTurno(J2);
             }
 
         } //Listo
 
-        public void CambioCartas3(Jugador J, int re1, int re2, int re3)
+        public void CambioCartas3(Jugador J, int re1, int re2, int re3)//Ejecuta el cambio de cartas para el jugador que parte.
         {
             if (re1 == 1)
             {
@@ -100,7 +100,7 @@ namespace Hearthstone_GUI_Grupo5
             }
         }
 
-        public void CambioCartas4(Jugador J, int re1, int re2, int re3, int re4)
+        public void CambioCartas4(Jugador J, int re1, int re2, int re3, int re4)//Ejecuta el cambio de cartas para el jugador que juega segundo.
         {
             if (re1 == 1)
             {
@@ -203,9 +203,9 @@ namespace Hearthstone_GUI_Grupo5
             InfoCartas(J2, J2.Mano);
             manager.Aviso("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
 
-        }*/ // Método para consola.
+        }*/ // [Obsoleto] Método para consola.
 
-        public void InfoCartas(Jugador J, List<Cartas> L)
+        public void InfoCartas(Jugador J, List<Cartas> L)// [Obsoleto] Método para consola.
         {
             int i = 0;
             manager.Aviso("                      (Costo/Ataque/Vida)");
@@ -213,6 +213,37 @@ namespace Hearthstone_GUI_Grupo5
             {
                 manager.Aviso(i + ". " + L[i].Nombre + " | " + L[i].Costo + "/" + L[i].Ataque + "/" + L[i].Vida);
                 i += 1;
+            }
+        }
+
+        public void Menu(Jugador J) // [Obsoleto] Método para consola.
+        {
+            manager.Aviso("Que desea hacer?, 1= BajarCarta, 2= UsarCarta, 3= UsarHabilidad, 4= FinTurno, 5= EnviarMensaje, 6= Conceder");
+            int x = manager.RecibirResp();
+            if (x == 1)
+            {
+                BajarCarta(J);
+            }
+            else if (x == 2)
+            {
+                UsarCarta(J);
+            }
+            else if (x == 3)
+            {
+                UsarHabilidad(J);
+            }
+            else if (x == 4)
+            {
+                FinTurno(J);
+            }
+            else if (x == 5)
+            {
+                J.Heroe.Mensaje();
+                Menu(J);
+            }
+            else
+            {
+                Conceder(J);
             }
         }
 
@@ -243,7 +274,7 @@ namespace Hearthstone_GUI_Grupo5
             J.UsoHab = false;
 
             // Mostramos las cartas que hay en tablero y le mostramos la mano al jugador que le toca jugar.
-            manager.Aviso("Vida de " + J1.Nombre + " " + J1.Vida + ", Armor: " + J1.Armor);
+            /*manager.Aviso("Vida de " + J1.Nombre + " " + J1.Vida + ", Armor: " + J1.Armor);
             manager.Aviso("Vida de " + J2.Nombre + " " + J2.Vida + ", Armor: " + J2.Armor);
             manager.Aviso("Tablero de " + J1.Nombre + ": ");
             InfoCartas(J1, J1.Tablero);
@@ -254,12 +285,12 @@ namespace Hearthstone_GUI_Grupo5
             manager.Aviso("Maná: " + J.Mana);
             manager.Aviso("Cartas actuales en mano: ");
             InfoCartas(J, J.Mano);
-            Menu(J);
+            Menu(J);*/
 
 
-        }  //Listo
+        }
 
-        public void TiempoTurno(int Turno, Jugador J)
+        /*public void TiempoTurno(int Turno, Jugador J)
             //entregarle el turno 
             //tiempo del turno son 75000 milisegundos la cuerda comienza a quemarse a los 55000 milisegundos
         {
@@ -282,7 +313,7 @@ namespace Hearthstone_GUI_Grupo5
                     break;
                 }
             }
-        }
+        }*/
 
         public void BajarCarta(Jugador J)
         {
@@ -303,38 +334,7 @@ namespace Hearthstone_GUI_Grupo5
             // ahora le mostramos el menú de opciones denuevo
             Menu(J);
             
-        } // Listo
-
-        public void Menu(Jugador J)
-        {
-            manager.Aviso("Que desea hacer?, 1= BajarCarta, 2= UsarCarta, 3= UsarHabilidad, 4= FinTurno, 5= EnviarMensaje, 6= Conceder");
-            int x = manager.RecibirResp();
-            if (x == 1)
-            {
-                BajarCarta(J);
-            }
-            else if (x == 2)
-            {
-                UsarCarta(J);
-            }
-            else if (x == 3)
-            {
-                UsarHabilidad(J);
-            }
-            else if (x == 4)
-            {
-                FinTurno(J);
-            }
-            else if (x == 5)
-            {
-                J.Heroe.Mensaje();
-                Menu(J);
-            }
-            else
-            {
-                Conceder(J);
-            }
-        }
+        } 
 
         public void UsarCarta(Jugador J)
         {
@@ -378,6 +378,7 @@ namespace Hearthstone_GUI_Grupo5
 
         public void Ataque(int x, Jugador J, int y)
         {
+            //Ejecuta el ataque de minions, con todas las respectivas verificaciones, en el caso que ataque a un heroe debe revizar la armadura de este.
             if (J.ID == true && J1.Tablero[x].Memoria >= 1)
             {
                 if (y < 7)
@@ -479,6 +480,9 @@ namespace Hearthstone_GUI_Grupo5
 
         public void AtaqueHeroe (Jugador J, int y)
         {
+            //Este metodo es muy extenso por todos lo casos bajo los cuales un heroe puede atacar y recibir daño
+            //Ya sea que ataca con o sin arma (ej:druida sin y rogue con arma), tambien debe revizar si al atacar el es dañado
+            //debe revizar si el y el oponente poseen armadura para quitar primero la armadura, y lo mismo para atacar a minions.
             if (J.ID == true && J.Arma != null)
             {
                 if (y < 7)
@@ -763,7 +767,7 @@ namespace Hearthstone_GUI_Grupo5
                     }
                 }
             }
-        } //Optimizar
+        }
 
         public void UsarHabilidad(Jugador J) // Terminar Jaina y Anduin
         {
@@ -864,9 +868,9 @@ namespace Hearthstone_GUI_Grupo5
                 J1Jugando = true;
                 InicioTurno(J1);
             }
-        } // Listo
+        }
 
-        public void Memorias()
+        public void Memorias()//Lleva la memoria de cartas en el tablero
         {
             foreach (Cartas i in J1.Tablero)
             {
@@ -882,7 +886,7 @@ namespace Hearthstone_GUI_Grupo5
         {
             J.Vida = 0;
             FinTurno(J);
-        } // Listo
+        }
     }
 
 }

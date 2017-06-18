@@ -25,7 +25,8 @@ namespace Hearthstone_GUI_Grupo5
     /// </summary>
     public partial class MainWindow : Window
     {
-        Tablero Tablerini;
+        Tablero Tablerini; //genera el tablero del juego
+        //Int respX son variables auxiliares para el cambio de carta inicial.
         int resp1;
         int resp2;
         int resp3;
@@ -149,10 +150,11 @@ namespace Hearthstone_GUI_Grupo5
 
         private void HabilidadAliado_Click(object sender, RoutedEventArgs e)
         {
-            //Tablerini.UsarHabilidad(Tablerini.J1);
+            Tablerini.UsarHabilidad(Tablerini.J1);
+            ActGui();
         }
 
-        private static void Save(Tablero tablero)
+        private static void Save(Tablero tablero)//Metodo de serializacion
         {
 
             string fileName1 = "Savedgame/tablero.txt";
@@ -164,7 +166,8 @@ namespace Hearthstone_GUI_Grupo5
             fs_tablero.Close();
 
         }
-        private static Tablero Load()//revisar cuantos metodos se deben hacer
+
+        private static Tablero Load()//Metodo de deserializacion
         {
             string fileName1 = "Savedgame/tablero.txt";
             // Creamos el Stream donde se encuentra nuestro juego
@@ -177,7 +180,7 @@ namespace Hearthstone_GUI_Grupo5
 
         private void InicioJuego(object sender, RoutedEventArgs e)
         {
-
+            //Generacion de minions
             Minions x1 = new Minions("Wisp", 0, 1, 1);//nombre, costo, vida, ataque
             Minions x2 = new Minions("Murloc Raider", 1, 1, 2);
             Minions x3 = new Minions("Bloodfen Raptor", 2, 2, 3);
@@ -238,15 +241,19 @@ namespace Hearthstone_GUI_Grupo5
             Minions x58 = new Minions("Boulderfist Ogre", 6, 7, 6);
             Minions x59 = new Minions("War Golem", 7, 7, 7);
             Minions x60 = new Minions("Core Hound", 7, 5, 9);
+            //Creacion de jugadores
             Jugador J1;
             Jugador J2;
+            //Creacion de listas para los mazos
             List<Cartas> Mazo1 = new List<Cartas> { x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30 };
             List<Cartas> Mazo2 = new List<Cartas> { x31, x32, x33, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x44, x45, x46, x47, x48, x49, x50, x51, x52, x53, x54, x55, x56, x57, x58, x59, x60 };
+            //Se barajan los mazos (listas)
             Mazo1.Shuffle();
             Mazo2.Shuffle();
             Mazo P1 = new Mazo(Mazo1, "Mazito");
             Mazo P2 = new Mazo(Mazo2, "Mazin");
-            Manager m = new Manager();
+            Manager m = new Manager();//[Obselato]
+            //Creacion de heroes
             Heroe H = new Heroe("Rexxar", "Hunter", m);
             Heroe W = new Heroe("Garrosh", "Warrior", m);
             Heroe R = new Heroe("Valeera", "Rogue", m);
@@ -256,12 +263,12 @@ namespace Hearthstone_GUI_Grupo5
             Heroe Wk = new Heroe("Guldan", "Warlock", m);
             Heroe D = new Heroe("Malfurion", "Druid", m);
             Heroe M = new Heroe("Jaina", "Mage", m);
-
+            //Creacion de menu de seleccion de heroes
             MenuHeroes popup = new MenuHeroes(0);
             MenuHeroes popup1 = new MenuHeroes(1);
             popup.ShowDialog();
             popup1.ShowDialog();
-
+            //Seleccion de imagenes de heroes en el tablero
             String z = popup.Nombre;
             int z1 = popup.Heroe;
             String z2 = popup1.Nombre;
@@ -341,11 +348,12 @@ namespace Hearthstone_GUI_Grupo5
                 J2 = new Jugador(z2, P2, false, Pr, m);
             }
 
-
             Tablero Tab = new Tablero(J1, J2, m);
             Tablerini = Tab;
-            Tablerini.Partir();
-            if (Tablerini.J1Jugando == true)
+            Tablerini.Partir();           
+            
+            
+            if (Tablerini.J1Jugando == true)//Ejecuta el cambio de cartas inicial, ademas de abrir las ventanas para cmabiar cartas.
             {
                 CambioCartas pop = new CambioCartas(J1);
                 CambioCartas pop1 = new CambioCartas(J2);
@@ -360,7 +368,7 @@ namespace Hearthstone_GUI_Grupo5
                 resp7 = pop1.i4;
                 Tablerini.CambioCartas3(J1, resp1, resp2, resp3);
                 Tablerini.CambioCartas4(J2, resp4, resp5, resp6, resp7);
-            } // GG WP
+            } 
             else
             {
                 CambioCartas pop = new CambioCartas(J2);
@@ -376,13 +384,20 @@ namespace Hearthstone_GUI_Grupo5
                 resp7 = pop.i3;
                 Tablerini.CambioCartas3(J2, resp5, resp6, resp7);
                 Tablerini.CambioCartas4(J1, resp1, resp2, resp3, resp4);
-            }          
+            }
+            if (Tablerini.J1Jugando == true)
+            {
+                Tablerini.InicioTurno(Tablerini.J1);
+            }
+            else
+            {
+                Tablerini.InicioTurno(Tablerini.J2);
+            }
             ActGui();
             //CambioImagenes(J1.Heroe, J2.Heroe, J1.Nombre, J2.Nombre);
         }
-
-        // Métodos de actualización de interfaz gráfica.
-        private void ActGui()
+        
+        private void ActGui()// Métodos de actualización de interfaz gráfica. Llama a los 3 metodos siguientes.
         {
             Hide();
             if (Tablerini.J1Jugando == true)
@@ -410,7 +425,8 @@ namespace Hearthstone_GUI_Grupo5
             }
             ShowDialog();
         }
-        private void ActManoAli(List<Cartas> Cartitas)
+
+        private void ActManoAli(List<Cartas> Cartitas)//Actualiza la vista de la mano aliada
         {
             for (int i = 0; i < Cartitas.Count; i++)
             {
@@ -1209,7 +1225,8 @@ namespace Hearthstone_GUI_Grupo5
 
             }
         }
-        private void ActTabAli(List<Cartas> Cartitas)
+
+        private void ActTabAli(List<Cartas> Cartitas)//Actualiza la vista del tablero aliada
         {
             for (int i = 0; i < Cartitas.Count; i++)
             {
@@ -1711,7 +1728,8 @@ namespace Hearthstone_GUI_Grupo5
 
             }
         }
-        private void ActTabEne(List<Cartas> Cartitas)
+
+        private void ActTabEne(List<Cartas> Cartitas)//Actualiza la vista del tablero enemigo
         {
             for (int i = 0; i < Cartitas.Count; i++)
             {
@@ -2216,13 +2234,13 @@ namespace Hearthstone_GUI_Grupo5
 
         private void Cambiocartas()
         {
-
             Cambiarcartas.Visibility = Visibility.Visible;
             Nocambiar.Visibility = Visibility.Visible;
             Nocambiar.IsEnabled = true;
             Sicambiar.Visibility = Visibility.Visible;
             Sicambiar.IsEnabled = true;
         }
+
         private void Nocambiar_Click(object sender, RoutedEventArgs e)
         {
 
@@ -2243,7 +2261,7 @@ namespace Hearthstone_GUI_Grupo5
             Cambiarcartas.Content = "Haga click sobre las cartas que desea cambiar.";
         }
 
-        private void CambioClick(object sender, RoutedEventArgs e)
+        private void CambioClick(object sender, RoutedEventArgs e)//Da funcionalidad a los botones
         {
             Button boton = (Button)sender;
             if (Tablerini.J1Jugando == true)
@@ -2285,8 +2303,53 @@ namespace Hearthstone_GUI_Grupo5
                 }
             }            
         }
+
+        private void CMAli1_Click(object sender, RoutedEventArgs e)
+        {
+            Tablerini.J1.BajarCarta(0);
+            
+            ActGui();
+        }
+
+        private void FinTurno_Click(object sender, RoutedEventArgs e)
+        {
+            if (Tablerini.J1Jugando == true)
+            {
+                Tablerini.FinTurno(Tablerini.J1);
+            }
+            else
+            {
+                Tablerini.FinTurno(Tablerini.J2);
+            }           
+        }
+
+        /* private void CMAli1_MouseDown(object sender, MouseButtonEventArgs e)
+         {
+             Button button = (Button)sender;
+             DragDrop.DoDragDrop(this, button.Background, DragDropEffects.Copy | DragDropEffects.Move);
+         }
+
+         private void CMAli1_DragEnter(object sender, DragEventArgs e)
+         {
+             if (e.Data.GetDataPresent(DataFormats.Bitmap))
+             {
+                 e.Effects = DragDropEffects.Copy;
+             }
+             else
+             {
+                 e.Effects = DragDropEffects.None;
+             }
+         }
+
+         private void CMAli1_Drop(object sender, DragEventArgs e)
+         {
+             Button button = (Button)sender;
+             button.Background = (Brush)e.Data.GetData(DataFormats.Bitmap);
+         }
+         */
+
     }
-    public static class ThreadSafeRandom
+    public static class ThreadSafeRandom//Generador de numeros aleatorios
         {
             [ThreadStatic] private static Random Local;
 
@@ -2296,7 +2359,7 @@ namespace Hearthstone_GUI_Grupo5
             }
         }
 
-        static class MyExtensions
+        static class MyExtensions//Baraja los mazos
         {
             public static void Shuffle<T>(this IList<T> list)
             {

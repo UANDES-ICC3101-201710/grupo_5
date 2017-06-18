@@ -89,7 +89,7 @@
                 </Button.Background>
             </Button>
         </Grid>
-        <Button Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="239,328,0,0" VerticalAlignment="Top" Width="92" Height="53" Name="FinTurno" Opacity="0.082">
+        <Button Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="239,328,0,0" VerticalAlignment="Top" Width="92" Height="53" Name="FinTurno" Opacity="0.082" Click="FinTurno_Click">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -169,7 +169,7 @@
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli1">
+            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli1" Click="CMAli1_Click">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>

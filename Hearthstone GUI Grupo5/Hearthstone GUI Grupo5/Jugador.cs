@@ -23,7 +23,7 @@ namespace Hearthstone_GUI_Grupo5
         public int Mana;
         public int Armor;
         public Heroe Heroe;
-        public int VarAuxDmg = 0;
+        public int VarAuxDmg = 0; //VarAuxDmg, HabMej y UsoHab son  variables auxiliares que se ocupan para implementar la habilidad de heroes
         public bool HabMej;
         public bool UsoHab;
         public Armas Arma;
@@ -34,28 +34,11 @@ namespace Hearthstone_GUI_Grupo5
         //Lista que guarda los totems que crea la habilidad del shaman
         public List<Minions> Totems = new List<Minions>();
         //Creacion de totems para poder ingresarlos a la lista totems
+        //Los efectos de los totems no estan implementados
         Minions totem1 = new Minions("Healing Totem", 1, 2, 0);//Al final de el turno del jugador da 1 de vida al resto de los minions del tablero del jugador.
         Minions totem2 = new Minions("Searing Totem", 1, 1, 1);
         Minions totem3 = new Minions("Stoneclaw Totem", 1, 2, 0);// Posee Taunt, habilidad que obliga a los minions enemigos a destruir este minion u otro que posea taunt antes de atacar al resto.
         Minions totem4 = new Minions("Wraith Of Air Totem", 1, 2, 0);// Otorga al jugador +1 spelldamage mientras este totem este vivo.
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public int Vida {
-            get { return vida; }
-            set
-            {
-                vida = value;
-                OnPropertyChanged(vida);
-            }
-        }
-        private void OnPropertyChanged(int VidaJugador)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs("VidaJugador"));
-            }
-        }
 
         public Jugador(String Nombre, Mazo Mazo, bool ID, Heroe Heroe, Manager manager)
         {
@@ -107,7 +90,7 @@ namespace Hearthstone_GUI_Grupo5
             }
         }
 
-        public void CambiarCarta(int z)//pasarle la carta a cambiar
+        public void CambiarCarta(int z)//pasarle la carta a cambiar, y re barajar el mazo
         {
             //Mostrar cartas a elegir.
             Mazo.miMazo.Add(Mano[z]);
@@ -121,7 +104,7 @@ namespace Hearthstone_GUI_Grupo5
         {
         }
 
-        public void RobarCarta()
+        public void RobarCarta() //Ejecuta el robar carta
         {
             if (Mazo.miMazo.Count == 0)
             {
@@ -141,7 +124,7 @@ namespace Hearthstone_GUI_Grupo5
             return Mano[z];
         }
 
-        public void UsarHabilidad()
+        public void UsarHabilidad() //implementa todas las habilidades de heroe
         {
             if (Mana < 2)
             {
@@ -153,7 +136,7 @@ namespace Hearthstone_GUI_Grupo5
             }
             else
             {
-                Mana -= 2; // agregar opcion para que el coste de mana sea 
+                Mana -= 2; 
                 UsoHab = true;
                 if (Heroe.Clase == "Hunter" && HabMej == true)
                 {
@@ -231,6 +214,7 @@ namespace Hearthstone_GUI_Grupo5
                 }
                 else if (Heroe.Clase == "Shaman" && HabMej == true)
                 {
+                    //El programa no implimenta la carta Justicar Truehearth por lo que se deja para despues la implementacion de habilidad mejorada para shaman
                     ///eleccion de totem.
                     ///creacion de totem.
                 }
@@ -327,6 +311,27 @@ namespace Hearthstone_GUI_Grupo5
         public void Fatiga()
         {
             Vida = Vida - Mazo.Fatiga();
+        }
+
+        //Metodo y evento Property Change no estan en uso ya que se presenta un error en el biding con XAML
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public int Vida
+        {
+            get { return vida; }
+            set
+            {
+                vida = value;
+                OnPropertyChanged(vida);
+            }
+        }
+
+        private void OnPropertyChanged(int VidaJugador)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs("VidaJugador"));
+            }
         }
 
         public void FinTurno()
