@@ -128,11 +128,11 @@ namespace Hearthstone_GUI_Grupo5
         {
             if (Mana < 2)
             {
-                manager.Aviso("No tiene suficiente maná: " + Mana);
+                //manager.Aviso("No tiene suficiente maná: " + Mana);
             }
             else if (UsoHab == true)
             {
-                manager.Aviso("Ya utilizó la habilidad este turno.");
+                //manager.Aviso("Ya utilizó la habilidad este turno.");
             }
             else
             {

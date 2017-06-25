@@ -2320,7 +2320,8 @@ namespace Hearthstone_GUI_Grupo5
             else
             {
                 Tablerini.FinTurno(Tablerini.J2);
-            }           
+            }
+            ActGui();
         }
 
         /* private void CMAli1_MouseDown(object sender, MouseButtonEventArgs e)

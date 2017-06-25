@@ -252,14 +252,14 @@ namespace Hearthstone_GUI_Grupo5
             if (J1.Vida <= 0)
             {
                 //Gano J2
-                manager.Aviso("Ha ganado " + J2.Nombre);
-                manager.RecibirResp();
+                //manager.Aviso("Ha ganado " + J2.Nombre);
+                //manager.RecibirResp();
             }
             else if (J2.Vida <= 0)
             {
                 //Gano J1
-                manager.Aviso("Ha ganado " + J1.Nombre);
-                manager.RecibirResp();
+                //manager.Aviso("Ha ganado " + J1.Nombre);
+                //manager.RecibirResp();
             }
             Turno += 1;
             // Agregamos mana, y chequeamos si tiene más de 10, de ser así igualamos a 10
@@ -850,14 +850,14 @@ namespace Hearthstone_GUI_Grupo5
             }
             J.VarAuxDmg = 0;
             // ahora le mostramos el menú de opciones denuevo
-            Menu(J);
+            // Menu(J);
         }
 
         public void FinTurno(Jugador J)
         {
-            manager.Aviso("El jugador " + J.Nombre + " ha finalizado su turno");
+            //manager.Aviso("El jugador " + J.Nombre + " ha finalizado su turno");
             Memorias();
-            manager.Aviso("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
+            //manager.Aviso("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
             if (J.ID == true)
             {
                 J1Jugando = false;
