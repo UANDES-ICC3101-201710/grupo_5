@@ -30,7 +30,7 @@ namespace Hearthstone_GUI_Grupo5
             Jugador gamer = (Jugador)jugador;
             jeque = gamer;
             InitializeComponent();
-            Nombre.Content = jeque.Nombre + "Cambia Cartas";
+            Nombre.Content = jeque.Nombre + " Cambia Cartas";
             List<Cartas> Cartitas = jeque.Mano;
             if (Cartitas.Count < 4)
             {

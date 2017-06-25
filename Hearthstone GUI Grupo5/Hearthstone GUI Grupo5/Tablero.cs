@@ -222,7 +222,7 @@ namespace Hearthstone_GUI_Grupo5
             int x = manager.RecibirResp();
             if (x == 1)
             {
-                BajarCarta(J);
+                //BajarCarta(J);
             }
             else if (x == 2)
             {
@@ -315,24 +315,24 @@ namespace Hearthstone_GUI_Grupo5
             }
         }*/
 
-        public void BajarCarta(Jugador J)
+        public void BajarCarta(Jugador J, int z)
         {
-            manager.Aviso("Maná disponible: " + J.Mana);
+            //manager.Aviso("Maná disponible: " + J.Mana);
             if (J.Tablero.Count >= 7)
             {
-                manager.Aviso("Su tablero está lleno, no puede bajar cartas");
+                //manager.Aviso("Su tablero está lleno, no puede bajar cartas");
             }
             else
             {
-                manager.Aviso("Que carta desea bajar? ");
-                InfoCartas(J, J.Mano);
-                int z = manager.RecibirResp();
+                //manager.Aviso("Que carta desea bajar? ");
+                //InfoCartas(J, J.Mano);
+                //int z = manager.RecibirResp();
                 Historial.Add(J.Mano[z]);
                 J.BajarCarta(z);
             }           
 
             // ahora le mostramos el menú de opciones denuevo
-            Menu(J);
+            //Menu(J);
             
         } 
 

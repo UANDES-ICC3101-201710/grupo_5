@@ -400,6 +400,30 @@ namespace Hearthstone_GUI_Grupo5
         private void ActGui()// Métodos de actualización de interfaz gráfica. Llama a los 3 metodos siguientes.
         {
             Hide();
+            TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), "Imagenes/Vacio.png")));
+            TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), "Imagenes/Vacio.png")));
+            TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), "Imagenes/Vacio.png")));
+            TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), "Imagenes/Vacio.png")));
+            TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), "Imagenes/Vacio.png")));
+            TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), "Imagenes/Vacio.png")));
+            TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), "Imagenes/Vacio.png")));
+            TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), "Imagenes/Vacio.png")));
+            TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), "Imagenes/Vacio.png")));
+            TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), "Imagenes/Vacio.png")));
+            TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), "Imagenes/Vacio.png")));
+            TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), "Imagenes/Vacio.png")));
+            TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), "Imagenes/Vacio.png")));
+            TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), "Imagenes/Vacio.png")));
+            CMAli1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli1), "Imagenes/Vacio.png")));
+            CMAli2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli2), "Imagenes/Vacio.png")));
+            CMAli3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli3), "Imagenes/Vacio.png")));
+            CMAli4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli4), "Imagenes/Vacio.png")));
+            CMAli5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli5), "Imagenes/Vacio.png")));
+            CMAli6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli6), "Imagenes/Vacio.png")));
+            CMAli7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli7), "Imagenes/Vacio.png")));
+            CMAli8.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli8), "Imagenes/Vacio.png")));
+            CMAli9.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli9), "Imagenes/Vacio.png")));
+            CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), "Imagenes/Vacio.png")));
             if (Tablerini.J1Jugando == true)
             {
                 NCartasEnem.Content = Tablerini.J2.Mano.Count + " Cartas en la mano.";
@@ -1222,6 +1246,51 @@ namespace Hearthstone_GUI_Grupo5
                         CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), Direccion)));
                     }
                 }
+                else if (Cartitas.Count() == 0)
+                {
+                    String Direccion = "Imagenes/Vacio.png";
+                    if (i == 0)
+                    {
+                        CMAli1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli1), Direccion)));
+                    }
+                    else if (i == 1)
+                    {
+                        CMAli2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli2), Direccion)));
+                    }
+                    else if (i == 2)
+                    {
+                        CMAli3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli3), Direccion)));
+                    }
+                    else if (i == 3)
+                    {
+                        CMAli4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli4), Direccion)));
+                    }
+                    else if (i == 4)
+                    {
+                        CMAli5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli5), Direccion)));
+                    }
+                    else if (i == 5)
+                    {
+                        CMAli6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli6), Direccion)));
+                    }
+                    else if (i == 6)
+                    {
+                        CMAli7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli7), Direccion)));
+                    }
+                    else if (i == 7)
+                    {
+                        CMAli8.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli8), Direccion)));
+                    }
+                    else if (i == 8)
+                    {
+                        CMAli9.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli9), Direccion)));
+                    }
+                    else
+                    {
+                        CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), Direccion)));
+                    }
+                }
+                
 
             }
         }
@@ -1724,6 +1793,38 @@ namespace Hearthstone_GUI_Grupo5
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
                     }
 
+                }
+                else if (Cartitas.Count() == 0)
+                {
+                    String Direccion = "Imagenes/Vacio.png";
+                    if (i == 0)
+                    {
+                        TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                    }
+                    else if (i == 1)
+                    {
+                        TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                    }
+                    else if (i == 2)
+                    {
+                        TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                    }
+                    else if (i == 3)
+                    {
+                        TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                    }
+                    else if (i == 4)
+                    {
+                        TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                    }
+                    else if (i == 5)
+                    {
+                        TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                    }
+                    else if (i == 6)
+                    {
+                        TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                    }
                 }
 
             }
@@ -2228,85 +2329,55 @@ namespace Hearthstone_GUI_Grupo5
                     }
 
                 }
+                else if (Cartitas.Count() == 0)
+                {
+                    String Direccion = "Imagenes/Vacio.png";
+                    if (i == 0)
+                    {
+                        TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), "Imagenes/Vacio.png")));
+                    }
+                    else if (i == 1)
+                    {
+                        TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                    }
+                    else if (i == 2)
+                    {
+                        TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                    }
+                    else if (i == 3)
+                    {
+                        TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                    }
+                    else if (i == 4)
+                    {
+                        TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                    }
+                    else if (i == 5)
+                    {
+                        TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                    }
+                    else if (i == 6)
+                    {
+                        TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                    }
+
+                }
 
             }
-        }
-
-        private void Cambiocartas()
-        {
-            Cambiarcartas.Visibility = Visibility.Visible;
-            Nocambiar.Visibility = Visibility.Visible;
-            Nocambiar.IsEnabled = true;
-            Sicambiar.Visibility = Visibility.Visible;
-            Sicambiar.IsEnabled = true;
-        }
-
-        private void Nocambiar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Sicambiar_Click(object sender, RoutedEventArgs e)
-        {
-            CartaCambio1.Visibility = Visibility.Visible;
-            CartaCambio1.IsEnabled = true;
-            CartaCambio2.Visibility = Visibility.Visible;
-            CartaCambio2.IsEnabled = true;
-            CartaCambio3.Visibility = Visibility.Visible;
-            CartaCambio3.IsEnabled = true;
-            CartaCambio4.Visibility = Visibility.Visible;
-            CartaCambio4.IsEnabled = true;
-            Nocambiar.Visibility = Visibility.Hidden;
-            Nocambiar.IsEnabled = false;
-            Cambiarcartas.Content = "Haga click sobre las cartas que desea cambiar.";
-        }
-
-        private void CambioClick(object sender, RoutedEventArgs e)//Da funcionalidad a los botones
-        {
-            Button boton = (Button)sender;
-            if (Tablerini.J1Jugando == true)
-            {
-                if (boton.Name == "CartaCambio1")
-                {
-                    resp1 = 1;
-                }
-                else if (boton.Name == "CartaCambio2")
-                {
-                    resp2 = 1;
-                }
-                else if (boton.Name == "CartaCambio3")
-                {
-                    resp3 = 1;
-                }
-                else
-                {
-                    resp4 = 1;
-                }
-            }
-            else
-            {
-                if (boton.Name == "CartaCambio1")
-                {
-                    resp5 = 1;
-                }
-                else if (boton.Name == "CartaCambio2")
-                {
-                    resp6 = 1;
-                }
-                else if (boton.Name == "CartaCambio3")
-                {
-                    resp7 = 1;
-                }
-                else
-                {
-                    resp8 = 1;
-                }
-            }            
         }
 
         private void CMAli1_Click(object sender, RoutedEventArgs e)
         {
-            Tablerini.J1.BajarCarta(0);
+            int z = 0;
+            if (Tablerini.J1Jugando == true)
+            {
+                Tablerini.BajarCarta(Tablerini.J1, z);
+            }
+            else if (Tablerini.J1Jugando == false)
+            {
+                Tablerini.BajarCarta(Tablerini.J2, z);
+            }
+            
             
             ActGui();
         }

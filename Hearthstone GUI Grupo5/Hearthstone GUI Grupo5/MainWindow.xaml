@@ -186,43 +186,6 @@
         </Button>
         <Label Content="Player" HorizontalAlignment="Left" Margin="0,492,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="NombreAliado"/>
         <Label Content="Player" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="NombreEnemigo"/>
-        <Label Content="Desea cambiar cartas?" Grid.Column="1" HorizontalAlignment="Left" Margin="354,453,0,0" VerticalAlignment="Top" Width="172" FontFamily="OPTIBelwe" FontSize="14" Foreground="White" Name="Cambiarcartas" Visibility="Hidden" IsEnabled="False"/>
-        <Button Content="Si" Grid.Column="1" HorizontalAlignment="Left" Margin="354,481,0,0" VerticalAlignment="Top" Width="75" Name="Sicambiar" Visibility="Hidden" IsEnabled="False" Click="Sicambiar_Click">
-            <Button.Background>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF976116" Offset="0"/>
-                    <GradientStop Color="#FFA28C6D" Offset="1"/>
-                </RadialGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button Content="No" Grid.Column="1" HorizontalAlignment="Left" Margin="451,481,0,0" VerticalAlignment="Top" Width="75" Name="Nocambiar" Visibility="Hidden" IsEnabled="False" Click="Nocambiar_Click">
-            <Button.Background>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF835512" Offset="1"/>
-                    <GradientStop Color="#FFA28C6D"/>
-                </RadialGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button Content="Cambiar?" Margin="716,645,477,8" x:Name="CartaCambio1" Grid.ColumnSpan="2" Visibility="Hidden" IsEnabled="False">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Cambiar?" Margin="637,645,20,8" x:Name="CartaCambio2" Click="CambioClick" Visibility="Hidden" IsEnabled="False">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Cambiar?" Margin="558,645,99,8" x:Name="CartaCambio3" Visibility="Hidden" IsEnabled="False">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-        <Button Content="Cambiar?" Margin="474,645,183,8" x:Name="CartaCambio4" Visibility="Hidden" IsEnabled="False">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
-
+        
     </Grid>
 </Window>

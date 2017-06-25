@@ -53,7 +53,7 @@ namespace Hearthstone_GUI_Grupo5
         {
             if (Mano[z].Costo > Mana)
             {
-                manager.Aviso("No tienes suficiente mana para bajar esa carta.");
+                //manager.Aviso("No tienes suficiente mana para bajar esa carta.");
             }
             else
             {
@@ -72,7 +72,7 @@ namespace Hearthstone_GUI_Grupo5
                         }
                     else
                     {
-                        manager.Aviso("La carta que quiere bajar no es un minion.");
+                        //manager.Aviso("La carta que quiere bajar no es un minion.");
                     }
 
                 }
