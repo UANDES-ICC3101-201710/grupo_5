@@ -16,32 +16,32 @@
             <ColumnDefinition Width="403*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="190" Margin="180,352,0,0" VerticalAlignment="Top" Width="770">
-            <Button Content="" HorizontalAlignment="Left" Margin="658,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA7">
+            <Button Content="" HorizontalAlignment="Left" Margin="658,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA7" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="564,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA6">
+            <Button Content="" HorizontalAlignment="Left" Margin="564,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA6" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="470,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA5">
+            <Button Content="" HorizontalAlignment="Left" Margin="470,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA5" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="376,10,0,0" VerticalAlignment="Top" Width="91" Height="128" Name="TA4">
+            <Button Content="" HorizontalAlignment="Left" Margin="376,10,0,0" VerticalAlignment="Top" Width="91" Height="128" Name="TA4" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA3">
+            <Button Content="" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA3" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="190,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA2">
+            <Button Content="" HorizontalAlignment="Left" Margin="190,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA2" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
@@ -78,7 +78,7 @@
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="300,0,0,0" VerticalAlignment="Top" Width="88" Height="132" Name="TE2">
+            <Button Content="" HorizontalAlignment="Left" Margin="300,0,0,0" VerticalAlignment="Top" Width="88" Height="132" Name="TE2" >
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
@@ -105,19 +105,21 @@
                 <ImageBrush ImageSource="imagenes/Base.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="694,558,0,0" VerticalAlignment="Top" Width="89" Height="82" Name="HabilidadAliado" Click="HabilidadAliado_Click" Grid.ColumnSpan="2">
-            <Button.Foreground>
-                <ImageBrush/>
-            </Button.Foreground>
-            <Button.BorderBrush>
-                <ImageBrush/>
-            </Button.BorderBrush>
+        <Button Content="" HorizontalAlignment="Left" Margin="694,558,0,0" VerticalAlignment="Top" Width="89" Height="82" Name="HabilidadAliado" Click="HabilidadAliado_Click" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="imagenes/Base.png"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="140" Margin="578,520,0,0" VerticalAlignment="Top" Width="111" Name="HeroeAli" Source="imagenes/Base.png"/>
-        <Image HorizontalAlignment="Left" Height="157" Margin="578,88,0,0" VerticalAlignment="Top" Width="120" Name="HeroeEne" Source="imagenes/Base.png"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="583,510,0,0" VerticalAlignment="Top" Width="111" Height="140" Name="HeroeAli" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/Vacio.png"/>
+            </Button.Background>
+        </Button>
+        <Button Content="" HorizontalAlignment="Left" Margin="578,81,0,0" VerticalAlignment="Top" Width="116" Height="134" Name="HeroeEne" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="imagenes/Vacio.png"/>
+            </Button.Background>
+        </Button>
         <Label Content="0" HorizontalAlignment="Left" Margin="666,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="VidaEnem" Grid.ColumnSpan="2"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="666,615,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="VidaAli"/>
 

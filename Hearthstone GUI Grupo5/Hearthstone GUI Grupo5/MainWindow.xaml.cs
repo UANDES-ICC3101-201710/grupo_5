@@ -52,93 +52,93 @@ namespace Hearthstone_GUI_Grupo5
             if (ally.NombreHeroe == "Rexxar")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Rexxar.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HRexxar.png"));
+                HeroeAli.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HRexxar.png")));
             }
             else if (ally.NombreHeroe == "Uther")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Uther.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HUther.png"));
+                HeroeAli.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HUther.png")));
             }
             else if (ally.NombreHeroe == "Valeera")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Valeera.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HValeera.png"));
+                HeroeAli.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HValeera.png")));
             }
             else if (ally.NombreHeroe == "Anduin")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Anduin.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HAnduin.png"));
+                HeroeAli.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HAnduin.png")));
             }
             else if (ally.NombreHeroe == "Thrall")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Thrall.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HThrall.png"));
+                HeroeAli.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HThrall.png")));
             }
             else if (ally.NombreHeroe == "Malfurion")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Malfurion.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HMalfurion.png"));
+                HeroeAli.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HMalfurion.png")));
             }
             else if (ally.NombreHeroe == "Guldan")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Guldan.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGuldan.png"));
+                HeroeAli.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGuldan.png")));
             }
             else if (ally.NombreHeroe == "Garrosh")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Garrosh.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGarrosh.png"));
+                HeroeAli.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HGarrosh.png")));
             }
             else if (ally.NombreHeroe == "Jaina")
             {
                 HabilidadAliado.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/Jaina.png")));
-                HeroeAli.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HJaina.png"));
+                HeroeAli.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadAliado), "Imagenes/HJaina.png")));
             }
             // CAMBIAMOS LA IMAGEN DEL ENEMIGO
             if (enemy.NombreHeroe == "Rexxar")
             {
                 HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Rexxar.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HRexxar.png"));
+                HeroeEne.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HRexxar.png")));
             }
             else if (enemy.NombreHeroe == "Uther")
             {
                 HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Uther.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HUther.png"));
+                HeroeEne.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HUther.png")));
             }
             else if (enemy.NombreHeroe == "Valeera")
             {
                 HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Valeera.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HValeera.png"));
+                HeroeEne.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HValeera.png")));
             }
             else if (enemy.NombreHeroe == "Anduin")
             {
                 HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Anduin.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HAnduin.png"));
+                HeroeEne.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HAnduin.png")));
             }
             else if (enemy.NombreHeroe == "Thrall")
             {
                 HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Thrall.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HThrall.png"));
+                HeroeEne.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HThrall.png")));
             }
             else if (enemy.NombreHeroe == "Malfurion")
             {
                 HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Malfurion.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HMalfurion.png"));
+                HeroeEne.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HMalfurion.png")));
             }
             else if (enemy.NombreHeroe == "Guldan")
             {
                 HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Guldan.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGuldan.png"));
+                HeroeEne.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGuldan.png")));
             }
             else if (enemy.NombreHeroe == "Garrosh")
             {
                 HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Garrosh.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGarrosh.png"));
+                HeroeEne.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HGarrosh.png")));
             }
             else if (enemy.NombreHeroe == "Jaina")
             {
                 HabilidadEnemigo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/Jaina.png")));
-                HeroeEne.Source = new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HJaina.png"));
+                HeroeEne.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(HabilidadEnemigo), "Imagenes/HJaina.png")));
             }
             Inicio.Content = "";
             Inicio.Background = Brushes.Transparent;
@@ -2519,6 +2519,7 @@ namespace Hearthstone_GUI_Grupo5
             TE5.Click += TEClick;
             TE6.Click += TEClick;
             TE7.Click += TEClick;
+            HeroeEne.Click += TEClick;
         }
 
         private void TEClick(object sender, RoutedEventArgs e)
@@ -2592,12 +2593,16 @@ namespace Hearthstone_GUI_Grupo5
             {
                 enemigo = 6;
             }
+            else if (TEClick1 == "HeroeEne")
+            {
+                enemigo = 7;
+            }
             
-            if (Tablerini.J1Jugando == true && Tablerini.J1.Tablero.Count <= aliado + 1 && Tablerini.J2.Tablero.Count <= enemigo + 1)
+            if (Tablerini.J1Jugando == true && Tablerini.J1.Tablero.Count <= aliado + 1 && Tablerini.J2.Tablero.Count <= enemigo + 1 && Tablerini.J1.Tablero.Count > 0 || Tablerini.J1Jugando == true && Tablerini.J1.Tablero.Count <= aliado + 1 && enemigo == 7 && Tablerini.J1.Tablero.Count > 0)
             {
                 Tablerini.Ataque(aliado, Tablerini.J1, enemigo);
             }
-            else if (Tablerini.J1Jugando == false && Tablerini.J1.Tablero.Count <= enemigo + 1 && Tablerini.J2.Tablero.Count <= aliado + 1)
+            else if (Tablerini.J1Jugando == false && Tablerini.J1.Tablero.Count <= enemigo + 1 && Tablerini.J2.Tablero.Count <= aliado + 1 && Tablerini.J2.Tablero.Count > 0 || Tablerini.J1Jugando == false && Tablerini.J2.Tablero.Count <= aliado + 1 && enemigo == 7 && Tablerini.J2.Tablero.Count > 0)
             {
                 Tablerini.Ataque(aliado, Tablerini.J2, enemigo);
             }
@@ -2609,6 +2614,7 @@ namespace Hearthstone_GUI_Grupo5
             TE5.Click -= TEClick;
             TE6.Click -= TEClick;
             TE7.Click -= TEClick;
+            HeroeEne.Click -= TEClick;
             TAClick1 = "";
             TEClick1 = "";
             ActGui();

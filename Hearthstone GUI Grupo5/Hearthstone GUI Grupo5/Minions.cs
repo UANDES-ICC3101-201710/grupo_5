@@ -16,23 +16,15 @@ namespace Hearthstone_GUI_Grupo5
         public int Memoria;
         public int VidaOriginal;
         private string nombre;
-        private int vida;
+        public int Vida;
 
         public Minions(string nombre, int costo, int Vida, int Ataque) : base(nombre, costo, Vida, Ataque)
         {
-            this.vida = Vida;
+            this.Vida = Vida;
             this.Ataque = Ataque;
             this.VidaOriginal = Vida;
         }
 
-
-        public int Vida
-        {
-            get { return vida; }
-            set { vida = value;
-                OnPropertyChanged(vida);
-            }
-        }
         //Tanto el metodo como el evento Property Change no se encuentran en uso ya que el data binding desde XAML presenta problemas
         private void OnPropertyChanged(int Propiedad)
         {
