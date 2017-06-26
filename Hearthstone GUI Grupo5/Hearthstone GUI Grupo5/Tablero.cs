@@ -474,7 +474,7 @@ namespace Hearthstone_GUI_Grupo5
             }
             else
             {
-                manager.Aviso("No puede utilizar esa carta, la bajó este turno.");
+                //manager.Aviso("No puede utilizar esa carta, la bajó este turno.");
             }
 
         }

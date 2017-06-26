@@ -46,7 +46,7 @@
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA1">
+            <Button Content="" HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA1" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
@@ -186,6 +186,6 @@
         </Button>
         <Label Content="Player" HorizontalAlignment="Left" Margin="0,492,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="NombreAliado"/>
         <Label Content="Player" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="NombreEnemigo"/>
-        
+
     </Grid>
 </Window>

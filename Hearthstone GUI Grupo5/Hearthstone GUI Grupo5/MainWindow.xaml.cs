@@ -35,6 +35,8 @@ namespace Hearthstone_GUI_Grupo5
         int resp6;
         int resp7;
         int resp8;
+        String TAClick1 = "";
+        String TEClick1 = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -2506,6 +2508,112 @@ namespace Hearthstone_GUI_Grupo5
             ActGui();
         }
 
+        private void TAClick(object sender, RoutedEventArgs e)
+        {
+            Button boton = (Button)sender;
+            TAClick1 = boton.Name;
+            TE1.Click += TEClick;
+            TE2.Click += TEClick;
+            TE3.Click += TEClick;
+            TE4.Click += TEClick;
+            TE5.Click += TEClick;
+            TE6.Click += TEClick;
+            TE7.Click += TEClick;
+        }
+
+        private void TEClick(object sender, RoutedEventArgs e)
+        {
+            Button boton = (Button)sender;
+            TEClick1 = boton.Name;
+            if (TEClick1 != "" && TAClick1 != "")
+            {
+                Ataque();
+            }
+        }
+
+        private void Ataque()
+        {
+            int aliado = 10;
+            int enemigo = 10;
+            if (TAClick1 == "TA1")
+            {
+                aliado = 0;
+            }
+            else if (TAClick1 == "TA2")
+            {
+                aliado = 1;
+            }
+            else if (TAClick1 == "TA3")
+            {
+                aliado = 2;
+            }
+            else if (TAClick1 == "TA4")
+            {
+                aliado = 3;
+            }
+            else if (TAClick1 == "TA5")
+            {
+                aliado = 4;
+            }
+            else if (TAClick1 == "TA6")
+            {
+                aliado = 5;
+            }
+            else if (TAClick1 == "TA7")
+            {
+                aliado = 6;
+            }
+
+            if (TEClick1 == "TE1")
+            {
+                enemigo = 0;
+            }
+            else if (TEClick1 == "TE2")
+            {
+                enemigo = 1;
+            }
+            else if (TEClick1 == "TE3")
+            {
+                enemigo = 2;
+            }
+            else if (TEClick1 == "TE4")
+            {
+                enemigo = 3;
+            }
+            else if (TEClick1 == "TE5")
+            {
+                enemigo = 4;
+            }
+            else if (TEClick1 == "TE6")
+            {
+                enemigo = 5;
+            }
+            else if (TEClick1 == "TE7")
+            {
+                enemigo = 6;
+            }
+            
+            if (Tablerini.J1Jugando == true && Tablerini.J1.Tablero.Count <= aliado + 1 && Tablerini.J2.Tablero.Count <= enemigo + 1)
+            {
+                Tablerini.Ataque(aliado, Tablerini.J1, enemigo);
+            }
+            else if (Tablerini.J1Jugando == false && Tablerini.J1.Tablero.Count <= enemigo + 1 && Tablerini.J2.Tablero.Count <= aliado + 1)
+            {
+                Tablerini.Ataque(aliado, Tablerini.J2, enemigo);
+            }
+
+            TE1.Click -= TEClick;
+            TE2.Click -= TEClick;
+            TE3.Click -= TEClick;
+            TE4.Click -= TEClick;
+            TE5.Click -= TEClick;
+            TE6.Click -= TEClick;
+            TE7.Click -= TEClick;
+            TAClick1 = "";
+            TEClick1 = "";
+            ActGui();
+
+        }
         /* private void CMAli1_MouseDown(object sender, MouseButtonEventArgs e)
          {
              Button button = (Button)sender;
