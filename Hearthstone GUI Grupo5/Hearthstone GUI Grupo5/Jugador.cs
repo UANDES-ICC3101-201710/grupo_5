@@ -176,7 +176,7 @@ namespace Hearthstone_GUI_Grupo5
                 else if (Heroe.Clase == "Warlock" && HabMej == false)
                 {
                     RobarCarta();
-                    Vida -= 2;
+                    vida -= 2;
                 }
                 else if (Heroe.Clase == "Mage" && HabMej == true)
                 {
