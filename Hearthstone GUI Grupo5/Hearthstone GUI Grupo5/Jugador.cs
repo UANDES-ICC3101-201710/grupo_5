@@ -20,6 +20,7 @@ namespace Hearthstone_GUI_Grupo5
         public Manager manager;
         public Random rdm = new Random();
         private int vida = 30;
+        public int ManaOrig;
         public int Mana;
         public int Armor;
         public Heroe Heroe;
@@ -66,6 +67,7 @@ namespace Hearthstone_GUI_Grupo5
                 {
                     if (Mano[z].GetType() == typeof(Minions))
                         {
+                        Mana -= Mano[z].Costo;
                         Mano[z].Memoria = 0;
                         Tablero.Add((Minions)(Mano[z]));
                         Mano.RemoveAt(z);

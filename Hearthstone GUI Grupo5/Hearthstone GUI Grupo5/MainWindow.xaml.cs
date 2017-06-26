@@ -2366,21 +2366,132 @@ namespace Hearthstone_GUI_Grupo5
             }
         }
 
-        private void CMAli1_Click(object sender, RoutedEventArgs e)
+        private void BajarCartaM(object sender, RoutedEventArgs e)
         {
             int z = 0;
-            if (Tablerini.J1Jugando == true)
+            Button boton = (Button)sender;
+            if (boton.Name == "CMAli1")
             {
-                Tablerini.BajarCarta(Tablerini.J1, z);
+                z = 0;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
             }
-            else if (Tablerini.J1Jugando == false)
+            else if (boton.Name == "CMAli2")
             {
-                Tablerini.BajarCarta(Tablerini.J2, z);
+                z = 1;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
             }
-            
-            
+            else if (boton.Name == "CMAli3")
+            {
+                z = 2;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
+            }
+            else if (boton.Name == "CMAli4")
+            {
+                z = 3;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
+            }
+            else if (boton.Name == "CMAli5")
+            {
+                z = 4;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
+            }
+            else if (boton.Name == "CMAli6")
+            {
+                z = 5;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
+            }
+            else if (boton.Name == "CMAli7")
+            {
+                z = 6;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
+            }
+            else if (boton.Name == "CMAli8")
+            {
+                z = 7;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
+            }
+            else if (boton.Name == "CMAli9")
+            {
+                z = 8;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
+            }
+            else if (boton.Name == "CMAli10")
+            {
+                z = 9;
+                if (Tablerini.J1Jugando == true)
+                {
+                    Tablerini.BajarCarta(Tablerini.J1, z);
+                }
+                else if (Tablerini.J1Jugando == false)
+                {
+                    Tablerini.BajarCarta(Tablerini.J2, z);
+                }
+            }
             ActGui();
-        }
+        }//Detecta la carta de la mano que se desea bajar y la baja al tablero
 
         private void FinTurno_Click(object sender, RoutedEventArgs e)
         {

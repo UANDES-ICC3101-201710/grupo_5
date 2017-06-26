@@ -263,7 +263,8 @@ namespace Hearthstone_GUI_Grupo5
             }
             Turno += 1;
             // Agregamos mana, y chequeamos si tiene más de 10, de ser así igualamos a 10
-            J.Mana += 1;
+            J.ManaOrig += 1;
+            J.Mana = J.ManaOrig;
             if (J.Mana >= 10)
             {
                 J.Mana = 10;
@@ -861,11 +862,15 @@ namespace Hearthstone_GUI_Grupo5
             if (J.ID == true)
             {
                 J1Jugando = false;
+                J1.UsoHab = false;
+                J2.UsoHab = false;
                 InicioTurno(J2);
             }
             else
             {
                 J1Jugando = true;
+                J1.UsoHab = false;
+                J2.UsoHab = false;
                 InicioTurno(J1);
             }
         }
