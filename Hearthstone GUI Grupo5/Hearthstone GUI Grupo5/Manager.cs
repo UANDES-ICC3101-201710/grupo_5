@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hearthstone_GUI_Grupo5
 {
+    [Serializable]
     class Manager {
-        //Para la entrega 3 esta clase esta obsoleta, sigue en el programa,
-        //ya que en la transicion muchos metodos ocupan esta clase,
-        //y se esperara a terminar le programa anres de eliminar esta clase
+        public string Aviso1;
         public Manager()
         {
 
@@ -17,7 +16,7 @@ namespace Hearthstone_GUI_Grupo5
 
     public void Aviso(String txt)//Da el aviso a consola.
         {
-            Console.WriteLine(txt);
+            Aviso1 = txt;
         }
     public int RecibirResp()
         {

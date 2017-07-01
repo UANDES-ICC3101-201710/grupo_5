@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hearthstone_GUI_Grupo5
 {
+    [Serializable]
     class Armas : Cartas
     {
         public int Ataque;

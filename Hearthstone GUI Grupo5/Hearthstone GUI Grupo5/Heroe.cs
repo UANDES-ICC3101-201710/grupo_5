@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hearthstone_GUI_Grupo5
 {
+    [Serializable]
     class Heroe
     {
         public String Clase;

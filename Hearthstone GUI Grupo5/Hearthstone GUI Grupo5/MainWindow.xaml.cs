@@ -152,14 +152,21 @@ namespace Hearthstone_GUI_Grupo5
 
         private void HabilidadAliado_Click(object sender, RoutedEventArgs e)
         {
-            Tablerini.UsarHabilidad(Tablerini.J1);
+            if (Tablerini.J1Jugando == true)
+            {
+                Tablerini.UsarHabilidad(Tablerini.J1);
+            }
+            else if (Tablerini.J1Jugando == false)
+            {
+                Tablerini.UsarHabilidad(Tablerini.J2);
+            }
             ActGui();
         }
 
         private static void Save(Tablero tablero)//Metodo de serializacion
         {
 
-            string fileName1 = "Savedgame/tablero.txt";
+            string fileName1 = @"C:\Users\fenzo\Desktop\Proyecto POO GUI\Hearthstone GUI Grupo5\Hearthstone GUI Grupo5\Tablero.txt";
             // Creamos el Stream donde guardaremos nuestro juego
 
             FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
@@ -171,7 +178,7 @@ namespace Hearthstone_GUI_Grupo5
 
         private static Tablero Load()//Metodo de deserializacion
         {
-            string fileName1 = "Savedgame/tablero.txt";
+            string fileName1 = @"C:\Users\fenzo\Desktop\Proyecto POO GUI\Hearthstone GUI Grupo5\Hearthstone GUI Grupo5\Tablero.txt";
             // Creamos el Stream donde se encuentra nuestro juego
             FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
             IFormatter formatter = new BinaryFormatter();
@@ -254,7 +261,7 @@ namespace Hearthstone_GUI_Grupo5
             Mazo2.Shuffle();
             Mazo P1 = new Mazo(Mazo1, "Mazito");
             Mazo P2 = new Mazo(Mazo2, "Mazin");
-            Manager m = new Manager();//[Obselato]
+            Manager m = new Manager();
             //Creacion de heroes
             Heroe H = new Heroe("Rexxar", "Hunter", m);
             Heroe W = new Heroe("Garrosh", "Warrior", m);
@@ -426,6 +433,21 @@ namespace Hearthstone_GUI_Grupo5
             CMAli8.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli8), "Imagenes/Vacio.png")));
             CMAli9.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli9), "Imagenes/Vacio.png")));
             CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), "Imagenes/Vacio.png")));
+            Mene1.Content = 0;
+            Mene2.Content = 0;
+            Mene3.Content = 0;
+            Mene4.Content = 0;
+            Mene5.Content = 0;
+            Mene6.Content = 0;
+            Mene7.Content = 0;
+            Mali1.Content = 0;
+            Mali2.Content = 0;
+            Mali3.Content = 0;
+            Mali4.Content = 0;
+            Mali5.Content = 0;
+            Mali6.Content = 0;
+            Mali7.Content = 0;
+            Historial.Text = "";
             if (Tablerini.J1Jugando == true)
             {
                 NCartasEnem.Content = Tablerini.J2.Mano.Count + " Cartas en la mano.";
@@ -436,7 +458,7 @@ namespace Hearthstone_GUI_Grupo5
                 VidaAli.Content = Tablerini.J1.Vida;
                 VidaEnem.Content = Tablerini.J2.Vida;
                 ManaAli.Content = Tablerini.J1.Mana;
-
+                Historial.Text = Tablerini.manager.Aviso1;
             }
             else
             {
@@ -448,6 +470,7 @@ namespace Hearthstone_GUI_Grupo5
                 VidaAli.Content = Tablerini.J2.Vida;
                 VidaEnem.Content = Tablerini.J1.Vida;
                 ManaAli.Content = Tablerini.J2.Mana;
+                Historial.Text = Tablerini.manager.Aviso1;
             }
             ShowDialog();
         }
@@ -1307,30 +1330,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1340,30 +1370,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1373,30 +1410,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1406,30 +1450,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1439,30 +1490,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1472,30 +1530,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1505,30 +1570,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1538,30 +1610,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1571,30 +1650,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1604,30 +1690,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1637,30 +1730,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1670,30 +1770,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1703,30 +1810,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1736,30 +1850,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1769,30 +1890,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TA1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA1), Direccion)));
+                        Mali1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TA2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA2), Direccion)));
+                        Mali2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TA3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA3), Direccion)));
+                        Mali3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TA4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA4), Direccion)));
+                        Mali4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TA5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA5), Direccion)));
+                        Mali5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TA6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA6), Direccion)));
+                        Mali6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TA7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TA7), Direccion)));
+                        Mali7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1842,30 +1970,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1875,30 +2010,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1908,30 +2050,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1941,30 +2090,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -1974,30 +2130,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -2007,30 +2170,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -2040,30 +2210,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -2073,30 +2250,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -2106,30 +2290,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -2139,30 +2330,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -2172,30 +2370,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -2205,30 +2410,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -2238,30 +2450,37 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
@@ -2271,36 +2490,83 @@ namespace Hearthstone_GUI_Grupo5
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
                     }
                     else if (i == 1)
                     {
                         TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
                     }
                     else if (i == 2)
                     {
                         TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
                     }
                     else if (i == 3)
                     {
                         TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
                     }
                     else if (i == 4)
                     {
                         TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
                     }
                     else if (i == 5)
                     {
                         TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
                     }
                     else if (i == 6)
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
                     }
 
                 }
                 else if (Cartitas[i].Nombre == "Wraith Of Air Totem")
                 {
                     String Direccion = "Imagenes/Airtotem.png";
+                    if (i == 0)
+                    {
+                        TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
+                        Mene1.Content = Cartitas[i].Vida;
+                    }
+                    else if (i == 1)
+                    {
+                        TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
+                        Mene2.Content = Cartitas[i].Vida;
+                    }
+                    else if (i == 2)
+                    {
+                        TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
+                        Mene3.Content = Cartitas[i].Vida;
+                    }
+                    else if (i == 3)
+                    {
+                        TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
+                        Mene4.Content = Cartitas[i].Vida;
+                    }
+                    else if (i == 4)
+                    {
+                        TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
+                        Mene5.Content = Cartitas[i].Vida;
+                    }
+                    else if (i == 5)
+                    {
+                        TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
+                        Mene6.Content = Cartitas[i].Vida;
+                    }
+                    else if (i == 6)
+                    {
+                        TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
+                        Mene7.Content = Cartitas[i].Vida;
+                    }
+
+                }
+                else if (Cartitas.Count() == 0)
+                {
+                    String Direccion = "Imagenes/Vacio.png";
                     if (i == 0)
                     {
                         TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), Direccion)));
@@ -2329,40 +2595,6 @@ namespace Hearthstone_GUI_Grupo5
                     {
                         TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
                     }
-
-                }
-                else if (Cartitas.Count() == 0)
-                {
-                    String Direccion = "Imagenes/Vacio.png";
-                    if (i == 0)
-                    {
-                        TE1.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE1), "Imagenes/Vacio.png")));
-                    }
-                    else if (i == 1)
-                    {
-                        TE2.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE2), Direccion)));
-                    }
-                    else if (i == 2)
-                    {
-                        TE3.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE3), Direccion)));
-                    }
-                    else if (i == 3)
-                    {
-                        TE4.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE4), Direccion)));
-                    }
-                    else if (i == 4)
-                    {
-                        TE5.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE5), Direccion)));
-                    }
-                    else if (i == 5)
-                    {
-                        TE6.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE6), Direccion)));
-                    }
-                    else if (i == 6)
-                    {
-                        TE7.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(TE7), Direccion)));
-                    }
-
                 }
 
             }
@@ -2508,7 +2740,7 @@ namespace Hearthstone_GUI_Grupo5
             ActGui();
         }
 
-        private void TAClick(object sender, RoutedEventArgs e)
+        private void TAClick(object sender, RoutedEventArgs e) // asumimos que el jugador no tratará de atacar espacios vacíos.
         {
             Button boton = (Button)sender;
             TAClick1 = boton.Name;
@@ -2520,6 +2752,7 @@ namespace Hearthstone_GUI_Grupo5
             TE6.Click += TEClick;
             TE7.Click += TEClick;
             HeroeEne.Click += TEClick;
+            ActGui();
         }
 
         private void TEClick(object sender, RoutedEventArgs e)
@@ -2598,11 +2831,11 @@ namespace Hearthstone_GUI_Grupo5
                 enemigo = 7;
             }
             
-            if (Tablerini.J1Jugando == true && Tablerini.J1.Tablero.Count <= aliado + 1 && Tablerini.J2.Tablero.Count <= enemigo + 1 && Tablerini.J1.Tablero.Count > 0 || Tablerini.J1Jugando == true && Tablerini.J1.Tablero.Count <= aliado + 1 && enemigo == 7 && Tablerini.J1.Tablero.Count > 0)
+            if (Tablerini.J1Jugando == true/* && Tablerini.J1.Tablero.Count <= aliado + 1 && Tablerini.J2.Tablero.Count <= enemigo + 1 && Tablerini.J1.Tablero.Count > 0 || Tablerini.J1Jugando == true && Tablerini.J1.Tablero.Count <= aliado + 1 && enemigo == 7 && Tablerini.J1.Tablero.Count > 0*/)
             {
                 Tablerini.Ataque(aliado, Tablerini.J1, enemigo);
             }
-            else if (Tablerini.J1Jugando == false && Tablerini.J1.Tablero.Count <= enemigo + 1 && Tablerini.J2.Tablero.Count <= aliado + 1 && Tablerini.J2.Tablero.Count > 0 || Tablerini.J1Jugando == false && Tablerini.J2.Tablero.Count <= aliado + 1 && enemigo == 7 && Tablerini.J2.Tablero.Count > 0)
+            else if (Tablerini.J1Jugando == false/* && Tablerini.J1.Tablero.Count <= enemigo + 1 && Tablerini.J2.Tablero.Count <= aliado + 1 && Tablerini.J2.Tablero.Count > 0 || Tablerini.J1Jugando == false && Tablerini.J2.Tablero.Count <= aliado + 1 && enemigo == 7 && Tablerini.J2.Tablero.Count > 0*/)
             {
                 Tablerini.Ataque(aliado, Tablerini.J2, enemigo);
             }
@@ -2620,30 +2853,45 @@ namespace Hearthstone_GUI_Grupo5
             ActGui();
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            if (b.Name == "Save1")
+            {
+                Save(Tablerini);
+            }
+            else if (b.Name == "Load1")
+            {
+                Load();
+            }
+            
+        }
+
         /* private void CMAli1_MouseDown(object sender, MouseButtonEventArgs e)
-         {
-             Button button = (Button)sender;
-             DragDrop.DoDragDrop(this, button.Background, DragDropEffects.Copy | DragDropEffects.Move);
-         }
+{
+    Button button = (Button)sender;
+    DragDrop.DoDragDrop(this, button.Background, DragDropEffects.Copy | DragDropEffects.Move);
+}
 
-         private void CMAli1_DragEnter(object sender, DragEventArgs e)
-         {
-             if (e.Data.GetDataPresent(DataFormats.Bitmap))
-             {
-                 e.Effects = DragDropEffects.Copy;
-             }
-             else
-             {
-                 e.Effects = DragDropEffects.None;
-             }
-         }
+private void CMAli1_DragEnter(object sender, DragEventArgs e)
+{
+    if (e.Data.GetDataPresent(DataFormats.Bitmap))
+    {
+        e.Effects = DragDropEffects.Copy;
+    }
+    else
+    {
+        e.Effects = DragDropEffects.None;
+    }
+}
 
-         private void CMAli1_Drop(object sender, DragEventArgs e)
-         {
-             Button button = (Button)sender;
-             button.Background = (Brush)e.Data.GetData(DataFormats.Bitmap);
-         }
-         */
+private void CMAli1_Drop(object sender, DragEventArgs e)
+{
+    Button button = (Button)sender;
+    button.Background = (Brush)e.Data.GetData(DataFormats.Bitmap);
+}
+*/
 
     }
     public static class ThreadSafeRandom//Generador de numeros aleatorios

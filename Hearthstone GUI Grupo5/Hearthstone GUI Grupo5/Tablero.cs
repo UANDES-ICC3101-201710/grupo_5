@@ -379,7 +379,7 @@ namespace Hearthstone_GUI_Grupo5
 
         public void Ataque(int x, Jugador J, int y)
         {
-            //Ejecuta el ataque de minions, con todas las respectivas verificaciones, en el caso que ataque a un heroe debe revizar la armadura de este.
+            //Ejecuta el ataque de minions, con todas las respectivas verificaciones, en el caso que ataque a un heroe debe revisar la armadura de este.
             if (J.ID == true && J1.Tablero[x].Memoria >= 1)
             {
                 if (y < 7)
@@ -474,7 +474,7 @@ namespace Hearthstone_GUI_Grupo5
             }
             else
             {
-                //manager.Aviso("No puede utilizar esa carta, la bajó este turno.");
+                manager.Aviso("No puede utilizar esa carta, la bajó este turno.");
             }
 
         }
@@ -856,7 +856,7 @@ namespace Hearthstone_GUI_Grupo5
 
         public void FinTurno(Jugador J)
         {
-            //manager.Aviso("El jugador " + J.Nombre + " ha finalizado su turno");
+            manager.Aviso("El jugador " + J.Nombre + " ha finalizado su turno");
             Memorias();
             //manager.Aviso("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
             if (J.ID == true)

@@ -15,81 +15,146 @@
             <ColumnDefinition Width="553*"/>
             <ColumnDefinition Width="403*"/>
         </Grid.ColumnDefinitions>
+
         <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="190" Margin="180,352,0,0" VerticalAlignment="Top" Width="770">
-            <Button Content="" HorizontalAlignment="Left" Margin="658,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA7" Click="TAClick">
+            <Button Content="" HorizontalAlignment="Left" Margin="658,10,0,0" VerticalAlignment="Top" Width="89" Height="128" x:Name="TA7" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="564,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA6" Click="TAClick">
+            <Button Content="" HorizontalAlignment="Left" Margin="564,10,0,0" VerticalAlignment="Top" Width="89" Height="128" x:Name="TA6" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="470,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA5" Click="TAClick">
+            <Button Content="" HorizontalAlignment="Left" Margin="470,10,0,0" VerticalAlignment="Top" Width="89" Height="128" x:Name="TA5" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="376,10,0,0" VerticalAlignment="Top" Width="91" Height="128" Name="TA4" Click="TAClick">
+            <Button Content="" HorizontalAlignment="Left" Margin="376,10,0,0" VerticalAlignment="Top" Width="91" Height="128" x:Name="TA4" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA3" Click="TAClick">
+            <Button Content="" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" Width="89" Height="128" x:Name="TA3" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="190,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA2" Click="TAClick">
+            <Button Content="" HorizontalAlignment="Left" Margin="190,10,0,0" VerticalAlignment="Top" Width="89" Height="128" x:Name="TA2" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top" Width="89" Height="128" Name="TA1" Click="TAClick">
+            <Button Content="" HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top" Width="89" Height="128" x:Name="TA1" Click="TAClick">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
+            <Label Content="0" HorizontalAlignment="Left" Margin="162,112,0,0" VerticalAlignment="Top" Width="23" FontFamily="OPTIBelwe" Foreground="White">
+                <Label.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
+            <Label Content="0" HorizontalAlignment="Left" Margin="256,112,0,0" VerticalAlignment="Top" Width="23" FontFamily="OPTIBelwe" Foreground="White" Name="Mali2">
+                <Label.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
+            <Label Content="0" HorizontalAlignment="Left" Margin="350,112,0,0" VerticalAlignment="Top" Width="23" FontFamily="OPTIBelwe" Foreground="White" Name="Mali3">
+                <Label.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
+            <Label Content="0" HorizontalAlignment="Left" Margin="444,112,0,0" VerticalAlignment="Top" Width="23" FontFamily="OPTIBelwe" Foreground="White" Name="Mali4">
+                <Label.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
+            <Label Content="0" HorizontalAlignment="Left" Margin="536,112,0,0" VerticalAlignment="Top" Width="23" FontFamily="OPTIBelwe" Foreground="White" Name="Mali5">
+                <Label.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
+            <Label Content="0" HorizontalAlignment="Left" Margin="630,112,0,0" VerticalAlignment="Top" Width="23" FontFamily="OPTIBelwe" Foreground="White" Name="Mali6">
+                <Label.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
+            <Label Content="0" HorizontalAlignment="Left" Margin="724,113,0,0" VerticalAlignment="Top" Width="23" FontFamily="OPTIBelwe" Foreground="White" Name="Mali7">
+                <Label.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
+            <Label Content="0" HorizontalAlignment="Left" Margin="162,112,0,0" VerticalAlignment="Top" Width="23" FontFamily="OPTIBelwe" Foreground="White" Name="Mali1">
+                <Label.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
         </Grid>
         <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="132" Margin="88,215,0,0" VerticalAlignment="Top" Width="862">
-            <Button Content="" HorizontalAlignment="Left" Margin="763,0,0,0" VerticalAlignment="Top" Width="89" Height="132" Name="TE7">
+            <Button Content="" HorizontalAlignment="Left" Margin="763,0,0,0" VerticalAlignment="Top" Width="89" Height="132" x:Name="TE7">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="671,0,0,0" VerticalAlignment="Top" Width="88" Height="132" Name="TE6">
+            <Button Content="" HorizontalAlignment="Left" Margin="671,0,0,0" VerticalAlignment="Top" Width="88" Height="132" x:Name="TE6">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="578,0,0,0" VerticalAlignment="Top" Width="89" Height="132" Name="TE5">
+            <Button Content="" HorizontalAlignment="Left" Margin="578,0,0,0" VerticalAlignment="Top" Width="89" Height="132" x:Name="TE5">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="485,0,0,0" VerticalAlignment="Top" Width="89" Height="132" Name="TE4">
+            <Button Content="" HorizontalAlignment="Left" Margin="485,0,0,0" VerticalAlignment="Top" Width="89" Height="132" x:Name="TE4">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="392,0,0,0" VerticalAlignment="Top" Width="89" Height="132" Name="TE3">
+            <Button Content="" HorizontalAlignment="Left" Margin="392,0,0,0" VerticalAlignment="Top" Width="89" Height="132" x:Name="TE3">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="300,0,0,0" VerticalAlignment="Top" Width="88" Height="132" Name="TE2" >
+            <Button Content="" HorizontalAlignment="Left" Margin="300,0,0,0" VerticalAlignment="Top" Width="88" Height="132" x:Name="TE2" >
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="207,0,0,0" VerticalAlignment="Top" Width="89" Height="132" Name="TE1">
+            <Button Content="" HorizontalAlignment="Left" Margin="207,0,0,0" VerticalAlignment="Top" Width="89" Height="132" x:Name="TE1">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
         </Grid>
-        <Button Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="239,328,0,0" VerticalAlignment="Top" Width="92" Height="53" Name="FinTurno" Opacity="0.082" Click="FinTurno_Click">
+        <Button Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="239,328,0,0" VerticalAlignment="Top" Width="92" Height="53" x:Name="FinTurno" Opacity="0.082" Click="FinTurno_Click">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -97,7 +162,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="704,98,0,0" VerticalAlignment="Top" Width="91" Height="87" Name="HabilidadEnemigo" RenderTransformOrigin="0.432,0.272" Grid.ColumnSpan="2">
+        <Button Content="" HorizontalAlignment="Left" Margin="704,98,0,0" VerticalAlignment="Top" Width="91" Height="87" x:Name="HabilidadEnemigo" RenderTransformOrigin="0.432,0.272" Grid.ColumnSpan="2">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -105,80 +170,138 @@
                 <ImageBrush ImageSource="imagenes/Base.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="694,558,0,0" VerticalAlignment="Top" Width="89" Height="82" Name="HabilidadAliado" Click="HabilidadAliado_Click" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Margin="694,558,0,0" VerticalAlignment="Top" Width="89" Height="82" x:Name="HabilidadAliado" Click="HabilidadAliado_Click" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="imagenes/Base.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="583,510,0,0" VerticalAlignment="Top" Width="111" Height="140" Name="HeroeAli" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Margin="583,510,0,0" VerticalAlignment="Top" Width="111" Height="140" x:Name="HeroeAli" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="imagenes/Vacio.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="578,81,0,0" VerticalAlignment="Top" Width="116" Height="134" Name="HeroeEne" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Margin="578,81,0,0" VerticalAlignment="Top" Width="116" Height="134" x:Name="HeroeEne" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="imagenes/Vacio.png"/>
             </Button.Background>
         </Button>
-        <Label Content="0" HorizontalAlignment="Left" Margin="666,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="VidaEnem" Grid.ColumnSpan="2"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="666,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="VidaEnem" Grid.ColumnSpan="2"/>
         <Label Content="0" HorizontalAlignment="Left" Margin="666,615,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.154" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="VidaAli"/>
 
-        <Label Content="0" Grid.Column="1" HorizontalAlignment="Left" Margin="65,687,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Foreground="White" Name="ManaAli" FontFamily="OPTIBelwe" Height="40"/>
+        <Label Content="0" Grid.Column="1" HorizontalAlignment="Left" Margin="65,687,0,0" VerticalAlignment="Top" Width="75" FontSize="20" Foreground="White" x:Name="ManaAli" FontFamily="OPTIBelwe" Height="40"/>
         <Label Content="0" Grid.Column="1" HorizontalAlignment="Left" Margin="44,40,0,0" VerticalAlignment="Top" Width="49" FontSize="20" Foreground="White" x:Name="ManaEnem" FontFamily="OPTIBelwe" Height="33"/>
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="150" Margin="4,609,0,0" VerticalAlignment="Top" Width="801" Orientation="Horizontal" >
-            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli10" Click="BajarCartaM">
+            <Button Content="" Width="79" Margin="0,34,0,0" x:Name="CMAli10" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli9" Click="BajarCartaM">
+            <Button Content="" Width="79" Margin="0,34,0,0" x:Name="CMAli9" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="78" Margin="0,34,0,0" Name="CMAli8" Click="BajarCartaM">
+            <Button Content="" Width="78" Margin="0,34,0,0" x:Name="CMAli8" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli7" Click="BajarCartaM">
+            <Button Content="" Width="79" Margin="0,34,0,0" x:Name="CMAli7" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli6" Click="BajarCartaM">
+            <Button Content="" Width="79" Margin="0,34,0,0" x:Name="CMAli6" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli5" Click="BajarCartaM">
+            <Button Content="" Width="79" Margin="0,34,0,0" x:Name="CMAli5" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli4" Click="BajarCartaM">
+            <Button Content="" Width="79" Margin="0,34,0,0" x:Name="CMAli4" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="78" Margin="0,34,0,0" Name="CMAli3" Click="BajarCartaM">
+            <Button Content="" Width="78" Margin="0,34,0,0" x:Name="CMAli3" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli2" Click="BajarCartaM">
+            <Button Content="" Width="79" Margin="0,34,0,0" x:Name="CMAli2" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
-            <Button Content="" Width="79" Margin="0,34,0,0" Name="CMAli1" Click="BajarCartaM">
+            <Button Content="" Width="79" Margin="0,34,0,0" x:Name="CMAli1" Click="BajarCartaM">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>
             </Button>
         </StackPanel>
-        <Label Content="0 Cartas en la mano" HorizontalAlignment="Left" Margin="526,10,0,0" VerticalAlignment="Top" Height="38" Width="236" Foreground="White" FontSize="20" FontFamily="OPTIBelwe" Name="NCartasEnem" Grid.ColumnSpan="2"/>
-        <Button Content="Jugar!" HorizontalAlignment="Left" Margin="549,299,0,0" VerticalAlignment="Top" Width="177" Height="126" FontSize="36" FontFamily="OPTIBelwe" Foreground="White" Click="InicioJuego" Name="Inicio" IsEnabled="True" Visibility ="Visible">
+        <Label Content="0 Cartas en la mano" HorizontalAlignment="Left" Margin="526,10,0,0" VerticalAlignment="Top" Height="38" Width="236" Foreground="White" FontSize="20" FontFamily="OPTIBelwe" x:Name="NCartasEnem" Grid.ColumnSpan="2"/>
+        <Label Content="Player" HorizontalAlignment="Left" Margin="0,492,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="NombreAliado"/>
+        <Label Content="Player" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" x:Name="NombreEnemigo"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="361,321,0,0" VerticalAlignment="Top" Width="22" Foreground="White" FontFamily="OPTIBelwe" Name="Mene1">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="0" HorizontalAlignment="Left" Margin="547,321,0,0" VerticalAlignment="Top" Width="22" Foreground="White" FontFamily="OPTIBelwe"  Name="Mene3">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="0" HorizontalAlignment="Left" Margin="453,321,0,0" VerticalAlignment="Top" Width="22" Foreground="White" FontFamily="OPTIBelwe" Name="Mene2">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="0" HorizontalAlignment="Left" Margin="639,322,0,0" VerticalAlignment="Top" Width="22" Foreground="White" FontFamily="OPTIBelwe"  Name="Mene4">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="0" HorizontalAlignment="Left" Margin="731,322,0,0" VerticalAlignment="Top" Width="22" Foreground="White" FontFamily="OPTIBelwe" Grid.ColumnSpan="2"  Name="Mene5">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="0" HorizontalAlignment="Left" Margin="88,321,0,0" VerticalAlignment="Top" Width="22" Foreground="White" FontFamily="OPTIBelwe" Grid.Column="1"  Name="Mene6">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="0" HorizontalAlignment="Left" Margin="181,321,0,0" VerticalAlignment="Top" Width="22" Foreground="White" FontFamily="OPTIBelwe" Grid.Column="1"  Name="Mene7">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Button Content="Jugar!" HorizontalAlignment="Left" Margin="549,299,0,0" VerticalAlignment="Top" Width="177" Height="126" FontSize="36" FontFamily="OPTIBelwe" Foreground="White" Click="InicioJuego" x:Name="Inicio" IsEnabled="True" Visibility ="Visible">
             <Button.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Black" Offset="1"/>
@@ -186,8 +309,25 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Label Content="Player" HorizontalAlignment="Left" Margin="0,492,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="NombreAliado"/>
-        <Label Content="Player" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="165" Height="95" FontSize="20" FontFamily="OPTIBelwe" Foreground="White" Name="NombreEnemigo"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="349,241,0,0" TextWrapping="Wrap" FontFamily="OPTIBelwe" Foreground="White" Text="Historial" VerticalAlignment="Top" Height="234" Width="177" Name="Historial"/>
+        <Button x:Name="Save1" Content="Save" Grid.Column="1" HorizontalAlignment="Left" Margin="451,687,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF894F0A" Offset="1"/>
+                    <GradientStop Color="#FED4D3D1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Load1" Content="Load" Grid.Column="1" HorizontalAlignment="Left" Margin="451,712,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF894F0A" Offset="1"/>
+                    <GradientStop Color="#FED4D3D1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

@@ -29,6 +29,10 @@ namespace Hearthstone_GUI_Grupo5
         public bool UsoHab;
         public Armas Arma;
         public int Daño = 0;
+        public int totem0count = 0;
+        public int totem1count = 0;
+        public int totem2count = 0;
+        public int totem3count = 0;
 
         //Lista que guarda los silver hand warriors que crea la habilidad del paladin
         public List<Minions> SilverHand = new List<Minions>();
@@ -130,11 +134,11 @@ namespace Hearthstone_GUI_Grupo5
         {
             if (Mana < 2)
             {
-                //manager.Aviso("No tiene suficiente maná: " + Mana);
+                manager.Aviso("No tiene suficiente maná: " + Mana);
             }
             else if (UsoHab == true)
             {
-                //manager.Aviso("Ya utilizó la habilidad este turno.");
+                manager.Aviso("Ya utilizó la habilidad este turno.");
             }
             else
             {
@@ -158,16 +162,15 @@ namespace Hearthstone_GUI_Grupo5
                 }
                 else if (Heroe.Clase == "Paladin" && HabMej == true)
                 {
-                    Minions s1 = new Minions("Silver Hand recruit", 1, 1, 1);
-                    s1 = new Minions("Silver Hand recruit", 1, 1, 1);
-                    SilverHand.Add(s1);
+                    Minions s1 = new Minions("Silver hand recruit", 1, 1, 1);
+                    Minions s2 = new Minions("Silver hand recruit", 1, 1, 1);
+                    Tablero.Add(s1);
+                    Tablero.Add(s2);
                 }
                 else if (Heroe.Clase == "Paladin" && HabMej == false)
                 {
-                    Minions silver1 = new Minions("Silver Hand recruit", 1, 1, 1);
-                    silver1 = new Minions("Silver Hand recruit", 1, 1, 1);
-                    SilverHand.Add(silver1);
-                    SilverHand.Add(silver1);
+                    Minions silver1 = new Minions("Silver hand recruit", 1, 1, 1);
+                    Tablero.Add(silver1);
                 }
                 else if (Heroe.Clase == "Warlock" && HabMej == true)
                 {
@@ -221,65 +224,78 @@ namespace Hearthstone_GUI_Grupo5
                     ///creacion de totem.
                 }
                 else if (Heroe.Clase == "Shaman" && HabMej == false)
-                //OBSERVACION DEL METODO, ESTE METODO ASIGNA UN RANDOM ENTER 0 Y 3 PARA ELEGIR ENTRE 4 TOTEMS DISTINTOS
+                //OBSERVACION DEL METODO, ESTE METODO ASIGNA UN RANDOM ENTER 1 Y 4 PARA ELEGIR ENTRE 4 TOTEMS DISTINTOS
                 //PERO SI EXISTE UN TOTEM EN EL TABLERO EL RANDOM SIGUIENTE EXCLUYE AL TOTEM QUE ESTA EN EL TABLERO, HASTA QUE SALGAN LOS 4
-                //POR ESTO ANTES DE CREAR UN TOTEM REVIZA (con 4 contadores de los 4 totems) QUE ESTE YA ESTE O NO CREADO.
+                //POR ESTO ANTES DE CREAR UN TOTEM REVISA (con 4 contadores de los 4 totems) QUE ESTE YA ESTE O NO CREADO.
                 {
-                    int totemPick = rdm.Next(0, 3);
-                    int totem0count = 0;
-                    int totem1count = 0;
-                    int totem2count = 0;
-                    int totem3count = 0;
+                    bool totem = true;
+                    int totemPick = rdm.Next(0, 5);
+                    while (totem == true)
+                    {                        
+                        if (totemPick == 1)
+                        {
+                            if (totem0count <= totem1count && totem0count <= totem2count && totem0count <= totem3count)
+                            {
+                                GenTotem0();
+                                totem0count += 1;
+                                totem = false;
+                            }
+                            else
+                            {
+                                totemPick = rdm.Next(0, 5);
+                                continue;
+                            }
+                        }
+                        else if (totemPick == 2)
+                        {
+                            if (totem1count <= totem0count && totem1count <= totem2count && totem1count <= totem3count)
+                            {
+                                GenTotem1();
+                                totem1count += 1;
+                                totem = false;
+                            }
+                            else
+                            {
+                                totemPick = rdm.Next(0, 5);
+                                continue;
+                            }
+                        }
+                        else if (totemPick == 3)
+                        {
+                            if (totem2count <= totem0count && totem2count <= totem1count && totem2count <= totem3count)
+                            {
+                                GenTotem2();
+                                totem2count += 1;
+                                totem = false;
+                            }
+                            else
+                            {
+                                totemPick = rdm.Next(0, 5);
+                                continue;
+                            }
 
-                    if (totemPick == 0)
-                    {
-                        if (!(totem0count >= totem1count && totem0count >= totem2count && totem0count >= totem3count))
+                        }
+                        else if (totemPick == 4)
                         {
-                            GenTotem0();
-                            totem0count += 1;
+                            if (totem3count <= totem0count && totem3count <= totem1count && totem3count <= totem2count)
+                            {
+                                GenTotem3();
+                                totem3count += 1;
+                                totem = false;
+                            }
+                            else
+                            {
+                                totemPick = rdm.Next(0, 5);
+                                continue;
+                            }
                         }
                         else
                         {
-                            UsarHabilidad();
-                        }
-                    }
-                    else if (totemPick == 1)
-                    {
-                        if (!(totem1count >= totem0count && totem1count >= totem2count && totem1count >= totem3count))
-                        {
-                            GenTotem1();
-                            totem1count += 1;
-                        }
-                        else
-                        {
-                            UsarHabilidad();
-                        }
-                    }
-                    else if (totemPick == 2)
-                    {
-                        if (!(totem2count >= totem0count && totem2count >= totem1count && totem2count >= totem3count))
-                        {
-                            GenTotem2();
-                            totem2count += 1;
-                        }
-                        else
-                        {
-                            UsarHabilidad();
+                            totemPick = rdm.Next(0, 5);
                         }
 
                     }
-                    else
-                    {
-                        if (!(totem3count >= totem0count && totem3count >= totem1count && totem3count >= totem2count))
-                        {
-                            GenTotem3();
-                            totem3count += 1;
-                        }
-                        else
-                        {
-                            UsarHabilidad();
-                        }
-                    }
+                    
 
                 }
             }
@@ -289,25 +305,25 @@ namespace Hearthstone_GUI_Grupo5
         public void GenTotem0()//Genera un healing totem
         {
             totem1 = new Minions("Healing Totem", 1, 2, 0);
-            Totems.Add(totem1);
+            Tablero.Add(totem1);
         }
 
         public void GenTotem1()//Genera un Searing totem
         {
             totem2 = new Minions("Searing Totem", 1, 1, 1);
-            Totems.Add(totem2);
+            Tablero.Add(totem2);
         }
 
         public void GenTotem2()//Genera un stoneclaw totem
         {
             totem3 = new Minions("Stoneclaw Totem", 1, 2, 0);
-            Totems.Add(totem3);
+            Tablero.Add(totem3);
         }
 
         public void GenTotem3()//Genera un wraith of air totem
         {
             totem4 = new Minions("Wraith Of Air Totem", 1, 2, 0);
-            Totems.Add(totem4);
+            Tablero.Add(totem4);
         }
 
         public void Fatiga()
