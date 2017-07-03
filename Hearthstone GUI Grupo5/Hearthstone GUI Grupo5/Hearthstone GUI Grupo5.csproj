@@ -202,5 +202,10 @@
   <ItemGroup>
     <Resource Include="Savedgame\tablero.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="imagenes\Congratulations.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

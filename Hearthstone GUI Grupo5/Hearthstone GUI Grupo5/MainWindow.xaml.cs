@@ -448,6 +448,23 @@ namespace Hearthstone_GUI_Grupo5
             Mali6.Content = 0;
             Mali7.Content = 0;
             Historial.Text = "";
+            MediaElement media = new MediaElement();
+            media.LoadedBehavior = MediaState.Manual;
+            media.UnloadedBehavior = MediaState.Manual;
+            media.Source = new Uri("Imagenes/Congratulations.mp3", UriKind.Relative);
+            if (Tablerini.J1.Vida <= 0)
+            {
+                Congratulations.Content = "Ha ganado el jugador: " + Tablerini.J2.Nombre;
+                Congratulations.Visibility = Visibility.Visible;
+                media.Play();
+            }
+            else if (Tablerini.J2.Vida <= 0)
+            {
+                Congratulations.Content = "Ha ganado el jugador: " + Tablerini.J1.Nombre;
+                Congratulations.Visibility = Visibility.Visible;
+                media.Play();
+            }
+
             if (Tablerini.J1Jugando == true)
             {
                 NCartasEnem.Content = Tablerini.J2.Mano.Count + " Cartas en la mano.";
