@@ -433,6 +433,9 @@ namespace Hearthstone_GUI_Grupo5
             CMAli8.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli8), "Imagenes/Vacio.png")));
             CMAli9.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli9), "Imagenes/Vacio.png")));
             CMAli10.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(CMAli10), "Imagenes/Vacio.png")));
+            Armaa.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(Armaa), "Imagenes/Vacio.png")));
+            Armae.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(Armae), "Imagenes/Vacio.png")));
+
             Mene1.Content = 0;
             Mene2.Content = 0;
             Mene3.Content = 0;
@@ -476,6 +479,18 @@ namespace Hearthstone_GUI_Grupo5
                 VidaEnem.Content = Tablerini.J2.Vida;
                 ManaAli.Content = Tablerini.J1.Mana;
                 Historial.Text = Tablerini.manager.Aviso1;
+                String Arm = Tablerini.J1.Armor.ToString();
+                Armora.Content = Arm;
+                String Arme = Tablerini.J2.Armor.ToString();
+                Armore.Content = Arme;
+                if (Tablerini.J1.Arma.Nombre == "Wicked Knife")
+                {
+                    Armaa.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(Armaa), "Imagenes/Wickedknifea.png")));
+                }
+                if (Tablerini.J2.Arma.Nombre == "Wicked Knife")
+                {
+                    Armae.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(Armae), "Imagenes/Wickedknifea.png")));
+                }
             }
             else
             {
@@ -488,6 +503,18 @@ namespace Hearthstone_GUI_Grupo5
                 VidaEnem.Content = Tablerini.J1.Vida;
                 ManaAli.Content = Tablerini.J2.Mana;
                 Historial.Text = Tablerini.manager.Aviso1;
+                String Arm = Tablerini.J2.Armor.ToString();
+                Armora.Content = Arm;
+                String Arme = Tablerini.J1.Armor.ToString();
+                Armore.Content = Arme;
+                if (Tablerini.J1.Arma.Nombre == "Wicked Knife")
+                {
+                    Armae.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(Armaa), "Imagenes/Wickedknifea.png")));
+                }
+                if (Tablerini.J2.Arma.Nombre == "Wicked Knife")
+                {
+                    Armaa.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(Armae), "Imagenes/Wickedknifea.png")));
+                }
             }
             ShowDialog();
         }

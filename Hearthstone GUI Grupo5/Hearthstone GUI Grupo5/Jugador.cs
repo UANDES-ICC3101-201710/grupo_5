@@ -27,7 +27,7 @@ namespace Hearthstone_GUI_Grupo5
         public int VarAuxDmg = 0; //VarAuxDmg, HabMej y UsoHab son  variables auxiliares que se ocupan para implementar la habilidad de heroes
         public bool HabMej;
         public bool UsoHab;
-        public Armas Arma;
+        public Armas Arma = new Armas("nada", 0, 0, 0);
         public int Daño = 0;
         public int totem0count = 0;
         public int totem1count = 0;
@@ -204,7 +204,7 @@ namespace Hearthstone_GUI_Grupo5
                 }
                 else if (Heroe.Clase == "Druid" && HabMej == false)
                 {
-                    Armor += 2;
+                    Armor += 1;
                     Daño = 1;
                 }
                 else if (Heroe.Clase == "Rogue" && HabMej == true) // Generamos un arma 2/2 y la equipamos
