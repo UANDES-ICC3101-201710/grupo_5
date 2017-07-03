@@ -2912,6 +2912,19 @@ namespace Hearthstone_GUI_Grupo5
             
         }
 
+        private void ConcederClick(object sender, RoutedEventArgs e)
+        {
+            if (Tablerini.J1Jugando == true)
+            {
+                Tablerini.Conceder(Tablerini.J1);
+            }
+            else
+            {
+                Tablerini.Conceder(Tablerini.J2);
+            }
+            ActGui();
+        }
+
         /* private void CMAli1_MouseDown(object sender, MouseButtonEventArgs e)
 {
     Button button = (Button)sender;
