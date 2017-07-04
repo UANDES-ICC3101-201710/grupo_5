@@ -165,11 +165,11 @@ namespace Hearthstone_GUI_Grupo5
 
         private static void Save(Tablero tablero)//Metodo de serializacion
         {
-
-            string fileName1 = @"C:\Users\fenzo\Desktop\Proyecto POO GUI\Hearthstone GUI Grupo5\Hearthstone GUI Grupo5\Tablero.txt";
+            string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string file = dir + @"\Tablero.txt";
             // Creamos el Stream donde guardaremos nuestro juego
 
-            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
+            FileStream fs_tablero = new FileStream(file, FileMode.Create);
             IFormatter formatter = new BinaryFormatter();
             formatter.Serialize(fs_tablero, tablero);
             fs_tablero.Close();
@@ -178,9 +178,10 @@ namespace Hearthstone_GUI_Grupo5
 
         private static Tablero Load()//Metodo de deserializacion
         {
-            string fileName1 = @"C:\Users\fenzo\Desktop\Proyecto POO GUI\Hearthstone GUI Grupo5\Hearthstone GUI Grupo5\Tablero.txt";
+            string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string file = dir + @"\Tablero.txt";
             // Creamos el Stream donde se encuentra nuestro juego
-            FileStream fs_tablero = new FileStream(fileName1, FileMode.Open);
+            FileStream fs_tablero = new FileStream(file, FileMode.Open);
             IFormatter formatter = new BinaryFormatter();
             Tablero tablero = formatter.Deserialize(fs_tablero) as Tablero;
             fs_tablero.Close();
