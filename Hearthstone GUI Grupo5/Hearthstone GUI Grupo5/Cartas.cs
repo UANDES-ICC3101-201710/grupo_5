@@ -16,6 +16,7 @@ namespace Hearthstone_GUI_Grupo5
         public int Ataque;
         public int Memoria;
         public int VidaOriginal;
+        public bool Ataco = false;
 
 
         public Cartas(string nombre, int costo, int Vida, int Ataque)

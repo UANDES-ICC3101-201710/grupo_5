@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hearthstone_GUI_Grupo5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1280">
+        Title="HearthProgra" Height="800" Width="1280">
     <Window.Background>
         <ImageBrush ImageSource="imagenes\hearthstone_screenshot_1-29-2014-00-53-39.png"/>
     </Window.Background>

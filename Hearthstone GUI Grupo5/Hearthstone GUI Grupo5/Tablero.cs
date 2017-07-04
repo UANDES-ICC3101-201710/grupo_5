@@ -380,8 +380,9 @@ namespace Hearthstone_GUI_Grupo5
         public void Ataque(int x, Jugador J, int y)
         {
             //Ejecuta el ataque de minions, con todas las respectivas verificaciones, en el caso que ataque a un heroe debe revisar la armadura de este.
-            if (J.ID == true && J1.Tablero[x].Memoria >= 1)
+            if (J.ID == true && J1.Tablero[x].Memoria >= 1 && J1.Tablero[x].Ataco == false)
             {
+                J1.Tablero[x].Ataco = true;
                 if (y < 7)
                 {
                     J2.Tablero[y].Vida -= J1.Tablero[x].Ataque;
@@ -405,7 +406,8 @@ namespace Hearthstone_GUI_Grupo5
                 }
                 else if (y >= 7 && J1.Tablero[x].Memoria >= 1)// Revisamos si el jugador tiene armadura, para atacar primero esta antes que la vida.
                 {
-                    if(J2.Armor > 0)
+                    J1.Tablero[x].Ataco = true;
+                    if (J2.Armor > 0)
                     {
                         J2.Armor -= J1.Tablero[x].Ataque;
                         if (J2.Armor > 0)
@@ -425,8 +427,9 @@ namespace Hearthstone_GUI_Grupo5
                 }
 
             }
-            else if (J.ID == false && J2.Tablero[x].Memoria >= 1)
+            else if (J.ID == false && J2.Tablero[x].Memoria >= 1 && J2.Tablero[x].Ataco == false)
             {
+                J2.Tablero[x].Ataco = true;
                 if (y < 7)
                 {
                     J1.Tablero[y].Vida -= J2.Tablero[x].Ataque;
@@ -450,7 +453,8 @@ namespace Hearthstone_GUI_Grupo5
                 }
                 else if (y >= 7 && J2.Tablero[x].Memoria >= 1)
                 {
-                    if(J1.Armor > 0) // Revisamos si el jugador tiene armadura, para atacar primero esta antes que la vida.
+                    J2.Tablero[x].Ataco = true;
+                    if (J1.Armor > 0) // Revisamos si el jugador tiene armadura, para atacar primero esta antes que la vida.
                     {
                         J1.Armor -= J2.Tablero[x].Ataque;
                         if(J1.Armor > 0)
@@ -471,6 +475,10 @@ namespace Hearthstone_GUI_Grupo5
                 }
 
 
+            }
+            else if(J.Tablero[x].Ataco == true)
+            {
+                manager.Aviso("Esta carta ya atacó en este turno.");
             }
             else
             {
@@ -880,10 +888,12 @@ namespace Hearthstone_GUI_Grupo5
             foreach (Cartas i in J1.Tablero)
             {
                 i.Memoria += 1;
+                i.Ataco = false;
             }
             foreach (Cartas p in J2.Tablero)
             {
                 p.Memoria += 1;
+                p.Ataco = false;
             }
         }
 
