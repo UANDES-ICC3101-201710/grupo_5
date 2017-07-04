@@ -180,7 +180,7 @@ namespace Hearthstone_GUI_Grupo5
         {
             string fileName1 = @"C:\Users\fenzo\Desktop\Proyecto POO GUI\Hearthstone GUI Grupo5\Hearthstone GUI Grupo5\Tablero.txt";
             // Creamos el Stream donde se encuentra nuestro juego
-            FileStream fs_tablero = new FileStream(fileName1, FileMode.CreateNew);
+            FileStream fs_tablero = new FileStream(fileName1, FileMode.Open);
             IFormatter formatter = new BinaryFormatter();
             Tablero tablero = formatter.Deserialize(fs_tablero) as Tablero;
             fs_tablero.Close();
@@ -2907,7 +2907,8 @@ namespace Hearthstone_GUI_Grupo5
             }
             else if (b.Name == "Load1")
             {
-                Load();
+                Tablerini = Load();
+                ActGui();
             }
             
         }
